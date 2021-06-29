@@ -18,49 +18,32 @@
  * This program was crafted by Marisa, Melissa (Best), Eric, and Ian
  */
 
-import java.util.Scanner;
-import java.util.Random;
 
-/*
-GOAL:
+import java.util.Scanner; // we need to solicit user input
+import java.util.Random; // we need to generate random numbers
 
-Be the player to remove the last stone.
-
-RULES:
-bag contains 12 stones initially
-a move consists of removing 1-3 stones from the bag
-YOUR CODING MISSION:
-
-Write a program that will allow a human at console to play against your "AI" a game of NIM.
-
-prompt user for number of stones they wish to remove each turn
-tell user how many stones the AI removed and how many stones remain
-facilitate play until human or AI wins, and announce winner
-Grow cohort KB ("knowledge base") on slack:
-
-Have a Q? Ask.
-Confident in your skills/knowledge? See how well you can explain it.
-DELIVERABLE:
-
-Save in your_work_repo: 01/Nim.java
-Include heading at top of file, as comment. List all collaborators and consultants.
-*/
 public class Nim {
 
-  public static int roll(int n){
+/*
+ * This method, modeled on the "roll" method from the craps game, will generate
+ * the random number that represents the AI's "turn"
+ */
+  public static int aiTurn(int n){
     Random random = new Random();
     int number = random.nextInt(n) + 1;
     return number;
   }
 
-  public static void main (String[] args) {
-    int totalStones = 12;
-    Scanner in = new Scanner(System.in);
-    System.out.println("This is the game of Nim. We start with 12 stones in a bag. Players choose 1, 2, or 3 stones each turn. The object of the game is to choose the last stone.");
 
+
+  public static void main (String[] args) {
+    int totalStones = 12; //we start with twelve stones
+    Scanner in = new Scanner(System.in);
+    System.out.print("This is the game of Nim. We start with 12 stones in a bag. ");
+    System.out.print("Players choose 1, 2, or 3 stones each turn.");
+    System.out.println("The object of the game is to choose the last stone.");
     System.out.print("Player 1: How many stones would you like to choose? Choose 1, 2, or 3: ");
     int playerStones = in.nextInt();
-
     System.out.print("Player AI: How many stones would you like to choose?");
     Random random = new Random();
     int aiStones = random.nextInt(2) + 1;
