@@ -10,14 +10,16 @@ import java.util.Random;
 public class Nim {
 
   public static void main (String[] args) {
+    //initialize and assign the variables
     int totalStones = 12;
     int playerStones = 0;
     int aiStones = 0;
 
+    //create a scanner and explain the rules
     Scanner in = new Scanner(System.in);
     System.out.println("This is the game of Nim. We start with 12 stones in a bag. Players choose 1, 2, or 3 stones each turn. The object of the game is to choose the last stone. \n");
 
-    //keep playing while there are more than zero stones!
+    //loop to keep playing while there are more than zero stones!
     while(totalStones >= 0){
 
         //solicit input from the user
