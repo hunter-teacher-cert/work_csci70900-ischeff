@@ -1,11 +1,7 @@
 //01/Nim.java
-
 //Collaborators: Marisa Laks, Michelle Best, Eric Wilson, Ian Scheffler
-
-
 import java.util.Scanner;
 import java.util.Random;
-
 
 public class Nim {
 
