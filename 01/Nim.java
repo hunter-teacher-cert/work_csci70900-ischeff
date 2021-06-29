@@ -23,7 +23,7 @@ public class Nim {
         playerStones = in.nextInt();
 
         totalStones = totalStones - playerStones;
-        System.out.println("Remaining stones: " + totalStones);
+        System.out.println("\nRemaining stones: " + totalStones);
         System.out.println();
 
       if (totalStones <= 0) {
@@ -37,7 +37,7 @@ public class Nim {
         System.out.println(aiStones);
 
         totalStones = totalStones - aiStones;
-        System.out.println("Remaining stones: " + totalStones);
+        System.out.println("\nRemaining stones: " + totalStones);
         System.out.println();
 
       if (totalStones <= 0) {
