@@ -26,7 +26,7 @@ public class Nim {
         System.out.println("Remaining stones: " + totalStones);
         System.out.println();
 
-      if (totalStones == 0) {
+      if (totalStones <= 0) {
         System.out.println("Congrats, you won!");
         break;
       }
@@ -40,8 +40,9 @@ public class Nim {
         System.out.println("Remaining stones: " + totalStones);
         System.out.println();
 
-      if (totalStones == 0) {
+      if (totalStones <= 0) {
         System.out.println("Sorry, the computer won!");
+        break;
       }
     }
   }
