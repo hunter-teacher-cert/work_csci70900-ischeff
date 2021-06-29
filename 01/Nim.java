@@ -30,21 +30,21 @@ public class Nim {
  */
   public static int aiTurn(int n){
     Random random = new Random();
-    int number = random.nextInt(n) + 1;
+    int number = random.nextInt(n) + 1; //note that we will need to set n = 2 in main
     return number;
   }
 
-
-
   public static void main (String[] args) {
     int totalStones = 12; //we start with twelve stones
-    Scanner in = new Scanner(System.in);
+    Scanner in = new Scanner(System.in); //create the scanner to solicit input
     System.out.print("This is the game of Nim. We start with 12 stones in a bag. ");
     System.out.print("Players choose 1, 2, or 3 stones each turn.");
     System.out.println("The object of the game is to choose the last stone.");
     System.out.print("Player 1: How many stones would you like to choose? Choose 1, 2, or 3: ");
     int playerStones = in.nextInt();
-    System.out.print("Player AI: How many stones would you like to choose?");
+    totalStones = 12 - playerStones;
+    System.out.println("There are now " + totalStones + " remaining.");
+
     Random random = new Random();
     int aiStones = random.nextInt(2) + 1;
     System.out.println(" " + aiStones);
