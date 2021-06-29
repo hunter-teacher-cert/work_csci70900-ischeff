@@ -37,16 +37,15 @@ public class Nim {
   public static void main (String[] args) {
     int totalStones = 12; //we start with twelve stones
     Scanner in = new Scanner(System.in); //create the scanner to solicit input
-    System.out.print("This is the game of Nim. We start with 12 stones in a bag. ");
-    System.out.print("Players choose 1, 2, or 3 stones each turn.");
-    System.out.println("The object of the game is to choose the last stone.");
+    System.out.println("This is the game of Nim. /n We start with 12 stones in a bag. /n");
+    System.out.println("Players choose 1, 2, or 3 stones each turn./n");
+    System.out.println("The object of the game is to choose the last stone. /n");
     System.out.print("Player 1: How many stones would you like to choose? Choose 1, 2, or 3: ");
     int playerStones = in.nextInt();
     totalStones = 12 - playerStones;
-    System.out.println("There are now " + totalStones + " remaining.");
-
+    System.out.println("There are now " + totalStones + "stones remaining.");
     Random random = new Random();
     int aiStones = random.nextInt(2) + 1;
     System.out.println(" " + aiStones);
-}
+  }
 }
