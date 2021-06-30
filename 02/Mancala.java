@@ -1,45 +1,79 @@
-/*
-Instructions: Work: Mancala
+import java.io.*;
+import java.util.*;
+import java.util.Scanner; //not necessary
+import java.util.Random;  //not necessary
 
-GOAL:
+public class Mancala{
 
-Collect as many stones as possible in your mancala.
+  //method for the player's turn
+  public static int playerInput{
+    Scanner in = new Scanner(System.in);
+    do {
+      //ask the user to pick stones from a pit
+      System.out.println("From which pit would like to pick stones? Please pick a number from 1 to 6.");
+      playerPitChoice = in.nextInt();
 
-RULES:
+      //check to see if the input is invalid
+      if (playerPit != 1 && != 2 && != 3 && != 4 && != 5 && != 6){
+      System.out.println("That's not a valid pit. Pick a number from 1 to 6!");
+      }//end if statement to catch invalid input
+    } while (playerPit != 1 && != 2 && != 3 && != 4 && != 5 && != 6);
+    return playerPitChoice;
+  }//end player input
 
-you can only move stones on your side
-a move consists of collecting all stones in a pit and dropping them 1 by 1 into each consecutive pit in a counterclockwise direction
-if last stone dropped is into your mancala, you go again
-if last stone dropped is into an empty pit on your side, you capture the stones in the opposite pit (store in mancala)
-GAMEBOARD:
+  public static int aiInput{
+    int aiPitChoice;
+    aiPitChoice =0;
+    while (aiPitChoice==0 ){
+      aiPitChoice = aiBoard[rand.nextInt(5) +1]
+    }
+    //to choose a pit to pick from (at random); we need to check tom ake sure that the pit actually has stones in it; we can do this with a loop
+  }//end aiTurn
 
-M p p p p p p
-  p p p p p p M
-key: p: pit m: mancala
+  public static void main (String[]args){
+    int aiBoard[]={0,4,4,4,4,4,4};
+    int playerBoard[]={0,4,4,4,4,4,4};
+    Random rand = new Random();
+    System.out.println("Welcome to Mancala! Here is the board:");
+    board();
 
-YOUR CODING MISSION:
 
-With your new team, write a program to facilitate a mancala game in the terminal.
 
-"AI"-vs-human or human-vs-human (you choose)
-prompt user for which pit they wish to empty
-display relevant info after each turn:
-state of the board
-location of last stone dropped
-which player goes next
-facilitate play until one entity wins, and announce winner
-PROTIPS:
-Design first. Sketch out your plan on paper ("keys to success"), transcribe into comments in your code file.
-You will be prompted to share your algo (or algo-in-progress) to the chat after teams have had time to work up their approaches. At this point, all teams will be encouraged to review others' approaches and offer feedback and/or take inspiration.
-Get something, however, minimal, to compile and run ASAP. Incrementally grow it until it aligns with your goal.
-New to java and/or arrays? Since the primary goal here is to grow facility with 1D arrays, simply getting the stones transfer algorithm implemented for a single player's side of the board (not bothering with emptying pits on the other side) would be a good thing to aim for...
-Never stray far from runnable code.
-Need to tune your mental model? Play here: https://www.mathplayground.com/mancala.html
-Want more background? Read up here: https://en.wikipedia.org/wiki/Mancala
-Grow cohort KB ("knowledge base") on slack:
-Have a Q? Ask.
-Confident in your skills/knowledge? See how well you can explain it.
-DELIVERABLE:
-Save in your_work_repo: 2/Mancala.java
-Include heading at top of file, as comment. List all collaborators and consultants.
-*/
+  }//end main
+public static void board{
+  // will this print or will i have to make this a method? i am using things from the main :/
+  System.out.println("ai position: 1 2 3 4 5 6");
+  System.out.println("ai:"+ Arrays.toString(aiBoard));
+  System.out.println("        ai:"+ Arrays.toString(aiBoard));
+  System.out.println("             "Arrays.toString(playerBoard)+ "player");
+  System.out.println("              1 2 3 4 5 6: player position");
+// display(example)
+// ai poition:1 2 3 4 5 6
+//         ai:4 4 4 4 4 4
+//            4 4 4 4 4 4:player
+//            6 5 4 3 2 1:player position
+//  Mancala: ai= 0 player= 0
+// last stone droped: ai position: 2
+
+}//end board
+
+
+
+
+}//end class
+
+
+
+// variables: 2 arrays for players (ai and player)
+// indeces are 0-6 (0 for each player is the mancala)
+//initialize all except [0] to 4. (4 stones to start)
+// main method to initiate game
+// method for AI turn (random pick of pit)
+// and method for player turn (solicit input for which pit you want to pick from)
+// method for checking gameOver (when one side has no more stones - when sum of all indices not including mancala is 0, that equals empty)
+// method for checking if last stone dropped in an empty pit on your side and the other side is not empty
+// variable for what you first pick up(what will be subtracted and added to each index)
+
+
+
+//we can just print the [0] index for each array for the score
