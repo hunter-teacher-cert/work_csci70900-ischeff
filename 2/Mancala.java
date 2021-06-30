@@ -77,3 +77,6 @@ public static void board{
 
 
 //we can just print the [0] index for each array for the score
+
+
+//Note: if you want to switch this to one array, you could create functions to check if the pit is valid (like if it's a certain number it's not valid--just make that function really simple)
