@@ -1,10 +1,10 @@
-## Work: Game of Nim
+# Work: Game of Nim
 
-# GOAL:
+## GOAL:
 
 Be the player to remove the last stone.
 
-# RULES:
+## RULES:
 
 bag contains 12 stones initially
 a move consists of removing 1-3 stones from the bag
