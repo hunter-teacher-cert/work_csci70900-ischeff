@@ -1,4 +1,4 @@
-//This exericse was made by Daiana, Ian, and Mr. H.
+//This exercise was made by Daiana, Ian, and Mr. H.
 //Note: I'm trying to rewrite this so the prior code is commented out below.
 import java.io.*;
 import java.util.*;
