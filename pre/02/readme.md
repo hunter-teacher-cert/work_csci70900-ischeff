@@ -1,1 +1,1 @@
-This program is designed to demonstrated comprehension of concepts like concatenation, by linking together strings and numbers and some mathematical operations to represent the date in different formats. 
+This program is designed to demonstrate comprehension of concepts like concatenation, by linking together strings and numbers and some mathematical operations to represent the date in different formats. 
