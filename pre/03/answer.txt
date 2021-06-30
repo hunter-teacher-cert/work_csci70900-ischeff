@@ -1,0 +1,69 @@
+Think Java 4.11
+
+Exercise 1
+
+1) What is the output of the following program? Be precise about
+where there are spaces and where there are newlines. (Hint: Start
+by describing in words what ping and baffle do when they are invoked.)
+
+As far as I can tell, the program should output the following:
+
+No, I wug.
+You wugga wug.
+I wug.
+
+Since the Java Virtual Machine will first execute the method "main"
+and the method "main" instructs us to first write "No, I " that is
+where we begin. Then the code invokes the zoop method, which itself
+invokes baffle, prints "You wugga " and then invokes baffle again. The
+baffle method, in turn, outputs "wug" and then invokes ping, which itself
+outputs a period and moves us to a new line by using println.
+
+Thus, the flow of execution is as follows:
++ output "No, I "
++ invoke zoop
++ invoke baffle
++ output "wug"
++ invoke ping
++ output "." and newline
++ output "You wugga "
++ invoke baffle
++ output "wug"
++ invoke ping
++ output "." and newline
++ output "I "
++ invoke baffle
++ output "wug"
++ invoke ping
++ output "." and newline
+
+
+2) Draw a stack diagram that shows the state of the program the first
+time ping is invoked.
+
+main [No, I]
+zoop [     ]
+baffle [wug]
+ping [.\n]
+
+3) What happens if you invoke baffle(); at the end of the ping method?
+
+As far as I can tell, this would trap the program in an endless loop,
+in which you are constantly outputting wug, adding a period, skipping
+a line, then repeating this process.
+
+This is because the baffle method also invokes the method ping, so
+when zoop is invoked in the main method, which invokes the baffle method
+which prints "wug" and then invokes the ping method, if we invoked baffle
+at the end of ping then we would ping-pong back to the baffle method,
+which would then print "wug" again and invoke the ping method, adding a
+period and a newline, then print "wug" and invoke ping again and so on.
+
+So the program would do this:
+
+No, I wug.
+wug.
+wug.
+wug.
+
+And so on.
