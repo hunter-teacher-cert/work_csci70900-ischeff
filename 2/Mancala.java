@@ -13,15 +13,16 @@ public class Mancala{
     for (int i = 12; i > 6; i--) {
         System.out.print(" | " + a[i]);
     }
+    System.out.print(" |");
     //skips to the next line
     System.out.println("");
     //prints human player pits and aligns them with AI pits
-    System.out.print("\t      " + a[0]);
+    System.out.print("\t    | " + a[0]);
     for (int i = 1; i < 6; i++) {
         System.out.print(" | " + a[i]);
     }
     //prints human player Mancala and skips a line
-    System.out.print(" {" + a[6] + "}" + "\n" + "\n");
+    System.out.print(" | {" + a[6] + "}" + "\n" + "\n");
 }//end of printBoard
 
   //public static void userTurn(){
