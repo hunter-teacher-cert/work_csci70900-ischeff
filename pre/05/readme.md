@@ -1,0 +1,1 @@
+This assignment asked us to demonstrate knowledge of methods by creating methods that would a) test if a shape with given lengths on each side is a triangle b) if certain numbers are divisible by others and c) emulate the Ackermann function. 
