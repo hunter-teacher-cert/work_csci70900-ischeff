@@ -36,7 +36,7 @@ public class Nim {
         //generate a turn from the AI
         System.out.print("Player AI: How many stones would you like to choose? ");
         Random random = new Random();
-        aiStones = random.nextInt(2) + 1;
+        aiStones = random.nextInt(3) + 1; //fixed this based on Liam and Peter's example
         //how can we have the computer NOT draw more stones than are in the bag?
         System.out.println(aiStones);
 
