@@ -1,4 +1,72 @@
+//This exericse was made by Daiana, Ian, and Mr. H.
+//Note: I'm trying to rewrite this so the prior code is commented out below.
 import java.io.*;
+import java.util.*;
+
+public class Mancala{
+
+  //method to display the board
+  public static void printBoard(int[] a) {
+    //prints AI mancala
+    System.out.print("\t{" + a[13] + "}");
+    //prints AI pits
+    for (int i = 12; i > 6; i--) {
+        System.out.print(" | " + a[i]);
+    }
+    //skips to the next line
+    System.out.println("\n" + "\t");
+    //prints human player pits
+    System.out.print("\t      " + a[0]);
+    for (int i = 1; i < 6; i++) {
+        System.out.print(" | " + a[i]);
+    }
+    //prints human player Mancala
+    System.out.print(" {" + a[6] + "}" + "\n");
+}//end of printBoard
+
+  //public static void userTurn(){
+
+  //}//end of userTurn
+
+  public static void main(String[]args){
+    System.out.println("Let's play Mancala!\n");
+    System.out.println("Here is the board:\n");
+    int[] board = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
+    printBoard(board);
+    //invoke method for user turn?
+  }//end of main
+} //end of class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import java.io.*;
 import java.util.*;
 import java.util.Scanner; //not necessary
 import java.util.Random;  //not necessary
@@ -80,3 +148,4 @@ public static void board{
 
 
 //Note: if you want to switch this to one array, you could create functions to check if the pit is valid (like if it's a certain number it's not valid--just make that function really simple)
+*/
