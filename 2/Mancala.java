@@ -27,14 +27,24 @@ public class Mancala{
 
   //public static void userTurn(){
 
-  //}//end of userTurn
+//} end of userTurn
+
+  //public static void AITurn(){
+
+//} end of AI Turn
+
+
 
   public static void main(String[]args){
     System.out.println("Let's play Mancala!\n");
     System.out.println("Here is the board:\n");
     int[] board = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
     printBoard(board);
-    //invoke method for user turn?
+    do{
+      //invoke userTurn
+      //invoke AITurn
+
+    } while (//the sum of each side is not zero)
   }//end of main
 } //end of class
 
