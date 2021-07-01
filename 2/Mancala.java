@@ -38,7 +38,7 @@ public class Mancala{
   public static Boolean didPlayerOneWin(int[] a){
     //sums the stones in the pits on player one's side of the array
     int playerOneSum = 0;
-    for(int i = 0; i < 5; i++){
+    for(int i = 0; i < 6; i++){
       playerOneSum += a[i];
     }
     //sets a condition for winning--no more stones on player one's side
@@ -88,15 +88,15 @@ public class Mancala{
   public static void playerOneTurn(int pit, int[] board){
     //set stones equal to number in pit
     stones = board[pit];
-    //set stones in pit to zero
-    board[pit] = 0;
     //loop through array, depositing stones, but skipping player two's mancala
-    for (int i = 0; i < (stones + 1); i++){
+    for (int i = 1; i < (stones + 1); i++){
       if (board[i] == board[13]){
         continue;
     } else {
       board[pit + i]++;
     }
+    //set stones in pit to zero
+    board[pit] = 0;
   }//end of for loop
 
     //check to see if player deposited final stone in mancala; if so, go again!
@@ -129,7 +129,7 @@ public class Mancala{
     //set stones equal to number in pit
     stones = board[pit];
     //loop through array, depositing stones, but skipping player two's mancala
-    for (int i = 0; i < (stones + 1); i++){
+    for (int i = 1; i < (stones + 1); i++){
      try{
         if (board[i] == board[6]){
         continue;
