@@ -8,10 +8,10 @@ public class Mancala{
 
   //Initialize an array with the starting values of the board
   static int[] board = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
-  //Generate some random numbers that we'll use for the AI
-  static Random rando = new Random();
   //create a global variable for the pit, which will also serve as index
-  static int pit = 0;
+  static int pit;
+  //create a global variable for stones
+  static int stones;
 
   //method to display the board
   public static void printBoard(int[] a) {
@@ -84,27 +84,24 @@ public class Mancala{
     return pit;
   } //end of playerInput
 
-  //method to check if one of the player's pits is empty
-/*  public static void isPlayerPitEmpty(int a, int[] a) {
-      while (a[a] == 0) {
-        System.out.println("You don't have any stones in that pit!\n");
-        System.out.println("Pick a different pit!");
-        playerInput();
-          }
-      return if (i == 0){}
-      }
-      return -1;
-  }*/
-/*
   //method for the player's turn, taking their choice of pit and the board as input
-  public static void playerTurn(int a, int[] a){
-    //create a local
-    int pit = a;
-    int stones = a[a];
-    a[a] = 0;
+  public static void playerTurn(int pit, int[] board){
+    //set stones equal to number in pit
+    stones = board[pit];
+    //loop through array, depositing stones, but skipping other mancala
+    for (int i = 0; i < (stones + 1); i++){
+      if (board[i] == board[13]){
+        continue;
+    } else {
+      board[pit + i]++;
+    }
+  }//end of for loop
+  //set stones in pit to zero
+    board[pit] = 0;
+    //check to see if player deposited final stone in mancala; if so, go again!
   }//end playerTurn
 
-  public static void aiTurn(int a, int[] a){
+/*  public static void aiTurn(int a, int[] a){
 
 } //end of AI Turn
 */
@@ -114,17 +111,13 @@ public class Mancala{
     System.out.println("Here is the board:\n");
     //display the starting conditions of the board
     printBoard(board);
-    //create variable for the pit (i.e., index)
-    int pit;
-    //create variable for number of stones in each pit
-    int stones;//create for player and others?
-    //check if the game is over (i.e., one player has no more stones)
-    //System.out.println(didPlayerWin(Board));
-    //System.out.println(didAIWin(Board));
-    System.out.println("You go first.\n");
+    //Give some directions to user
+    System.out.println("Player 1, you go first.\n");
     System.out.println("Your stones are in the bottom row.\n");
     System.out.println("The pits are numbered 0 to 5, from left to right.\n");
-    playerInput();
+    //playerInput();
+    playerTurn(playerInput(), board);
+    printBoard(board);
     /*
     while (didPlayerWin(board) == false && didAIWin(board) == false){
       playerTurn(playerInput(), board);
