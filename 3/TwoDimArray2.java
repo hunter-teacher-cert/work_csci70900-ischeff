@@ -22,7 +22,12 @@ public class TwoDimArray2
   //print each row of 2D integer array a on its own line,
   // using a FOREACH loop
   public static void print2( int[][] a ) {
-
+    for(int[] row : a){
+      for(int value : row){
+        System.out.print(value + " ");
+      }
+      System.out.println();
+    }
   }
 
 
@@ -61,10 +66,11 @@ public class TwoDimArray2
        print1(m1);
        print1(m2);
        print1(m3);
-       /* ~~~v~~~~~slide~me~down~as~you~test~~~~~~~~~~~~~~~v~~~
        print2(m1);
        print2(m2);
        print2(m3);
+       //works up to here!
+             /* ~~~v~~~~~slide~me~down~as~you~test~~~~~~~~~~~~~~~v~~~
        System.out.print("testing sum1...\n");
        System.out.println("sum m1 : " + sum1(m1));
        System.out.println("sum m2 : " + sum1(m2));
