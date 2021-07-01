@@ -25,6 +25,30 @@ public class Mancala{
     System.out.print(" | {" + a[6] + "}" + "\n" + "\n");
 }//end of printBoard
 
+  //method to check if the human player has no more stones
+  public static Boolean didPlayerWin(int[] a){
+    int playerSum = 0;
+    for(int i = 0; i < 5; i++){
+      playerSum += a[i];
+    }
+    if (playerSum == 0){
+      System.out.println("Congratulations, you win!");
+      return true;
+    } else return false;
+  }//end of didPlayerWin
+
+  //method to check if the AI player has no more stones
+  public static Boolean didAIWin(int[] a){
+    int aiSum = 0;
+    for(int i = 7; i < 13; i++){
+      aiSum += a[i];
+    }
+    if (aiSum == 0){
+      System.out.println("The computer wins! Better luck next time.");
+      return true;//should this go before the println?
+    } else return false;
+  }//end of didPlayerWin
+
   //public static void userTurn(){
 
 //} end of userTurn
@@ -36,15 +60,19 @@ public class Mancala{
 
 
   public static void main(String[]args){
+    //Introduce the game!
     System.out.println("Let's play Mancala!\n");
     System.out.println("Here is the board:\n");
-    int[] board = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
-    printBoard(board);
-    do{
-      //invoke userTurn
-      //invoke AITurn
-
-    } while (//the sum of each side is not zero)
+    //Initialize an array with the starting values of the board
+    int[] initialBoard = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
+    //display the starting conditions of the board
+    printBoard(initialBoard);
+    //check if the game is over (i.e., one player has no more stones)
+    System.out.println(didPlayerWin(initialBoard));
+    System.out.println(didAIWin(initialBoard));
+    //while (didPlayerWin(initialBoard) = false && didAIWin(initialboard) = false){
+      //invoke Player Turn
+      //invoke AI Turn
   }//end of main
 } //end of class
 
