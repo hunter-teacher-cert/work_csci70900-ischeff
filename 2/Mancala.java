@@ -130,15 +130,15 @@ public class Mancala{
     stones = board[pit];
     //loop through array, depositing stones, but skipping player two's mancala
     for (int i = 1; i < (stones + 1); i++){
-     try{
+     //try{
         if (board[i] == board[6]){
         continue;
     } else {
       board[pit + i]++;
     }
-   }catch(ArrayIndexOutOfBoundsException e){
-     i = 0;
-   }
+  //}//catch(ArrayIndexOutOfBoundsException e){
+    // i = 0;
+   //}
   }//end of for loop
   //set stones in pit to zero
     board[pit] = 0;
