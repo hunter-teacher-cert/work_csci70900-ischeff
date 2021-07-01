@@ -64,7 +64,7 @@ public class Mancala{
     System.out.println("Let's play Mancala!\n");
     System.out.println("Here is the board:\n");
     //Initialize an array with the starting values of the board
-    int[] initialBoard = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
+    int[] initialBoard = {0,0,0,0,0,0,0,4,4,4,4,4,4,0};
     //display the starting conditions of the board
     printBoard(initialBoard);
     //check if the game is over (i.e., one player has no more stones)
