@@ -6,34 +6,41 @@ import java.util.*;
 
 public class Mancala{
 
-  //static Scanner in = new Scanner (System.in);
+  //Initialize an array with the starting values of the board
+  static int[] board = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
+  //Generate some random numbers that we'll use for the AI
+  static Random rando = new Random();
+  //create a global variable for the pit, which will also serve as index
+  static int pit = 0;
 
   //method to display the board
   public static void printBoard(int[] a) {
-    //prints AI mancala
+    //prints AI mancala with brackets around it
     System.out.print("\t{" + a[13] + "}");
-    //prints AI pits
+    //prints AI pits and separates them with lines
     for (int i = 12; i > 6; i--) {
         System.out.print(" | " + a[i]);
     }
     System.out.print(" |");
     //skips to the next line
     System.out.println("");
-    //prints human player pits and aligns them with AI pits
+    //prints human player pits, separates them with lines and aligns them with AI pits
     System.out.print("\t    | " + a[0]);
     for (int i = 1; i < 6; i++) {
         System.out.print(" | " + a[i]);
     }
-    //prints human player Mancala and skips a line
+    //prints human player Mancala with brackets around it and skips a line
     System.out.print(" | {" + a[6] + "}" + "\n" + "\n");
   }//end of printBoard
 
   //method to check if the human player has no more stones
   public static Boolean didPlayerWin(int[] a){
+    //sums the stones in the pits on the player's side of the array
     int playerSum = 0;
     for(int i = 0; i < 5; i++){
       playerSum += a[i];
     }
+    //sets a condition for winning--no more stones on the player's side
     if (playerSum == 0){
       System.out.println("Congratulations, you win!");
       return true;
@@ -42,72 +49,94 @@ public class Mancala{
 
   //method to check if the AI player has no more stones
   public static Boolean didAIWin(int[] a){
+  //sums the stones in the pits on the AI's side of the array
     int aiSum = 0;
     for(int i = 7; i < 13; i++){
       aiSum += a[i];
     }
+    //sets a condition for winning--no more stones on the AI's side
     if (aiSum == 0){
       System.out.println("The computer wins! Better luck next time.");
       return true;//should this go before the println?
     } else return false;
   }//end of didAIWin
 
-  //public static Boolean isPitEmpty()
   //method to solicit player Input
   public static int playerInput(){
     //Create a scanner for input
     Scanner in = new Scanner(System.in);
-    //create a variable to hold user input
-    int pit;
     //Create loop to check user input is valid (shoutout to Emma Wingreen!)
     do{
       //solicit user input
       System.out.println("From which pit would you like to pick stones?\n");
       //collect the user input
       pit = in.nextInt();
-      //error message for invalid user input
+      //error message for invalid user input (invalid pit)
       if (pit < 0 || pit > 5){
         System.out.println("Remember, the pits are numbered 0 to 5! Try again!\n");
-      //how to check / send error message if pit is empty? or is that even important? (more important for AI I think!)
+      }
+      //error message for invalid user input (no stones in pit)
+      if (board[pit] == 0){
+        System.out.println("You can't pick a pit without stones! Try again!\n");
       }
     } while(pit < 0 || pit > 5);
+    //System.out.println(pit);
     return pit;
   } //end of playerInput
 
+  //method to check if one of the player's pits is empty
+/*  public static void isPlayerPitEmpty(int a, int[] a) {
+      while (a[a] == 0) {
+        System.out.println("You don't have any stones in that pit!\n");
+        System.out.println("Pick a different pit!");
+        playerInput();
+          }
+      return if (i == 0){}
+      }
+      return -1;
+  }*/
+/*
   //method for the player's turn, taking their choice of pit and the board as input
   public static void playerTurn(int a, int[] a){
-    
-  }
+    //create a local
+    int pit = a;
+    int stones = a[a];
+    a[a] = 0;
+  }//end playerTurn
 
+  public static void aiTurn(int a, int[] a){
 
-
-  //public static void AITurn(){
-
-//} end of AI Turn
-
+} //end of AI Turn
+*/
   public static void main(String[]args){
     //Introduce the game!
     System.out.println("Let's play Mancala!\n");
     System.out.println("Here is the board:\n");
-    //Initialize an array with the starting values of the board
-    int[] initialBoard = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
     //display the starting conditions of the board
-    printBoard(initialBoard);
+    printBoard(board);
     //create variable for the pit (i.e., index)
     int pit;
     //create variable for number of stones in each pit
     int stones;//create for player and others?
     //check if the game is over (i.e., one player has no more stones)
-    //System.out.println(didPlayerWin(initialBoard));
-    //System.out.println(didAIWin(initialBoard));
+    //System.out.println(didPlayerWin(Board));
+    //System.out.println(didAIWin(Board));
     System.out.println("You go first.\n");
     System.out.println("Your stones are in the bottom row.\n");
     System.out.println("The pits are numbered 0 to 5, from left to right.\n");
-    while (didPlayerWin(initialBoard) == false && didAIWin(initialBoard) == false){
-      playerTurn(playerInput());
-      didPlayerWin(initialBoard);
-      //invoke AI Turn
-    //}//end of while loop
+    playerInput();
+    /*
+    while (didPlayerWin(board) == false && didAIWin(board) == false){
+      playerTurn(playerInput(), board);
+      if (didPlayerWin(board) == true){
+        break;
+      }
+      aiTurn(aiInput(), board);
+      if (didAIWin(board) == true){
+        break;
+      }
+    }//end of while loop
+    //add option to play again!*/
   }//end of main
 } //end of class
 
