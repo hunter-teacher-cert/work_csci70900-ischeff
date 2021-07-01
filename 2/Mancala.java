@@ -1,5 +1,5 @@
 //This exercise was made by Daiana, Ian, and Mr. H.
-//Note: Ian got some inspiration from Emma Wingreen's code!
+//Note: Ian got some inspiration from Emma Wingreen's code for soliciting valid input! 
 import java.io.*;
 import java.util.*;
 
