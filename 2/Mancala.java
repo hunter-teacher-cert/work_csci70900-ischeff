@@ -53,8 +53,8 @@ public class Mancala{
   }//end of didAIWin
 
   //public static Boolean isPitEmpty()
-
-  public static int playerTurn(){
+  //method to solicit player Input
+  public static int playerInput(){
     //Create a scanner for input
     Scanner in = new Scanner(System.in);
     //create a variable to hold user input
@@ -68,10 +68,18 @@ public class Mancala{
       //error message for invalid user input
       if (pit < 0 || pit > 5){
         System.out.println("Remember, the pits are numbered 0 to 5! Try again!\n");
+      //how to check / send error message if pit is empty? or is that even important? (more important for AI I think!)
       }
     } while(pit < 0 || pit > 5);
     return pit;
-  } //end of playerTurn
+  } //end of playerInput
+
+  //method for the player's turn, taking their choice of pit and the board as input
+  public static void playerTurn(int a, int[] a){
+    
+  }
+
+
 
   //public static void AITurn(){
 
@@ -95,9 +103,9 @@ public class Mancala{
     System.out.println("You go first.\n");
     System.out.println("Your stones are in the bottom row.\n");
     System.out.println("The pits are numbered 0 to 5, from left to right.\n");
-    playerTurn();
-    //while (didPlayerWin(initialBoard) == false && didAIWin(initialBoard) == false){
-      //invoke Player Turn
+    while (didPlayerWin(initialBoard) == false && didAIWin(initialBoard) == false){
+      playerTurn(playerInput());
+      didPlayerWin(initialBoard);
       //invoke AI Turn
     //}//end of while loop
   }//end of main
