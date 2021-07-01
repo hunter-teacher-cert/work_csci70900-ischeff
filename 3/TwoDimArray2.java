@@ -1,7 +1,4 @@
-/** skeleton file for
- class twoDimArray
-  ...practice working with 2D arrays
-*/
+//test code written during lunch
 
 public class TwoDimArray2
 {
@@ -69,7 +66,6 @@ public class TwoDimArray2
        print2(m1);
        print2(m2);
        print2(m3);
-       //works up to here!
              /* ~~~v~~~~~slide~me~down~as~you~test~~~~~~~~~~~~~~~v~~~
        System.out.print("testing sum1...\n");
        System.out.println("sum m1 : " + sum1(m1));
