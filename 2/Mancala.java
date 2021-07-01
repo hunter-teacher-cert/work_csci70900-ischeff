@@ -42,6 +42,8 @@ public class Mancala{
       playerOneSum += a[i];
     }
     //sets a condition for winning--no more stones on player one's side
+    //NOTE: I realize now the win condition is NOT correct--it's not
+    //about who has zero stones left but who has more stones in their mancala
     if (playerOneSum == 0){
       System.out.println("Congratulations, Player One, you win!");
       return true;
@@ -56,6 +58,8 @@ public class Mancala{
       playerTwoSum += a[i];
     }
     //sets a condition for winning--no more stones on player two's side
+    //NOTE: I realize now the win condition is NOT correct--it's not
+    //about who has zero stones left but who has more stones in their mancala
     if (playerTwoSum == 0){
       System.out.println("Congratulations, Player Two, you win!");
       return true;//should this go before the println?
