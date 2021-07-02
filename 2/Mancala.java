@@ -100,9 +100,9 @@ public class Mancala{
       board[pit + i]++;
     }
     //set stones in pit to zero
-    board[pit] = 0;
+    board[pit] = 0; //not sure why, but moving this earlier seems to cause a problem (in theory it would make more sense after stones = board[pit])
   }//end of for loop
-
+//just use an if statement and reset index!
     //check to see if player deposited final stone in mancala; if so, go again!
   }//end playerTurn
 
