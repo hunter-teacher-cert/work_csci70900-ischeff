@@ -46,7 +46,21 @@ public class Cgol
 
   //return number of living neigbours of board[r][c]
   public static int countNeighbours(char[][] board, int rows, int cols) {
-    return 0;
+    //Chris: what if we treat this method as the following:
+    //search the area around a given r,c by summing the space around import junit.framework.TestCase;
+    //as a 3x3 2D array. (See image on slack)
+    int sum = 0;
+    for (int r = rows -1; r < rows+2; r++){
+      if (r <board.length && r > 0){
+        for (int c = cols -1; c < cols+2; c++){
+            if (c <board[r].length && c > 0 && !(r == rows && c ==cols)){
+              sum +=1;
+            }
+        }  //end of inner loop
+      }//end of if statement for the outer loop
+    } //end of outer loop
+      return sum;
+  } return 0;
   }
 
 
