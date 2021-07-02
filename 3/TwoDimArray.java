@@ -21,8 +21,8 @@ public class TwoDimArray
   // using a FOREACH loop
   public static void print2( int[][] a ) {
     for(int[] row : a){
-      for(int value : row){ //as Topher noted, we could also say "cell"; we could say "element" as Victoria said
-        System.out.print(value + " ");
+      for(int cell : row){ //as Topher noted, we could also say "cell"; we could say "element" as Victoria said
+        System.out.print(cell + " ");
       }
       System.out.println();
     }
