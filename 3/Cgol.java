@@ -1,3 +1,5 @@
+//This project was made by Michelle Best, Chris O'Brian, and Ian Scheffler
+
 import java.io.*;
 import java.util.*;
 
