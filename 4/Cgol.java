@@ -1,3 +1,5 @@
+//This program was written by Michelle Best, Chris O'Brien, and Ian Scheffler
+
 import java.io.*;
 import java.util.*;
 
