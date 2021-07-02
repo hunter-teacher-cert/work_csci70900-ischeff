@@ -1,5 +1,3 @@
-//This project was made by Michelle Best, Chris O'Brian, and Ian Scheffler
-
 import java.io.*;
 import java.util.*;
 
@@ -49,20 +47,29 @@ public class Cgol
     //Chris: what if we treat this method as the following:
     //search the area around a given r,c by summing the space around import junit.framework.TestCase;
     //as a 3x3 2D array. (See image on slack)
-    //we need to check if the neighboring cell has a neighbor
+    //initialize sum as zero, this will store the number of living neighbor cells.
     int sum = 0;
-    for (int r = rows -1; r < rows+2; r++){
-      if (r <board.length && r > 0){
+    //search rows about and below the cell
+    for (int r = rows -1; r < rows + 2; r++){
+      //make sure rows aren't outside of array
+    //  System.out.println("r = " + r);
+      if (r <board.length && r >= 0){
+        //search 3 cells in row;
         for (int c = cols -1; c < cols+2; c++){
-            if (c <board[r].length && c > 0 && !(r == rows && c ==cols)){
+          //make sure cells our within array
+          //  System.out.println("c = " + c);
+            if (c < board[r].length && c >= 0 && !(r == rows && c ==cols)){
+              //if cell ==X add 1 to sum.
+              //System.out.println("This cell contains " + board[r][c]);
               if (board[r][c] == 'X'){
                 sum +=1;
               }
+
             }
         }  //end of inner loop
-      }//end of if statement for the outer loop
+      } //end of if statement for the outer loop
     } //end of outer loop
-    return sum;
+      return sum;
   }
 
 
@@ -96,16 +103,18 @@ public class Cgol
     //breathe life into some cells:
     setCell(board, 0, 0, 'X');
     printBoard(board);
-    System.out.println("# of neighbors: " + countNeighbours(board, 0 ,0));
+    int sum = countNeighbours(board, 0 ,0);
+    System.out.println("# of neighbors: " + sum);
     setCell(board, 0, 1, 'X');
     printBoard(board);
-    System.out.println("# of neighbors: " + countNeighbours(board, 0 ,0));
+    sum = countNeighbours(board, 0 ,0);
+    System.out.println("# of neighbors: " + sum);
     setCell(board, 1, 0, 'X');
     printBoard(board);
-    System.out.println("# of neighbors: " + countNeighbours(board, 0 ,0));
+    sum = countNeighbours(board, 0 ,0);
+    System.out.println("# of neighbors: " + sum);
 
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
     // TASK:
     // Once your initial version is running,
@@ -121,4 +130,4 @@ public class Cgol
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
-}//end class
+}//end classd
