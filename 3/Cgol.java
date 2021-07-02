@@ -105,9 +105,14 @@ public class Cgol
 
   //generate new board representing next generation
   public static char[][] generateNextBoard(char[][] board) {
-    char[][] newBoard = createNewBoard(board.length,board[0].length);
-    for (int row =0; row < board.length; row++){
-
+    int numRow, numCol;
+    numRow = board.length;
+    numCol = board[0].length;
+    char[][] newBoard = createNewBoard(numRow,numCol);
+    for (int row =0; row < numRow; row++){
+      for (int cell =0; cell < numCol; cell++){
+        newBoard[row][cell] = getNextGenCell(board, row, cell);
+      }
     }
     return newBoard;
   }
@@ -123,22 +128,25 @@ public class Cgol
   //  System.out.println("# of columns: " + board[0].length);
 
     //breathe life into some cells:
-    setCell(board, 0, 0, 'X');
-    printBoard(board);
-    int sum = countNeighbours(board, 0 ,0);
-    System.out.println("# of neighbors: " + sum);
-    setCell(board, 0, 1, 'X');
-    printBoard(board);
-    sum = countNeighbours(board, 0 ,0);
-    System.out.println("# of neighbors: " + sum);
-    setCell(board, 1, 0, 'X');
-    printBoard(board);
-    sum = countNeighbours(board, 0 ,0);
+    setCell(board, 10, 10, 'X');
+  //  printBoard(board);
+  //  int sum = countNeighbours(board, 0 ,0);
+  //  System.out.println("# of neighbors: " + sum);
+    setCell(board, 10, 11, 'X');
+//    printBoard(board);
+  //  sum = countNeighbours(board, 0 ,0);
+  //  System.out.println("# of neighbors: " + sum);
+    setCell(board, 10, 12, 'X');
+    //printBoard(board);
+    //sum = countNeighbours(board, 0 ,0);
+
+    /*
     System.out.println("# of neighbors: " + sum);
     System.out.println("Cell at 1,1 is initially a " + board[1][1]);
     char newCell  = getNextGenCell(board, 1,1);
     System.out.println("cell at (1,1) will become a " + newCell);
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+
 
     // TASK:
     // Once your initial version is running,
@@ -151,7 +159,11 @@ public class Cgol
     System.out.println("Gen X+1:");
     printBoard(board);
     System.out.println("--------------------------\n\n");
+
+    //make glider
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
-}//end classd
+}//end class
