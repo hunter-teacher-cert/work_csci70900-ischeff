@@ -128,15 +128,19 @@ public class Cgol
   //  System.out.println("# of columns: " + board[0].length);
 
     //breathe life into some cells:
-    setCell(board, 10, 10, 'X');
+    setCell(board, 11, 11, 'X');
   //  printBoard(board);
   //  int sum = countNeighbours(board, 0 ,0);
   //  System.out.println("# of neighbors: " + sum);
-    setCell(board, 10, 11, 'X');
+    setCell(board, 11, 12, 'X');
 //    printBoard(board);
   //  sum = countNeighbours(board, 0 ,0);
   //  System.out.println("# of neighbors: " + sum);
-    setCell(board, 10, 12, 'X');
+    setCell(board, 11, 13, 'X');
+    setCell(board, 12, 11, 'X');
+    setCell(board, 12, 13, 'X');
+    setCell(board, 13, 11, 'X');
+    setCell(board, 13, 13, 'X');
     //printBoard(board);
     //sum = countNeighbours(board, 0 ,0);
 
@@ -160,7 +164,7 @@ public class Cgol
     printBoard(board);
     System.out.println("--------------------------\n\n");
     int roundNum = 0;
-    for (int i=0; i<5; i++){
+    for (int i=0; i<1000; i++){
       roundNum +=i;
       System.out.println("Round #" +roundNum);
       board = generateNextBoard(board);
