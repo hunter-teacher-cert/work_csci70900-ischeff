@@ -71,14 +71,14 @@ public class TwoDimArray
   }
 */
 
+/* Note: I'm assuming the below is optional (obviously, we chose a FOR loop; we finished the tests!)
   //return sum of all items on row r of 2D integer array a
   // using a FOREACH loop
   public static int sumRow2( int r, int[][] m ) {
-    
     return 0;
   }
 
-
+*/
   public static void main( String [] args )
   {
        int [][] m1 = new int[4][2];
