@@ -39,6 +39,7 @@ public class Cgol
   //set a single cell  located at (rows, cols) to value val
   public static void setCell(char[][] board, int rows, int cols, char val){
       board[rows][cols] = val;
+
   }
 
 
@@ -79,15 +80,36 @@ public class Cgol
      (alive 'X', dead ' ')
   */
   public static char getNextGenCell(char[][] board,int rows, int cols) {
-    char a = 65;
-    return a;
+    //
+    int numNeighbors = countNeighbours(board, rows, cols);
+    char newCell = ' ';
+    //decide if cell is alive or dead;
+    if (board[rows][cols] == 'X') {//cell is alive
+      //decide if cell less than 2 or more than 3 neighbors
+      if(numNeighbors > 3 || numNeighbors < 2){
+        newCell = ' ';//cell dies
+      } else {//otherwise cell lives
+        newCell = 'X';//cell lives
+      }
+    } else {//cell is dead
+      //decide if cell has exactly 3 countNeighbours
+      if (numNeighbors == 3){
+        newCell = 'X'; //cell is born
+      } else {
+        newCell = ' '; //cell stays dead
+      }
+    }
+    return newCell;
   }
 
 
   //generate new board representing next generation
   public static char[][] generateNextBoard(char[][] board) {
-    char[][] hello = new char[1][1];
-    return hello;
+    char[][] newBoard = createNewBoard(board.length,board[0].length);
+    for (int row =0; row < board.length; row++){
+
+    }
+    return newBoard;
   }
 
 
@@ -113,7 +135,9 @@ public class Cgol
     printBoard(board);
     sum = countNeighbours(board, 0 ,0);
     System.out.println("# of neighbors: " + sum);
-
+    System.out.println("Cell at 1,1 is initially a " + board[1][1]);
+    char newCell  = getNextGenCell(board, 1,1);
+    System.out.println("cell at (1,1) will become a " + newCell);
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     // TASK:
