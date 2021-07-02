@@ -45,18 +45,20 @@ public class TwoDimArray
   //return sum of all items in 2D integer array a
   // using helper fxn sumRow
   //Peter had his function with two inputs--is that necessary?
-  public static int sumRow(int[][] arr, int col){
+  //try conceptualizing this with a drawing!
+  //Note: the drawing REALLY helped--easy to see which rows/cols you are looping
+  public static int sumRow(int[][] arr, int z){
     int sum = 0;
-    for (int i = 0; i < arr.length; i++){
-      sum = sum + arr[i][];
+    for (int col = 0; col < arr[col].length; col++){
+      sum = sum + arr[z][col];
     }
     return sum;
   }
   public static int sum2( int [][] m ) {
     int sum = 0;
     //below should be the same as the outer loop in print1, right?
-    for(int i = 0; i < m.length; i ++){
-      sum = sum + sumRow(m, i);
+    for(int row = 0; row < m.length; row ++){//realized more descriptive variables would help me conceptualize this (thanks to Peter Tsun's demo!)
+      sum = sum + sumRow(m, row);
     }
     return sum;
   }
