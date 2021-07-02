@@ -45,16 +45,18 @@ public class TwoDimArray
   //return sum of all items in 2D integer array a
   // using helper fxn sumRow
   //Peter had his function with two inputs--is that necessary?
-  public static int sumRow(int[] arr){
+  public static int sumRow(int[][] arr, int col){
     int sum = 0;
-    //code to sum the row goes here
+    for (int i = 0; i < arr.length; i++){
+      sum = sum + arr[i][];
+    }
     return sum;
   }
   public static int sum2( int [][] m ) {
     int sum = 0;
     //below should be the same as the outer loop in print1, right?
-    for(int i = 0; i < a.length; i ++){
-      sum = sum + sumRow(//add inputs);
+    for(int i = 0; i < m.length; i ++){
+      sum = sum + sumRow(m, i);
     }
     return sum;
   }
@@ -89,11 +91,11 @@ public class TwoDimArray
        System.out.println("sum m1 : " + sum1(m1));
        System.out.println("sum m2 : " + sum1(m2));
        System.out.println("sum m3 : " + sum1(m3));
-                     /* ~~~v~~~~~slide~me~down~as~you~test~~~~~~~~~~~~~~~v~~~
        System.out.print("testing sum2...\n");
        System.out.println("sum m1 : " + sum2(m1));
        System.out.println("sum m2 : " + sum2(m2));
        System.out.println("sum m3 : " + sum2(m3));
+       /* ~~~v~~~~~slide~me~down~as~you~test~~~~~~~~~~~~~~~v~~~
        ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~*/
   }//end main()
 
