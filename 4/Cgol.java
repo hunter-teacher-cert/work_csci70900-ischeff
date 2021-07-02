@@ -152,7 +152,7 @@ public class Cgol{
       }
 
 */
-      delay(1000);
+      delay(500);
     }
 
   public static void main( String[] args )
@@ -165,22 +165,25 @@ public class Cgol{
       X
     XXX
     */
-    setCell(board, 10, 10, 'X');
-    setCell(board, 10, 11, 'X');
-    setCell(board, 10, 12, 'X');
-    setCell(board,9,12,'X');
-    setCell(board,8,11,'X');
+    //setCell(board, 10, 10, 'X');
+    //setCell(board, 10, 11, 'X');
+    //setCell(board, 10, 12, 'X');
+    //setCell(board,9,12,'X');
+    //setCell(board,8,11,'X');
 
-    /*make cool pattern that eventually gets stable after ~170 generations
+    /*
+    make cool pattern that eventually gets stable after ~170 generations
     XXX
     X X
-    X X
+    X X*/
+    setCell(board, 11, 11, 'X');
+    setCell(board, 11, 12, 'X');
     setCell(board, 11, 13, 'X');
     setCell(board, 12, 11, 'X');
     setCell(board, 12, 13, 'X');
     setCell(board, 13, 11, 'X');
     setCell(board, 13, 13, 'X');
-    */
+
     //printBoard(board);
     //sum = countNeighbours(board, 0 ,0)
 
@@ -204,7 +207,7 @@ public class Cgol{
     System.out.println("--------------------------\n\n");
     */
 
-    for (int gen=1; gen<6; gen++){
+    for (int gen=1; gen<200; gen++){
       //System.out.println("Generation #" +gen);
       board = generateNextBoard(board);
       animate(gen);
