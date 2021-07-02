@@ -49,7 +49,7 @@ public class TwoDimArray
   //Note: the drawing REALLY helped--easy to see which rows/cols you are looping
   public static int sumRow(int[][] arr, int z){
     int sum = 0;
-    for (int col = 0; col < arr[col].length; col++){
+    for (int col = 0; col < arr[z].length; col++){//issue was here--needed to be arr[z].length so it could change! 
       sum = sum + arr[z][col];
     }
     return sum;
@@ -95,7 +95,7 @@ public class TwoDimArray
        System.out.println("sum m3 : " + sum1(m3));
        System.out.print("testing sum2...\n");
        System.out.println("sum m1 : " + sum2(m1));//this seems to work with your current sum2--why not the other tests?
-       //System.out.println("sum m2 : " + sum2(m2));//these tests are causing sum2 issues--array out of bounds!
+       System.out.println("sum m2 : " + sum2(m2));//these tests are causing sum2 issues--array out of bounds!
        //System.out.println("sum m3 : " + sum2(m3));
        /* ~~~v~~~~~slide~me~down~as~you~test~~~~~~~~~~~~~~~v~~~
        ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~*/
