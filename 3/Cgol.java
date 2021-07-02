@@ -159,11 +159,17 @@ public class Cgol
     System.out.println("Gen X+1:");
     printBoard(board);
     System.out.println("--------------------------\n\n");
-
+    int roundNum = 0;
+    for (int i=0; i<5; i++){
+      roundNum +=i;
+      System.out.println("Round #" +roundNum);
+      board = generateNextBoard(board);
+      printBoard(board);
+    }
     //make glider
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
-}//end class
+}//end classd
