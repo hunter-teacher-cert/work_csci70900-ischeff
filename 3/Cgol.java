@@ -59,8 +59,7 @@ public class Cgol
         }  //end of inner loop
       }//end of if statement for the outer loop
     } //end of outer loop
-      return sum;
-  } return 0;
+    return sum;
   }
 
 
@@ -94,10 +93,14 @@ public class Cgol
     //breathe life into some cells:
     setCell(board, 0, 0, 'X');
     printBoard(board);
+    System.out.println("# of neighbors: " + countNeighbours(board, 0 ,0));
     setCell(board, 0, 1, 'X');
     printBoard(board);
+    System.out.println("# of neighbors: " + countNeighbours(board, 0 ,0));
     setCell(board, 1, 0, 'X');
     printBoard(board);
+    System.out.println("# of neighbors: " + countNeighbours(board, 0 ,0));
+
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
