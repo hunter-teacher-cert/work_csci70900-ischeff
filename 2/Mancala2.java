@@ -21,27 +21,11 @@ public class Mancala2{
     System.out.print(" | {" + a[6] + "}" + "\n" + "\n");//player 1's mancala
   }//end of printBoard
 
-  //method to solicit player one's input
-  public static int playerOneInput(){
-    //Create loop to check user input is valid (shoutout to Emma Wingreen!)
-    do{
-      //solicit user input
-      System.out.println("Player 1, from which pit would you like to pick stones?\n");
-      //collect the user input
-      pit = in.nextInt();
-      //error message for invalid user input (invalid pit)
-      if (pit < 0 || pit > 5){
-        System.out.println("Remember, the pits are numbered 0 to 5! Try again!\n");
-      }
-      //error message for invalid user input (no stones in pit)
-      if (board[pit] == 0){
-        System.out.println("You can't pick a pit without stones! Try again!\n");
-        playerOneInput();
-      }
-    } while(pit < 0 || pit > 5);
-    //System.out.println(pit);
-    return pit;
-  } //end of playerInput
+  //method to check if game is over (will return true if game is over)
+  public static Boolean isGameOver(){
+    return(board[0] + board [1] + board[2] + board [4] + board [5] == 0 || board [7] + board [8] + board [9] + board [10
+    ] + board[11] + board [12] == 0); //check if either player's pits are empty
+  }
 
   public static void main(String[] args){
     //Test that the program compiles
@@ -52,6 +36,7 @@ public class Mancala2{
     System.out.println(player1Mancala);//should be zero at start
     System.out.println(player2Mancala);//should be zero at start
     printBoard(board);//print the starting board
+    System.out.println(isGameOver());
 
     //while loop as long as gameOver conditions haven't been met
       //gameOver conditions: one player's side has no more stones in the pits.
