@@ -63,12 +63,9 @@ public class Mancala2{
     //loop for gameplay (will break when isGameOver evaluates to true in body)
     while(true){
       printBoard(board);
-      p1Input();
+      p1Input();//think this works now!
       break;
       //player 1 turn
-        //get player 1 input
-          //check if input is valid
-            //if not valid, ask for input again
         //set the value of stones in the players' "hand" equal to the number of stones in the pit they selected.
         //increment the array based on the number of stones.
           //note: can you make a general mancala algorithm that moves stones, and just takes the board and n as an input?
