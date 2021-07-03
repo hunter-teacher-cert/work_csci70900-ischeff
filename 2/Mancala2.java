@@ -6,8 +6,8 @@ public class Mancala2{
   //create 1-D array with 4 stones in each pit and 0 in each mancala
   public static int[] board = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
   //create the Mancalas for each player as global variables
-  public static int player1Mancala = board[6];
-  public static int player2Mancala = board[13];
+  public static int p1Mancala = board[6];
+  public static int p2Mancala = board[13];
   //create a scanner for input
   public static Scanner in = new Scanner(System.in);
 
@@ -34,8 +34,11 @@ public class Mancala2{
 
   //get input from player 1
   public static int player1Input(){
-    return 0;
-  }
+    System.out.println("Player 1: input a number between 1 and 6.");
+    int p1PitChoice = (in.nextInt() - 1);
+    System.out.println(p1PitChoice);//test
+    return p1PitChoice;
+  }//end of player input
 
   public static void main(String[] args){
     //Test that the program compiles
@@ -43,14 +46,15 @@ public class Mancala2{
     //Test that the gameboard array was created; expect a hexadecimal address
     System.out.println(board);
     //Test the mancala variables are assigned correctly
-    System.out.println(player1Mancala);//should be zero at start
-    System.out.println(player2Mancala);//should be zero at start
+    System.out.println(p1Mancala);//should be zero at start
+    System.out.println(p2Mancala);//should be zero at start
     printBoard(board);//print the starting board
     System.out.println(isGameOver());//test if game is over
 
     //loop for gameplay (will break when isGameOver evaluates to true in body)
     while(true){
       printBoard(board);
+      player1Input();
       break;
       //player 1 turn
         //get player 1 input
