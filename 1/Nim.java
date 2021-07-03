@@ -22,34 +22,32 @@ public class Nim {
         System.out.print("Player 1: How many stones would you like to choose? Choose 1, 2, or 3: \n");
         playerStones = in.nextInt();
 
-      while (playerStones > 3 || playerStones <= 0 ){
-        System.out.println("Sorry, that's not a valid move!\n");
-        System.out.print("Player 1: How many stones would you like to choose? Choose 1, 2, or 3: \n");
-        playerStones = in.nextInt();
-      }
+        //check to see that input is valid.
+        while (playerStones > 3 || playerStones <= 0 ){
+          System.out.println("Sorry, that's not a valid move!\n");
+          System.out.print("Player 1: How many stones would you like to choose? Choose 1, 2, or 3: \n");
+          playerStones = in.nextInt();
+        }
         //update the total number of stones
         totalStones = totalStones - playerStones;
         System.out.println("\nRemaining stones: " + totalStones);
         System.out.println();
 
         //check to see if the user wins
-      if (totalStones <= 0) {
-        System.out.println("Congrats, you won!");
-        break;
-      }
+        if (totalStones <= 0) {
+          System.out.println("Congrats, you won!");
+          break;
+        }
 
         //generate a turn from the AI
         System.out.print("Player AI: How many stones would you like to choose? ");
         Random random = new Random();
-      if (totalStones <= 3){
-        aiStones = totalStones;
-      } else {
-        aiStones = random.nextInt(3) + 1;
-      }
-         //fixed this based on Liam and Peter's example
-        //how can we have the computer NOT draw more stones than are in the bag?
-        //maybe we should use Peter and Liam's idea of optimizing the AI's choice at this point?
-        System.out.println(aiStones);
+        //if the AI can take the remaining stones to win, it will do so.
+        if (totalStones <= 3){
+          aiStones = totalStones;
+        } else {
+          aiStones = random.nextInt(3) + 1;
+        }
 
         //update the total number of stones
         totalStones = totalStones - aiStones;
@@ -57,10 +55,10 @@ public class Nim {
         System.out.println();
 
         //check to see if the AI wins
-      if (totalStones <= 0) {
-        System.out.println("Sorry, the computer won!");
-        break;
+        if (totalStones <= 0) {
+          System.out.println("Sorry, the computer won!");
+          break;
+        }
       }
     }
   }
-}
