@@ -1,3 +1,6 @@
+import java.io.*;
+import java.util.*;
+
 public class Mancala2{
 
   //create 1-D array with 4 stones in each pit and 0 in each mancala
@@ -5,6 +8,8 @@ public class Mancala2{
   //create the Mancalas for each player as global variables
   public static int player1Mancala = board[6];
   public static int player2Mancala = board[13];
+  //create a scanner for input
+  public static Scanner in = new Scanner(System.in);
 
   //method to print the board by looping through board array
   public static void printBoard(int[] a) {
@@ -25,6 +30,11 @@ public class Mancala2{
   public static Boolean isGameOver(){
     return(board[0] + board [1] + board[2] + board [4] + board [5] == 0 || board [7] + board [8] + board [9] + board [10
     ] + board[11] + board [12] == 0); //check if either player's pits are empty
+  }
+
+  //get input from player 1
+  public static int player1Input(){
+    return 0;
   }
 
   public static void main(String[] args){
