@@ -12,7 +12,8 @@ public class Mancala2{
     //Test that the gameboard array was created; expect a hexadecimal address
     System.out.println(board);
     //Test the mancala variables are assigned correctly
-    
+    System.out.println(player1Mancala);//should be zero at start
+    System.out.println(player2Mancala);//should be zero at start
 
     //create the mancala board (as a single 1-D array)
 
