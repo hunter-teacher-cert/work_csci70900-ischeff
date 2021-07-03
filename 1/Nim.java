@@ -15,13 +15,18 @@ public class Nim {
     Scanner in = new Scanner(System.in);
     System.out.println("This is the game of Nim. We start with 12 stones in a bag. Players choose 1, 2, or 3 stones each turn. The object of the game is to choose the last stone. \n");
 
-    //loop to keep playing until the break statements are reached. 
+    //loop to keep playing until the break statements are reached.
     while(true){
 
         //solicit input from the user
-        System.out.print("Player 1: How many stones would you like to choose? Choose 1, 2, or 3: ");
+        System.out.print("Player 1: How many stones would you like to choose? Choose 1, 2, or 3: \n");
         playerStones = in.nextInt();
 
+      while (playerStones > 3 || playerStones <= 0 ){
+        System.out.println("Sorry, that's not a valid move!\n");
+        System.out.print("Player 1: How many stones would you like to choose? Choose 1, 2, or 3: \n");
+        playerStones = in.nextInt();
+      }
         //update the total number of stones
         totalStones = totalStones - playerStones;
         System.out.println("\nRemaining stones: " + totalStones);
@@ -36,7 +41,12 @@ public class Nim {
         //generate a turn from the AI
         System.out.print("Player AI: How many stones would you like to choose? ");
         Random random = new Random();
-        aiStones = random.nextInt(3) + 1; //fixed this based on Liam and Peter's example
+      if (totalStones <= 3){
+        aiStones = totalStones;
+      } else {
+        aiStones = random.nextInt(3) + 1;
+      }
+         //fixed this based on Liam and Peter's example
         //how can we have the computer NOT draw more stones than are in the bag?
         //maybe we should use Peter and Liam's idea of optimizing the AI's choice at this point?
         System.out.println(aiStones);
