@@ -1,5 +1,6 @@
 //01/Nim.java
 //Collaborators: Marisa Laks, Michelle Best, Eric Wilson, Ian Scheffler
+//lines 47-51 were inspired by Liam Baum's group!
 import java.util.Scanner;
 import java.util.Random;
 
