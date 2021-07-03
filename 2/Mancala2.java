@@ -36,11 +36,12 @@ public class Mancala2{
     System.out.println(player1Mancala);//should be zero at start
     System.out.println(player2Mancala);//should be zero at start
     printBoard(board);//print the starting board
-    System.out.println(isGameOver());
+    System.out.println(isGameOver());//test if game is over
 
-    //while loop as long as gameOver conditions haven't been met
-      //gameOver conditions: one player's side has no more stones in the pits.
-
+    //loop for gameplay (will break when isGameOver evaluates to true in body)
+    while(true){
+      printBoard(board);
+      break;
       //player 1 turn
         //get player 1 input
           //check if input is valid
@@ -57,7 +58,11 @@ public class Mancala2{
 
       //player 2 turn
         //check if player 2 wins
+  }//end of gameplay while loop
 
+    //add any remainig stones in player 1 pits to their Mancala
+    //add any remaining stones in player 2 pits to their mancala
+    //check to see who won
     //print winning statement/final scores?
 
   }//end of main
