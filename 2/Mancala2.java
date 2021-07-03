@@ -36,6 +36,12 @@ public class Mancala2{
   public static int player1Input(){
     System.out.println("Player 1: input a number between 1 and 6.");
     int p1PitChoice = (in.nextInt() - 1);
+    if (p1PitChoice < 0 || p1PitChoice > 5){//check if pit exists
+      System.out.println("Sorry, pick a pit between 1 and 6!");
+      player1Input();
+    } else if (board[p1PitChoice] == 0){//check if pit has stones
+      System.out.println("Sorry, pick a pit with stones in it!");
+    }
     System.out.println(p1PitChoice);//test
     return p1PitChoice;
   }//end of player input
