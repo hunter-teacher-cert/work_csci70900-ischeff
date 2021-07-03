@@ -33,17 +33,20 @@ public class Mancala2{
   }
 
   //get input from player 1
-  public static int player1Input(){
+  public static int p1Input(){
     System.out.println("Player 1: input a number between 1 and 6.");
     int p1PitChoice = (in.nextInt() - 1);
     if (p1PitChoice < 0 || p1PitChoice > 5){//check if pit exists
       System.out.println("Sorry, pick a pit between 1 and 6!");
-      player1Input();
+      p1Input();
     } else if (board[p1PitChoice] == 0){//check if pit has stones
       System.out.println("Sorry, pick a pit with stones in it!");
+      p1Input();
+    } else{
+      System.out.println(p1PitChoice);//test
+      return p1PitChoice;
     }
-    System.out.println(p1PitChoice);//test
-    return p1PitChoice;
+    return 0;
   }//end of player input
 
   public static void main(String[] args){
@@ -60,7 +63,7 @@ public class Mancala2{
     //loop for gameplay (will break when isGameOver evaluates to true in body)
     while(true){
       printBoard(board);
-      player1Input();
+      p1Input();
       break;
       //player 1 turn
         //get player 1 input
