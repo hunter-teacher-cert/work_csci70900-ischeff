@@ -10,6 +10,9 @@ public class Mancala2{
   public static int p2Mancala = board[13];
   //create a scanner for input
   public static Scanner in = new Scanner(System.in);
+  //create the player pit choices as global variables
+  public static int p1PitChoice = 0;
+  public static int p2PitChoice = 0;
 
   //method to print the board by looping through board array
   public static void printBoard(int[] a) {
@@ -35,7 +38,7 @@ public class Mancala2{
   //get input from player 1
   public static int p1Input(){
     System.out.println("Player 1: input a number between 1 and 6.");
-    int p1PitChoice = (in.nextInt() - 1);
+    p1PitChoice = (in.nextInt() - 1);
     if (p1PitChoice < 0 || p1PitChoice > 5){//check if pit exists
       System.out.println("Sorry, pick a pit between 1 and 6!");
       p1Input();
@@ -48,6 +51,15 @@ public class Mancala2{
     }
     return 0;
   }//end of player input
+
+  //this method will move stones around the board.
+  public static void moveTheStones(int pitChoice){
+    System.out.println("This method will move stones on the board.");
+    int pit = pitChoice;
+    System.out.println(pitChoice);
+    int stonesInHand = board[pitChoice];
+    System.out.println(stonesInHand);
+  }
 
   public static void main(String[] args){
     //Test that the program compiles
@@ -64,6 +76,7 @@ public class Mancala2{
     while(true){
       printBoard(board);
       p1Input();//think this works now!
+      moveTheStones(p1PitChoice);
       break;
       //player 1 turn
         //set the value of stones in the players' "hand" equal to the number of stones in the pit they selected.
