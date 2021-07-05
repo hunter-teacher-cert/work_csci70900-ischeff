@@ -1,3 +1,8 @@
+//The original version of this (Mancala.java) was written by Daiana, Mr. H, and Ian
+//This revised version (which is less buggy and has more features) was coded by Ian
+//Ian used work from Eric, Tiffany, Emma Wingreen, and Mr. Bomb Music's groups for inspiration!
+
+
 import java.io.*;
 import java.util.*;
 
@@ -19,6 +24,7 @@ public class Mancala2{
   //method to print the board by looping through board array
   public static void printBoard(int[] a) {
     System.out.print("\t{" + a[13] + "}"); //player2's mancala
+    //NOTE: when p2's mancala is in double digits but p1's is not, it throws the board alignment off!
     for (int i = 12; i > 6; i--) { //player 2's pits
         System.out.print(" | " + a[i]);
     }
@@ -69,8 +75,9 @@ public class Mancala2{
       if (pit + i == 13){
         counter++;
         continue; //skip p2 mancala
+        //should you replace the above contiune with just incrementing the next pit?
       }
-      if (pit + i > 13){
+      if (pit + i > 12){
         pit = (pit - 14);//reset pit to 0 to avoid array out of bounds error
         counter = (counter - 14);
       }
@@ -256,3 +263,8 @@ public class Mancala2{
   }//end of main
 
 }//end of class
+
+//To do:
+//fix board print method so that when one player is in double digits but the other is not, the board is still aligned
+//figure out why when a player is wrapping around the board the last stone isn't always deposited where necessary (skipping the mancala isn't working quite right--if there is one stone left, it just disappears)
+//capture method currently "captures" stones when there are 0 stones in a parallel pit--nothing should happen! 
