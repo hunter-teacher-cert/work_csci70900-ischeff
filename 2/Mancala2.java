@@ -87,6 +87,7 @@ public class Mancala2{
     counter = p1PitChoice;
     board[p1PitChoice] = 0;
     for(int i = 1; i <= stonesInHand; i++){
+      //maybe add in condition where if there is one more stone in hand, and you are at the other player's mancala, just increment the following pit by one? 
       if (pit + i == 13){
         counter++;
         continue; //skip p2 mancala
@@ -151,6 +152,7 @@ public class Mancala2{
     counter = p2PitChoice;
     board[p2PitChoice] = 0;
     for(int i = 1; i <= stonesInHand; i++){
+      //maybe add in condition where if there is one more stone in hand, and you are at the other player's mancala, just increment the following pit by one?
       if (pit + i == 6){
         counter++;
         continue;//skip p1 mancala
@@ -281,4 +283,3 @@ public class Mancala2{
 //To do:
 //figure out why when a player is wrapping around the board the last stone isn't always deposited where necessary (skipping the mancala isn't working quite right--if there is one stone left, it just disappears)
 //Note for the above: it appears that when the last stone in the player's hand reaches the index on the array that equals the opponent's mancala, instead of going into the next available pit, it disappears; when passing by it's not a problem.
-//capture method currently "captures" stones when there are 0 stones in a parallel pit--nothing should happen!
