@@ -25,7 +25,6 @@ public class Mancala2{
   public static void printBoard(int[] a) {
       if (board[13] > 9){//adjust board if only p2 mancala is in double digits
       System.out.print("\t{" + a[13] + "}"); //player2's mancala
-      //NOTE: when p2's mancala is in double digits but p1's is not, it throws the board alignment off!
       for (int i = 12; i > 6; i--) { //player 2's pits
           System.out.print(" | " + a[i]);
       }
@@ -38,9 +37,8 @@ public class Mancala2{
       System.out.print(" | {" + a[6] + "}" + "\n" + "\n");//player 1's mancala
       System.out.println("Player 1 Mancala: " + p1Mancala);
       System.out.println("Player 2 Mancala: " + p2Mancala + "\n");
-    } else {//both mancalas are in single digits or only p1's mancala is in double digits
+    } else {//both mancalas are in single/double digits or only p1's mancala is in double digits
       System.out.print("\t{" + a[13] + "}"); //player2's mancala
-      //NOTE: when p2's mancala is in double digits but p1's is not, it throws the board alignment off!
       for (int i = 12; i > 6; i--) { //player 2's pits
           System.out.print(" | " + a[i]);
       }
@@ -282,7 +280,6 @@ public class Mancala2{
 }//end of class
 
 //To do:
-//fix board print method so that when one player is in double digits but the other is not, the board is still aligned
 //figure out why when a player is wrapping around the board the last stone isn't always deposited where necessary (skipping the mancala isn't working quite right--if there is one stone left, it just disappears)
 //Note for the above: it appears that when the last stone in the player's hand reaches the index on the array that equals the opponent's mancala, instead of going into the next available pit, it disappears; when passing by it's not a problem.
 //capture method currently "captures" stones when there are 0 stones in a parallel pit--nothing should happen!
