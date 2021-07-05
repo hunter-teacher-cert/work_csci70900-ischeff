@@ -88,6 +88,10 @@ public class Mancala2{
     board[p1PitChoice] = 0;//remove the stones from the chosen pit
     for(int i = 1; i <= stonesInHand; i++){
       //maybe add in condition where if there is one more stone in hand, and you are at the other player's mancala, just increment the following pit by one?
+      //if((pit + i == 13) && 1 stoneleft--create new var?){
+      //counter = counter + 2;
+      //board[pit + i + 1]++;
+    //}end of new if statement
       if (pit + i == 13){
         counter++;
         continue; //skip p2 mancala
