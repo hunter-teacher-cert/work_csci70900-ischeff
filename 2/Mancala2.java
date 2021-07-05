@@ -52,14 +52,19 @@ public class Mancala2{
     return 0;
   }//end of player input
 
-  //this method will move stones around the board.
-  public static void moveTheStones(int pitChoice){
+  //this method will move player 1's stones around the board.
+  public static void moveP1Stones(int p1PitChoice){
     System.out.println("This method will move stones on the board.");
-    int pit = pitChoice;
-    System.out.println(pitChoice);
-    int stonesInHand = board[pitChoice];
+    int pit = p1PitChoice;
+    System.out.println(p1PitChoice);
+    int stonesInHand = board[p1PitChoice];
     System.out.println(stonesInHand);
-  }
+    board[p1PitChoice] = 0;
+    for(int i = 1; i <= stonesInHand; i++){
+      board[pit + i]++;
+    }//end of for loop
+    printBoard(board);
+  }//end of moveP1Stones
 
   public static void main(String[] args){
     //Test that the program compiles
@@ -76,7 +81,7 @@ public class Mancala2{
     while(true){
       printBoard(board);
       p1Input();//think this works now!
-      moveTheStones(p1PitChoice);
+      moveP1Stones(p1PitChoice);
       break;
       //player 1 turn
         //set the value of stones in the players' "hand" equal to the number of stones in the pit they selected.
