@@ -13,6 +13,8 @@ public class Mancala2{
   //create the player pit choices as global variables
   public static int p1PitChoice = 0;
   public static int p2PitChoice = 0;
+  //create a counter to check which pit the last stone went into
+  public static int counter = 0;
 
   //method to print the board by looping through board array
   public static void printBoard(int[] a) {
@@ -61,20 +63,30 @@ public class Mancala2{
     //System.out.println(p1PitChoice);//test
     int stonesInHand = board[p1PitChoice];
     //System.out.println(stonesInHand);//test
+    counter = pit;
     board[p1PitChoice] = 0;
     for(int i = 1; i <= stonesInHand; i++){
       if (pit + i == 13){
+        counter++;
         continue; //skip p2 mancala
       }
       if (pit + i > 13){
         pit = (pit - 14);//reset pit to 0 to avoid array out of bounds error
+      counter = (counter - 14);
       }
       board[pit + i]++;
+      counter++;
     }//end of for loop
     p1Mancala = board[6];
     p2Mancala = board[13];
     printBoard(board);//test
+    System.out.println("The last pit was: " + counter);//Testß
   }//end of moveP1Stones
+
+  //method to check if last stone went into p1's mancala
+  public static Boolean p1GoAgain(int counter){
+    return(counter == 6);
+  }//end of p1 go again
 
   //get input from player 2
   public static int p2Input(){
@@ -115,6 +127,11 @@ public class Mancala2{
     printBoard(board);//test
   }//end of moveP2Stones
 
+  //method to check if last stone went into p2's mancala
+  public static Boolean p2GoAgain(int counter){
+    return(counter == 13);
+  }//end of p2 go again
+
   public static void main(String[] args){
     //Test that the program compiles
     System.out.println("This will be a game of Mancala!\n");
@@ -131,12 +148,17 @@ public class Mancala2{
       //printBoard(board);
       p1Input();//get input from player 1
       moveP1Stones(p1PitChoice); //move player 1's stones around the board
-      //check if player 1's last stone went into their Mancala
-        //if so, player 1's turn repeats
       //check if player 1's last stone went into an empty pit on their side
         //if so, check if parallel player2 pit has any stones
           //if so, zero out that p2 pit and the p1 pit that is parallel
             //add sum of stones to p1 mancala
+      p1GoAgain(counter);
+      while (p1GoAgain(counter) == true){
+        System.out.println("Player 1, you place your last stone in your Mancala. Go again!");
+        p1Input();//get input from player 1
+        moveP1Stones(p1PitChoice); //move player 1's stones around the board
+      }//end of go again check
+
       //check if game is over
         //if so, break
       p2Input();
