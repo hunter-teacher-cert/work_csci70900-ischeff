@@ -9,7 +9,7 @@ import java.util.*;
 public class Mancala2{
 
   //create 1-D array with 4 stones in each pit and 0 in each mancala
-  public static int[] board = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
+  public static int[] board = {4,4,4,4,10,4,0,4,4,4,4,4,4,0};
   //create the Mancalas for each player as global variables
   public static int p1Mancala = board[6];
   public static int p2Mancala = board[13];
@@ -89,14 +89,15 @@ public class Mancala2{
     board[p1PitChoice] = 0;//remove the stones from the chosen pit
     for(int i = 1; i <= stonesInHand; i++){
       //maybe add in condition where if there is one more stone in hand, and you are at the other player's mancala, just increment the following pit by one?
-      if((pit + i == 13) && stoneCounter == 1){
+      /*if((pit + i == 13) && stoneCounter == 1){
       counter = counter + 2;
       board[pit + i + 1]++;;
       stoneCounter--;
       continue;
-    }//end of new if statement
+    }*///end of new if statement
       if (pit + i == 13){
         counter = counter + 2;
+        stonesInHand++;
         continue; //skip p2 mancala
         //problem here is that the continue statement skips incrementing the last stone when it is going to land on the opponent's mancala entirely
         //should you replace the above contiune with just incrementing the next pit?
@@ -113,6 +114,7 @@ public class Mancala2{
     p2Mancala = board[13];
     //printBoard(board);//test
     System.out.println("The last pit was: " + counter + "\n");//Test
+    System.out.println("There are " + stoneCounter + " stones remaining.\n");
   }//end of moveP1Stones
 
   //method to see if p1 captures any of p2's stones
@@ -126,6 +128,7 @@ public class Mancala2{
       p1Mancala = board[6];
       p2Mancala = board[13];
       //printBoard(board);
+      System.out.println("Counter = " + counter + "\n");
       System.out.println("Player 1, you captured " + capturedStones + " from player 2!\n");
     }
   }//end of p1Capture
@@ -164,14 +167,15 @@ public class Mancala2{
     board[p2PitChoice] = 0;
     for(int i = 1; i <= stonesInHand; i++){
       //maybe add in condition where if there is one more stone in hand, and you are at the other player's mancala, just increment the following pit by one?
-      if ((pit + i == 6) && stoneCounter == 1){//if there is only one more stone and you are at the other mancala, skip and increment next pit
+      /*if ((pit + i == 6) && stoneCounter == 1){//if there is only one more stone and you are at the other mancala, skip and increment next pit
         counter = counter + 2;
         board[pit + i + 1]++;;
         stoneCounter--;
         continue;
-      }
+      }*/
       if (pit + i == 6){
         counter = counter + 2;
+        stonesInHand++;
         continue;//skip p1 mancala
       }
       if (pit + i > 13){
@@ -200,6 +204,7 @@ public class Mancala2{
       p1Mancala = board[6];
       p2Mancala = board[13];
       //printBoard(board);
+      System.out.println("Counter = " + counter + "\n");
       System.out.println("Player 2, you captured " + capturedStones + " from player 1!\n");
     }
   }//end of p2Capture
@@ -303,4 +308,4 @@ public class Mancala2{
 //To do:
 //figure out why when a player is wrapping around the board the last stone isn't always deposited where necessary (skipping the mancala isn't working quite right--if there is one stone left, it just disappears)
 //Note for the above: it appears that when the last stone in the player's hand reaches the index on the array that equals the opponent's mancala, instead of going into the next available pit, it disappears; when passing by it's not a problem.
-//Zero out pit on your side when you capture the other side
+//When a pit reaches double digits, it throws the alignment of pits off
