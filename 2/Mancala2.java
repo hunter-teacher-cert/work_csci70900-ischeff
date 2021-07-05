@@ -108,7 +108,7 @@ public class Mancala2{
   //method to see if p1 captures any of p2's stones
   public static void p1Capture(int counter){
     int capturedStones = 0;
-    if ((counter >= 0 && counter < 6) && board[counter] == 1){
+    if ((counter >= 0 && counter < 6) && board[counter] == 1 && board[12 - counter] != 0){
       capturedStones = board[12 - counter]; //collect captured stones
       board[12-counter] = 0; //remove captured stones from pit
       board[6] = board [6] + capturedStones; //add captured stones to mancala
@@ -171,7 +171,7 @@ public class Mancala2{
   //method to see if p1 captures any of p2's stones
   public static void p2Capture(int counter){
     int capturedStones = 0;
-    if ((counter >= 7 && counter < 13) && board[counter] == 1){
+    if ((counter >= 7 && counter < 13) && board[counter] == 1 && board[12 - counter] != 0){
       capturedStones = board[12 - counter]; //collect captured stones
       board[12-counter] = 0; //remove captured stones from pit
       board[13] = board [13] + capturedStones; //add captured stones to mancala
@@ -197,7 +197,6 @@ public class Mancala2{
     //System.out.println(p2Mancala);//should be zero at start
     printBoard(board);//print the starting board
     //System.out.println(isGameOver());//test if game is over
-/*
     //loop for gameplay (will break when isGameOver evaluates to true in body)
     while(true){
 
@@ -246,7 +245,7 @@ public class Mancala2{
       //break;
 
   }//end of gameplay while loop
-
+    //end of game protocols / declaring a winner!
     System.out.println("The game is now over!\n");
     System.out.println("Any remaining stones in your pits will be added to your Mancala.\n");
     //add any remaining stones in player 1 pits to their Mancala
@@ -274,7 +273,7 @@ public class Mancala2{
     } else{
       System.out.println("It's a tie!");
     }
-*/
+
   }//end of main
 
 }//end of class
