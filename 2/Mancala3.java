@@ -84,25 +84,17 @@ public class Mancala3{
     //System.out.println(p1PitChoice);//test
     int stonesInHand = board[p1PitChoice];
     int stoneCounter = stonesInHand;
+    int i = 0;
     //System.out.println(stonesInHand);//test
-    counter = p1PitChoice;//used to keep track of the index of current pit
+    //counter = p1PitChoice;//used to keep track of the index of current pit
     board[p1PitChoice] = 0;//remove the stones from the chosen pit
-    for(int i = 1; i <= stonesInHand; i++){
-      //maybe add in condition where if there is one more stone in hand, and you are at the other player's mancala, just increment the following pit by one?
-      /*if((pit + i == 13) && stoneCounter == 1){
-      counter = counter + 2;
-      board[pit + i + 1]++;;
-      stoneCounter--;
-      continue;
-    }*///end of new if statement
-      if (pit + i == 13){
+    for(i = 1; i <= stonesInHand; i++){
+      if (pit + i == 13){//skip p2 mancala
         counter--;
         stonesInHand++;
         continue; //skip p2 mancala
-        //problem here is that the continue statement skips incrementing the last stone when it is going to land on the opponent's mancala entirely
-        //should you replace the above contiune with just incrementing the next pit?
       }
-      if (pit + i > 12){
+      if (pit + i > 12){//looping around the board
         pit = (pit - 14);//reset pit to 0 to avoid array out of bounds error
         counter = (counter - 14);
       }
@@ -113,8 +105,9 @@ public class Mancala3{
     p1Mancala = board[6];
     p2Mancala = board[13];
     //printBoard(board);//test
-    System.out.println("The index of the last stone was: " + counter + "\n");//Test
-    System.out.println("There are " + stoneCounter + " stones remaining in your hand.\n");
+    counter = (pit + i - 1);
+    System.out.println("The index of the last stone (0-13) was: " + counter + "\n");//Test
+    System.out.println("There are " + stoneCounter + " stones remaining in your hand.\n");//Test
   }//end of moveP1Stones
 
   //method to see if p1 captures any of p2's stones
@@ -122,13 +115,13 @@ public class Mancala3{
     int capturedStones = 0;
     if ((counter >= 0 && counter < 6) && board[counter] == 1 && board[12 - counter] != 0){
       capturedStones = board[12 - counter]; //collect captured stones
-      board[12-counter] = 0; //remove captured stones from pit
-      board[6] = board [6] + capturedStones + 1; //add captured stones and your stone to mancala
+      board[12 - counter] = 0; //remove captured stones from pit
+      board[6] = board [6] + capturedStones + board[counter]; //add captured stones and your stone to mancala
       board[counter] = 0;//empty your parallel pit
       p1Mancala = board[6];
       p2Mancala = board[13];
       //printBoard(board);
-      System.out.println("Counter = " + counter + "\n");
+      //System.out.println("Counter = " + counter + "\n");
       System.out.println("Player 1, you captured " + capturedStones + " from player 2!\n");
     }
   }//end of p1Capture*/
@@ -163,33 +156,28 @@ public class Mancala3{
     int stonesInHand = board[p2PitChoice];
     int stoneCounter = stonesInHand;
     //System.out.println(stonesInHand);//test
-    counter = p2PitChoice;
+    //counter = p2PitChoice;
+    int i = 0;
     board[p2PitChoice] = 0;
-    for(int i = 1; i <= stonesInHand; i++){
-      //maybe add in condition where if there is one more stone in hand, and you are at the other player's mancala, just increment the following pit by one?
-      /*if ((pit + i == 6) && stoneCounter == 1){//if there is only one more stone and you are at the other mancala, skip and increment next pit
-        counter = counter + 2;
-        board[pit + i + 1]++;;
-        stoneCounter--;
-        continue;
-      }*/
-      if (pit + i == 6){
-        counter--;
-        stonesInHand++;
+    for(i = 1; i <= stonesInHand; i++){
+      if (pit + i == 6){//skip p1 mancala
+        //counter--;//not sure why this is needed but we get a +1 error without it to counter
+        stonesInHand++;//again, not sure why we need it, but we get an error without this.
         continue;//skip p1 mancala
       }
-      if (pit + i > 13){
+      if (pit + i > 13){//looping around
         pit = (pit - 14);//reset pit to 0 to avoid array out of bounds error
-        counter = (counter - 14);
+        //counter = (counter - 14);
       }
       board[pit + i]++;
-      counter++;
+      //counter++;
       stoneCounter--;
     }//end of for loop
     p1Mancala = board[6];
     p2Mancala = board[13];
     //printBoard(board);//test
-    System.out.println("The index of the last stone was: " + counter + "\n");//Test
+    counter = (pit + i - 1);
+    System.out.println("The index (0-13) of the last stone was: " + counter + "\n");//Test
     System.out.println("The number of stones in hand is: " + stoneCounter + "\n");//Test
   }//end of moveP2Stones
 
@@ -197,16 +185,15 @@ public class Mancala3{
   /*public static void p2Capture(int counter){
     int capturedStones = 0;
     if ((counter >= 7 && counter < 13) && board[counter] == 1 && board[12 - counter] != 0){
-      //there is an error in the line above where when counter is off by one it makes a capture it shouldn't
       capturedStones = board[12 - counter]; //collect captured stones
-      board[12-counter] = 0; //remove captured stones from pit
-      board[13] = board [13] + capturedStones + 1; //add captured stones and your stone to mancala
+      board[12 - counter] = 0; //remove captured stones from pit
+      board[13] = board [13] + capturedStones + board[counter]; //add captured stones and your stone to mancala
       board[counter] = 0;//empty your stone from parallel pit
       p1Mancala = board[6];
       p2Mancala = board[13];
       //printBoard(board);
-      System.out.println("Counter = " + counter + "\n");
-      System.out.println("Player 2, you captured " + capturedStones + " from player 1!\n");
+      //System.out.println("Counter = " + counter + "\n");//test
+      System.out.println("Player 2, you captured " + capturedStones + " from player 1!\n");//test
     }
   }//end of p2Capture*/
 
