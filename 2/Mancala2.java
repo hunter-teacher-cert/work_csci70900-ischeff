@@ -9,7 +9,7 @@ import java.util.*;
 public class Mancala2{
 
   //create 1-D array with 4 stones in each pit and 0 in each mancala
-  public static int[] board = {4,4,4,4,10,4,0,4,4,4,4,4,4,0};
+  public static int[] board = {4,4,4,4,4,0,4,4,4,4,4,4,0};
   //create the Mancalas for each player as global variables
   public static int p1Mancala = board[6];
   public static int p2Mancala = board[13];
