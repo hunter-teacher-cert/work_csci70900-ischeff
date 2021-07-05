@@ -63,7 +63,7 @@ public class Mancala2{
   //get input from player 1
   public static int p1Input(){
     System.out.println("Player 1: input a number between 1 and 6.");
-    p1PitChoice = (in.nextInt() - 1);
+    p1PitChoice = (in.nextInt() - 1);//subtract 1 to align player choice with array, which is zero-indexed.
     if (p1PitChoice < 0 || p1PitChoice > 5){//check if pit exists
       System.out.println("Sorry, pick a pit between 1 and 6!\n");
       p1Input();
@@ -84,13 +84,14 @@ public class Mancala2{
     //System.out.println(p1PitChoice);//test
     int stonesInHand = board[p1PitChoice];
     //System.out.println(stonesInHand);//test
-    counter = p1PitChoice;
-    board[p1PitChoice] = 0;
+    counter = p1PitChoice;//used to keep track of current pit
+    board[p1PitChoice] = 0;//remove the stones from the chosen pit
     for(int i = 1; i <= stonesInHand; i++){
-      //maybe add in condition where if there is one more stone in hand, and you are at the other player's mancala, just increment the following pit by one? 
+      //maybe add in condition where if there is one more stone in hand, and you are at the other player's mancala, just increment the following pit by one?
       if (pit + i == 13){
         counter++;
         continue; //skip p2 mancala
+        //problem here is that the continue statement skips incrementing the last stone when it is going to land on the opponent's mancala entirely
         //should you replace the above contiune with just incrementing the next pit?
       }
       if (pit + i > 12){
