@@ -267,4 +267,5 @@ public class Mancala2{
 //To do:
 //fix board print method so that when one player is in double digits but the other is not, the board is still aligned
 //figure out why when a player is wrapping around the board the last stone isn't always deposited where necessary (skipping the mancala isn't working quite right--if there is one stone left, it just disappears)
-//capture method currently "captures" stones when there are 0 stones in a parallel pit--nothing should happen! 
+//Note for the above: it appears that when the last stone in the player's hand reaches the index on the array that equals the opponent's mancala, instead of going into the next available pit, it disappears; when passing by it's not a problem.
+//capture method currently "captures" stones when there are 0 stones in a parallel pit--nothing should happen!
