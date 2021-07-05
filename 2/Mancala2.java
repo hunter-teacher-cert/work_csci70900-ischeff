@@ -158,28 +158,41 @@ public class Mancala2{
           //if so, zero out that p2 pit and the p1 pit that is parallel
             //add sum of stones to p1 mancala
       //p1Capture(counter);
+      //check if game is over
+        //if so, break
       p1GoAgain(counter);
       while (p1GoAgain(counter) == true){
         System.out.println("Player 1, you placed your last stone in your Mancala. Go again!\n");
         p1Input();//get input from player 1
-        moveP1Stones(p1PitChoice); //move player 1's stones around the board
+        moveP1Stones(p1PitChoice);//move player 1's stones around the board
         //p1Capture(counter);
+        //check if game is over
+          //if so, break
       }//end of p1 go again check
 
       //check if game is over
         //if so, break
       p2Input();
       moveP2Stones(p2PitChoice);
+      //check if player 2's last stone went into an empty pit on their side
+        //if so, check if parallel player1 pit has any stones
+          //if so, zero out that p2 pit and the p1 pit that is parallel
+            //add sum of stones to p2 mancala
+      //check if game is over
+        //if so, break
       p2GoAgain(counter);
       while (p2GoAgain(counter) == true){
         System.out.println("Player 2, you placed your last stone in your Mancala. Go again!\n");
         p2Input();//get input from player 2
         moveP2Stones(p2PitChoice); //move player 2's stones around the board
+        //check if player 2's last stone went into an empty pit on their side
+          //if so, check if parallel player1 pit has any stones
+            //if so, zero out that p2 pit and the p1 pit that is parallel
+              //add sum of stones to p2 mancala
+        //check if game is over
+          //if so, break
       }//end of p2 go again check
-    //check if player 1's last stone went into an empty pit on their side
-      //if so, check if parallel player2 pit has any stones
-        //if so, zero out that p2 pit and the p1 pit that is parallel
-          //add sum of stones to p1 mancala
+
     //check if game is over
       //if so, break
       break;
