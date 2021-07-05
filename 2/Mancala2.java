@@ -63,7 +63,7 @@ public class Mancala2{
     //System.out.println(p1PitChoice);//test
     int stonesInHand = board[p1PitChoice];
     //System.out.println(stonesInHand);//test
-    counter = pit;
+    counter = p1PitChoice;
     board[p1PitChoice] = 0;
     for(int i = 1; i <= stonesInHand; i++){
       if (pit + i == 13){
@@ -112,7 +112,7 @@ public class Mancala2{
     //System.out.println(p2PitChoice);//test
     int stonesInHand = board[p2PitChoice];
     //System.out.println(stonesInHand);//test
-    counter = pit;
+    counter = p2PitChoice;
     board[p2PitChoice] = 0;
     for(int i = 1; i <= stonesInHand; i++){
       if (pit + i == 6){
@@ -130,7 +130,6 @@ public class Mancala2{
     p2Mancala = board[13];
     printBoard(board);//test
     System.out.println("The last pit was: " + counter);//Test
-
   }//end of moveP2Stones
 
   //method to check if last stone went into p2's mancala
@@ -158,11 +157,13 @@ public class Mancala2{
         //if so, check if parallel player2 pit has any stones
           //if so, zero out that p2 pit and the p1 pit that is parallel
             //add sum of stones to p1 mancala
+      //p1Capture(counter);
       p1GoAgain(counter);
       while (p1GoAgain(counter) == true){
-        System.out.println("Player 1, you place your last stone in your Mancala. Go again!\n");
+        System.out.println("Player 1, you placed your last stone in your Mancala. Go again!\n");
         p1Input();//get input from player 1
         moveP1Stones(p1PitChoice); //move player 1's stones around the board
+        //p1Capture(counter);
       }//end of p1 go again check
 
       //check if game is over
@@ -171,7 +172,7 @@ public class Mancala2{
       moveP2Stones(p2PitChoice);
       p2GoAgain(counter);
       while (p2GoAgain(counter) == true){
-        System.out.println("Player 2, you place your last stone in your Mancala. Go again!\n");
+        System.out.println("Player 2, you placed your last stone in your Mancala. Go again!\n");
         p2Input();//get input from player 2
         moveP2Stones(p2PitChoice); //move player 2's stones around the board
       }//end of p2 go again check
