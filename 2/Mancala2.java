@@ -63,6 +63,9 @@ public class Mancala2{
     System.out.println(stonesInHand);//test
     board[p1PitChoice] = 0;
     for(int i = 1; i <= stonesInHand; i++){
+      if (pit + i > 13){
+        pit = (pit - 14);//resets pit so that pit + i will resume with pit 0
+      }
       board[pit + i]++;
     }//end of for loop
     p1Mancala = board[6];
@@ -70,7 +73,7 @@ public class Mancala2{
     printBoard(board);//test
   }//end of moveP1Stones
 
-  //get input from player 1
+  //get input from player 2
   public static int p2Input(){
     System.out.println("Player 2: input a number between 1 and 6.");
     p2PitChoice = (in.nextInt() + 6);
@@ -87,7 +90,7 @@ public class Mancala2{
     return 0;
   }//end of player 2 input
 
-  //this method will move player 1's stones around the board.
+  //this method will move player 2's stones around the board.
   public static void moveP2Stones(int p2PitChoice){
     System.out.println("This method will move stones on the board.");//test
     int pit = p2PitChoice;
@@ -96,12 +99,15 @@ public class Mancala2{
     System.out.println(stonesInHand);//test
     board[p2PitChoice] = 0;
     for(int i = 1; i <= stonesInHand; i++){
+      if (pit + i > 13){
+        pit = (pit - 14);
+      }
       board[pit + i]++;
     }//end of for loop
     p1Mancala = board[6];
     p2Mancala = board[13];
     printBoard(board);//test
-  }//end of moveP1Stones
+  }//end of moveP2Stones
 
   public static void main(String[] args){
     //Test that the program compiles
@@ -130,6 +136,15 @@ public class Mancala2{
         //if so, break
       p2Input();
       moveP2Stones(p2PitChoice);
+      //add in adjustment if you need to loop around.
+    //check if player 2's last stone went into their Mancala
+      //if so, player 1's turn repeats
+    //check if player 1's last stone went into an empty pit on their side
+      //if so, check if parallel player2 pit has any stones
+        //if so, zero out that p2 pit and the p1 pit that is parallel
+          //add sum of stones to p1 mancala
+    //check if game is over
+      //if so, break
       break;
 
   }//end of gameplay while loop
