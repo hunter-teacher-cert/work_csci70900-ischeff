@@ -48,7 +48,7 @@ public class Mancala2{
       System.out.println("Sorry, pick a pit with stones in it!");
       p1Input();
     } else{
-      System.out.println(p1PitChoice);//test
+      //System.out.println(p1PitChoice);//test
       return p1PitChoice;
     }
     return 0;
@@ -56,15 +56,18 @@ public class Mancala2{
 
   //this method will move player 1's stones around the board.
   public static void moveP1Stones(int p1PitChoice){
-    System.out.println("This method will move stones on the board.");//test
+    //System.out.println("This method will move stones on the board.");//test
     int pit = p1PitChoice;
-    System.out.println(p1PitChoice);//test
+    //System.out.println(p1PitChoice);//test
     int stonesInHand = board[p1PitChoice];
-    System.out.println(stonesInHand);//test
+    //System.out.println(stonesInHand);//test
     board[p1PitChoice] = 0;
     for(int i = 1; i <= stonesInHand; i++){
+      if (pit + i == 13){
+        continue; //skip p2 mancala
+      }
       if (pit + i > 13){
-        pit = (pit - 14);//resets pit so that pit + i will resume with pit 0
+        pit = (pit - 14);//reset pit to 0 to avoid array out of bounds error
       }
       board[pit + i]++;
     }//end of for loop
@@ -84,7 +87,7 @@ public class Mancala2{
       System.out.println("Sorry, pick a pit with stones in it!");
       p2Input();
     } else{
-      System.out.println(p2PitChoice);//test
+      //System.out.println(p2PitChoice);//test
       return p2PitChoice;
     }
     return 0;
@@ -92,15 +95,18 @@ public class Mancala2{
 
   //this method will move player 2's stones around the board.
   public static void moveP2Stones(int p2PitChoice){
-    System.out.println("This method will move stones on the board.");//test
+    //System.out.println("This method will move stones on the board.");//test
     int pit = p2PitChoice;
-    System.out.println(p2PitChoice);//test
+    //System.out.println(p2PitChoice);//test
     int stonesInHand = board[p2PitChoice];
-    System.out.println(stonesInHand);//test
+    //System.out.println(stonesInHand);//test
     board[p2PitChoice] = 0;
     for(int i = 1; i <= stonesInHand; i++){
+      if (pit + i == 6){
+        continue;//skip p1 mancala
+      }
       if (pit + i > 13){
-        pit = (pit - 14);
+        pit = (pit - 14);//reset pit to 0 to avoid array out of bounds error
       }
       board[pit + i]++;
     }//end of for loop
@@ -111,9 +117,9 @@ public class Mancala2{
 
   public static void main(String[] args){
     //Test that the program compiles
-    System.out.println("This will be a game of Mancala!");
+    System.out.println("This will be a game of Mancala!\n");
     //Test that the gameboard array was created; expect a hexadecimal address
-    System.out.println(board);
+    //System.out.println(board);
     //Test the mancala variables are assigned correctly
     //System.out.println(p1Mancala);//should be zero at start
     //System.out.println(p2Mancala);//should be zero at start
@@ -123,9 +129,8 @@ public class Mancala2{
     //loop for gameplay (will break when isGameOver evaluates to true in body)
     while(true){
       //printBoard(board);
-      //p1Input();//get input from player 1
-      //moveP1Stones(p1PitChoice); //move player 1's stones around the board
-        //add in adjustment if you need to loop around.
+      p1Input();//get input from player 1
+      moveP1Stones(p1PitChoice); //move player 1's stones around the board
       //check if player 1's last stone went into their Mancala
         //if so, player 1's turn repeats
       //check if player 1's last stone went into an empty pit on their side
@@ -136,7 +141,6 @@ public class Mancala2{
         //if so, break
       p2Input();
       moveP2Stones(p2PitChoice);
-      //add in adjustment if you need to loop around.
     //check if player 2's last stone went into their Mancala
       //if so, player 1's turn repeats
     //check if player 1's last stone went into an empty pit on their side
