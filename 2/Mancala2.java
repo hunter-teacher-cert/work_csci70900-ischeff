@@ -80,8 +80,19 @@ public class Mancala2{
     p1Mancala = board[6];
     p2Mancala = board[13];
     printBoard(board);//test
-    System.out.println("The last pit was: " + counter);//Test
+    System.out.println("The last pit was: " + counter + "\n");//Test
   }//end of moveP1Stones
+
+  //method to see if p1 captures any of p2's stones
+  public static void p1Capture(int counter){
+    int capturedStones = 0;
+    if ((counter >= 0 && counter < 6) && board[counter] == 1){
+      capturedStones = board[12 - counter]; //collect captured stones
+      board[12-counter] = 0; //remove captured stones from pit
+      board[6] = board [6] + capturedStones; //add captured stones to mancala
+      System.out.println("Player 1, you captured " + capturedStones + " from player 2!");
+    }
+  }//end of p1Capture
 
   //method to check if last stone went into p1's mancala
   public static Boolean p1GoAgain(int counter){
@@ -129,8 +140,19 @@ public class Mancala2{
     p1Mancala = board[6];
     p2Mancala = board[13];
     printBoard(board);//test
-    System.out.println("The last pit was: " + counter);//Test
+    System.out.println("The last pit was: " + counter + "\n");//Test
   }//end of moveP2Stones
+
+  //method to see if p1 captures any of p2's stones
+  public static void p2Capture(int counter){
+    int capturedStones = 0;
+    if ((counter >= 7 && counter < 13) && board[counter] == 1){
+      capturedStones = board[12 - counter]; //collect captured stones
+      board[12-counter] = 0; //remove captured stones from pit
+      board[13] = board [13] + capturedStones; //add captured stones to mancala
+      System.out.println("Player 2, you captured " + capturedStones + " from player 2!");
+    }
+  }//end of p2Capture
 
   //method to check if last stone went into p2's mancala
   public static Boolean p2GoAgain(int counter){
@@ -153,11 +175,7 @@ public class Mancala2{
       //printBoard(board);
       p1Input();//get input from player 1
       moveP1Stones(p1PitChoice); //move player 1's stones around the board
-      //check if player 1's last stone went into an empty pit on their side
-        //if so, check if parallel player2 pit has any stones
-          //if so, zero out that p2 pit and the p1 pit that is parallel
-            //add sum of stones to p1 mancala
-      //p1Capture(counter);
+      p1Capture(counter);//check if p1 captures any stones from p2
       //check if game is over
         //if so, break
       p1GoAgain(counter);
@@ -165,7 +183,7 @@ public class Mancala2{
         System.out.println("Player 1, you placed your last stone in your Mancala. Go again!\n");
         p1Input();//get input from player 1
         moveP1Stones(p1PitChoice);//move player 1's stones around the board
-        //p1Capture(counter);
+        p1Capture(counter);//check if p1 captures any stones from p2
         //check if game is over
           //if so, break
       }//end of p1 go again check
@@ -174,10 +192,7 @@ public class Mancala2{
         //if so, break
       p2Input();
       moveP2Stones(p2PitChoice);
-      //check if player 2's last stone went into an empty pit on their side
-        //if so, check if parallel player1 pit has any stones
-          //if so, zero out that p2 pit and the p1 pit that is parallel
-            //add sum of stones to p2 mancala
+      p2Capture(counter);//check if p2 captures any stones from p1
       //check if game is over
         //if so, break
       p2GoAgain(counter);
@@ -185,10 +200,7 @@ public class Mancala2{
         System.out.println("Player 2, you placed your last stone in your Mancala. Go again!\n");
         p2Input();//get input from player 2
         moveP2Stones(p2PitChoice); //move player 2's stones around the board
-        //check if player 2's last stone went into an empty pit on their side
-          //if so, check if parallel player1 pit has any stones
-            //if so, zero out that p2 pit and the p1 pit that is parallel
-              //add sum of stones to p2 mancala
+        p2Capture(counter);//check if p2 captures any stones from p1
         //check if game is over
           //if so, break
       }//end of p2 go again check
