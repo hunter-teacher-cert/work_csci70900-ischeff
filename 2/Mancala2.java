@@ -9,7 +9,7 @@ import java.util.*;
 public class Mancala2{
 
   //create 1-D array with 4 stones in each pit and 0 in each mancala
-  public static int[] board = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
+  public static int[] board = {4,0,4,4,4,9,0,4,4,4,4,4,4,0};
   //create the Mancalas for each player as global variables
   public static int p1Mancala = board[6];
   public static int p2Mancala = board[13];
@@ -85,7 +85,7 @@ public class Mancala2{
     int stonesInHand = board[p1PitChoice];
     int stoneCounter = stonesInHand;
     //System.out.println(stonesInHand);//test
-    counter = p1PitChoice;//used to keep track of current pit
+    counter = p1PitChoice + 1;//used to keep track of the index of current pit
     board[p1PitChoice] = 0;//remove the stones from the chosen pit
     for(int i = 1; i <= stonesInHand; i++){
       //maybe add in condition where if there is one more stone in hand, and you are at the other player's mancala, just increment the following pit by one?
@@ -96,7 +96,7 @@ public class Mancala2{
       continue;
     }*///end of new if statement
       if (pit + i == 13){
-        counter = counter + 2;
+        //counter++;
         stonesInHand++;
         continue; //skip p2 mancala
         //problem here is that the continue statement skips incrementing the last stone when it is going to land on the opponent's mancala entirely
@@ -113,23 +113,23 @@ public class Mancala2{
     p1Mancala = board[6];
     p2Mancala = board[13];
     //printBoard(board);//test
-    //System.out.println("The last pit was: " + counter + "\n");//Test
-    //System.out.println("There are " + stoneCounter + " stones remaining in your hand.\n");
+    System.out.println("The last pit was: " + counter + "\n");//Test
+    System.out.println("There are " + stoneCounter + " stones remaining in your hand.\n");
   }//end of moveP1Stones
 
   //method to see if p1 captures any of p2's stones
   public static void p1Capture(int counter){
     int capturedStones = 0;
-    if ((counter >= 0 && counter < 6) && board[counter-1] == 1 && board[13 - counter] != 0){
-      capturedStones = board[13 - counter]; //collect captured stones
-      board[13-counter] = 0; //remove captured stones from pit
+    if ((counter >= 0 && counter < 6) && board[counter] == 1 && board[12 - counter] != 0){
+      capturedStones = board[12 - counter]; //collect captured stones
+      board[12-counter] = 0; //remove captured stones from pit
       board[6] = board [6] + capturedStones + 1; //add captured stones and your stone to mancala
-      board[counter-1] = 0;//empty your parallel pit
+      board[counter] = 0;//empty your parallel pit
       p1Mancala = board[6];
       p2Mancala = board[13];
       //printBoard(board);
-      //System.out.println("Counter = " + counter + "\n");
-      //System.out.println("Player 1, you captured " + capturedStones + " from player 2!\n");
+      System.out.println("Counter = " + counter + "\n");
+      System.out.println("Player 1, you captured " + capturedStones + " from player 2!\n");
     }
   }//end of p1Capture
 
@@ -174,7 +174,7 @@ public class Mancala2{
         continue;
       }*/
       if (pit + i == 6){
-        counter = counter + 2;//I wonder if the bug is here?
+        //counter = counter + 2;//I wonder if the bug is here?
         stonesInHand++;
         continue;//skip p1 mancala
       }
@@ -189,8 +189,8 @@ public class Mancala2{
     p1Mancala = board[6];
     p2Mancala = board[13];
     //printBoard(board);//test
-    //System.out.println("The last pit was: " + counter + "\n");//Test
-    //System.out.println("The number of stones in hand is: " + stoneCounter + "\n");//Test
+    System.out.println("The last pit was: " + counter + "\n");//Test
+    System.out.println("The number of stones in hand is: " + stoneCounter + "\n");//Test
   }//end of moveP2Stones
 
   //method to see if p1 captures any of p2's stones
@@ -205,8 +205,8 @@ public class Mancala2{
       p1Mancala = board[6];
       p2Mancala = board[13];
       //printBoard(board);
-      //System.out.println("Counter = " + counter + "\n");
-      //System.out.println("Player 2, you captured " + capturedStones + " from player 1!\n");
+      System.out.println("Counter = " + counter + "\n");
+      System.out.println("Player 2, you captured " + capturedStones + " from player 1!\n");
     }
   }//end of p2Capture
 
@@ -310,3 +310,4 @@ public class Mancala2{
 //To do:
 //When a pit reaches double digits, it throws the alignment of pits off
 //counter is sometimes off by plus 1 (I've noticed this mostly when moving a larger number from one side to wrap around the other); this leads to unintentional captures.
+//still  need to debug capture method
