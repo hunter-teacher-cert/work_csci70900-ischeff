@@ -114,7 +114,7 @@ public class Mancala2{
     p2Mancala = board[13];
     //printBoard(board);//test
     System.out.println("The last pit was: " + counter + "\n");//Test
-    System.out.println("There are " + stoneCounter + " stones remaining.\n");
+    System.out.println("There are " + stoneCounter + " stones remaining in your hand.\n");
   }//end of moveP1Stones
 
   //method to see if p1 captures any of p2's stones
@@ -197,6 +197,7 @@ public class Mancala2{
   public static void p2Capture(int counter){
     int capturedStones = 0;
     if ((counter >= 7 && counter < 13) && board[counter] == 1 && board[12 - counter] != 0){
+      //there is an error in the line above where when counter is off by one it makes a capture it shouldn't
       capturedStones = board[12 - counter]; //collect captured stones
       board[12-counter] = 0; //remove captured stones from pit
       board[13] = board [13] + capturedStones + board[counter]; //add captured stones and your stone to mancala
@@ -306,6 +307,5 @@ public class Mancala2{
 }//end of class
 
 //To do:
-//figure out why when a player is wrapping around the board the last stone isn't always deposited where necessary (skipping the mancala isn't working quite right--if there is one stone left, it just disappears)
-//Note for the above: it appears that when the last stone in the player's hand reaches the index on the array that equals the opponent's mancala, instead of going into the next available pit, it disappears; when passing by it's not a problem.
 //When a pit reaches double digits, it throws the alignment of pits off
+//counter is sometimes off by plus 1 (I've noticed this mostly when moving a larger number from one side to wrap around the other); this leads to unintentional captures.
