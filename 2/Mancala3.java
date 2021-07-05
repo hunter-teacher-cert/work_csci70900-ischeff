@@ -1,5 +1,5 @@
 //The original version of this (Mancala.java) was written by Daiana, Mr. H, and Ian
-//This revised version (which is less buggy and has more features) was coded by Ian
+//This revised version was coded by Ian
 //Ian used work from Eric, Tiffany, Emma Wingreen, and Mr. Bomb Music's groups for inspiration!
 
 
@@ -56,8 +56,8 @@ public class Mancala3{
 
   //method to check if game is over (will return true if game is over)
   public static Boolean isGameOver(){
-    return(board[0] + board [1] + board[2] + board [4] + board [5] == 0 || board [7] + board [8] + board [9] + board [10
-    ] + board[11] + board [12] == 0); //check if either player's pits are empty
+    return((board[0] + board [1] + board[2] + board [4] + board [5] == 0) || (board [7] + board [8] + board [9] + board [10
+    ] + board[11] + board [12] == 0)); //check if either player's pits are empty
   }
 
   //get input from player 1
@@ -111,7 +111,7 @@ public class Mancala3{
   }//end of moveP1Stones
 
   //method to see if p1 captures any of p2's stones
-  /*public static void p1Capture(int counter){
+  public static void p1Capture(int counter){
     int capturedStones = 0;
     if ((counter >= 0 && counter < 6) && board[counter] == 1 && board[12 - counter] != 0){
       capturedStones = board[12 - counter]; //collect captured stones
@@ -124,7 +124,7 @@ public class Mancala3{
       //System.out.println("Counter = " + counter + "\n");
       System.out.println("Player 1, you captured " + capturedStones + " from player 2!\n");
     }
-  }//end of p1Capture*/
+  }//end of p1Capture
 
   //method to check if last stone went into p1's mancala
   public static Boolean p1GoAgain(int counter){
@@ -136,10 +136,10 @@ public class Mancala3{
     System.out.println("Player 2: input a number between 1 and 6.");
     p2PitChoice = (in.nextInt() + 6);
     if (p2PitChoice < 7 || p2PitChoice > 12){//check if pit exists
-      System.out.println("Sorry, pick a pit between 1 and 6!");
+      System.out.println("Sorry, pick a pit between 1 and 6!\n");
       p2Input();
     } else if (board[p2PitChoice] == 0){//check if pit has stones
-      System.out.println("Sorry, pick a pit with stones in it!");
+      System.out.println("Sorry, pick a pit with stones in it!\n");
       p2Input();
     } else{
       //System.out.println(p2PitChoice);//test
@@ -182,7 +182,7 @@ public class Mancala3{
   }//end of moveP2Stones
 
   //method to see if p1 captures any of p2's stones
-  /*public static void p2Capture(int counter){
+  public static void p2Capture(int counter){
     int capturedStones = 0;
     if ((counter >= 7 && counter < 13) && board[counter] == 1 && board[12 - counter] != 0){
       capturedStones = board[12 - counter]; //collect captured stones
@@ -195,7 +195,7 @@ public class Mancala3{
       //System.out.println("Counter = " + counter + "\n");//test
       System.out.println("Player 2, you captured " + capturedStones + " from player 1!\n");//test
     }
-  }//end of p2Capture*/
+  }//end of p2Capture
 
   //method to check if last stone went into p2's mancala
   public static Boolean p2GoAgain(int counter){
@@ -218,7 +218,7 @@ public class Mancala3{
       //p1's turn
       p1Input();//get input from player 1
       moveP1Stones(p1PitChoice); //move player 1's stones around the board
-      //p1Capture(counter);//check if p1 captures any stones from p2
+      p1Capture(counter);//check if p1 captures any stones from p2
       printBoard(board);//print updated board
       isGameOver();
         if (isGameOver() == true){
@@ -229,7 +229,7 @@ public class Mancala3{
         System.out.println("Player 1, you placed your last stone in your Mancala. Go again!\n");
         p1Input();//get input from player 1
         moveP1Stones(p1PitChoice);//move player 1's stones around the board
-        //p1Capture(counter);//check if p1 captures any stones from p2
+        p1Capture(counter);//check if p1 captures any stones from p2
         printBoard(board);//print updated board
         isGameOver();
           if (isGameOver() == true){
@@ -240,7 +240,7 @@ public class Mancala3{
       //p2's turn
       p2Input();
       moveP2Stones(p2PitChoice);
-      //p2Capture(counter);//check if p2 captures any stones from p1
+      p2Capture(counter);//check if p2 captures any stones from p1
       printBoard(board);//print updated board
       isGameOver();
           if (isGameOver() == true){
@@ -251,7 +251,7 @@ public class Mancala3{
         System.out.println("Player 2, you placed your last stone in your Mancala. Go again!\n");
         p2Input();//get input from player 2
         moveP2Stones(p2PitChoice); //move player 2's stones around the board
-        //p2Capture(counter);//check if p2 captures any stones from p1
+        p2Capture(counter);//check if p2 captures any stones from p1
         printBoard(board);//print updated board
           if (isGameOver() == true){
             break;
@@ -297,4 +297,5 @@ public class Mancala3{
 //To do:
 //When a pit reaches double digits, it throws the alignment of pits off
 //counter is sometimes off by plus 1 (I've noticed this mostly when moving a larger number from one side to wrap around the other); this leads to unintentional captures.
+//note: think I've solved the +1 issue!
 //still  need to debug capture method
