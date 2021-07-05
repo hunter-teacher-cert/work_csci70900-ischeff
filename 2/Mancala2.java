@@ -113,8 +113,8 @@ public class Mancala2{
     p1Mancala = board[6];
     p2Mancala = board[13];
     //printBoard(board);//test
-    System.out.println("The last pit was: " + counter + "\n");//Test
-    System.out.println("There are " + stoneCounter + " stones remaining in your hand.\n");
+    //System.out.println("The last pit was: " + counter + "\n");//Test
+    //System.out.println("There are " + stoneCounter + " stones remaining in your hand.\n");
   }//end of moveP1Stones
 
   //method to see if p1 captures any of p2's stones
@@ -128,8 +128,8 @@ public class Mancala2{
       p1Mancala = board[6];
       p2Mancala = board[13];
       //printBoard(board);
-      System.out.println("Counter = " + counter + "\n");
-      System.out.println("Player 1, you captured " + capturedStones + " from player 2!\n");
+      //System.out.println("Counter = " + counter + "\n");
+      //System.out.println("Player 1, you captured " + capturedStones + " from player 2!\n");
     }
   }//end of p1Capture
 
@@ -189,8 +189,8 @@ public class Mancala2{
     p1Mancala = board[6];
     p2Mancala = board[13];
     //printBoard(board);//test
-    System.out.println("The last pit was: " + counter + "\n");//Test
-    System.out.println("The number of stones in hand is: " + stoneCounter + "\n");//Test
+    //System.out.println("The last pit was: " + counter + "\n");//Test
+    //System.out.println("The number of stones in hand is: " + stoneCounter + "\n");//Test
   }//end of moveP2Stones
 
   //method to see if p1 captures any of p2's stones
@@ -205,8 +205,8 @@ public class Mancala2{
       p1Mancala = board[6];
       p2Mancala = board[13];
       //printBoard(board);
-      System.out.println("Counter = " + counter + "\n");
-      System.out.println("Player 2, you captured " + capturedStones + " from player 1!\n");
+      //System.out.println("Counter = " + counter + "\n");
+      //System.out.println("Player 2, you captured " + capturedStones + " from player 1!\n");
     }
   }//end of p2Capture
 
