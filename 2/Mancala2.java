@@ -23,20 +23,37 @@ public class Mancala2{
 
   //method to print the board by looping through board array
   public static void printBoard(int[] a) {
-    System.out.print("\t{" + a[13] + "}"); //player2's mancala
-    //NOTE: when p2's mancala is in double digits but p1's is not, it throws the board alignment off!
-    for (int i = 12; i > 6; i--) { //player 2's pits
-        System.out.print(" | " + a[i]);
+      if (board[13] > 9){//adjust board if only p2 mancala is in double digits
+      System.out.print("\t{" + a[13] + "}"); //player2's mancala
+      //NOTE: when p2's mancala is in double digits but p1's is not, it throws the board alignment off!
+      for (int i = 12; i > 6; i--) { //player 2's pits
+          System.out.print(" | " + a[i]);
+      }
+      System.out.print(" |");
+      System.out.println("");
+      System.out.print("\t     | " + a[0]);//player 1's pits
+      for (int i = 1; i < 6; i++) {
+          System.out.print(" | " + a[i]);
+      }
+      System.out.print(" | {" + a[6] + "}" + "\n" + "\n");//player 1's mancala
+      System.out.println("Player 1 Mancala: " + p1Mancala);
+      System.out.println("Player 2 Mancala: " + p2Mancala + "\n");
+    } else {//both mancalas are in single digits or only p1's mancala is in double digits
+      System.out.print("\t{" + a[13] + "}"); //player2's mancala
+      //NOTE: when p2's mancala is in double digits but p1's is not, it throws the board alignment off!
+      for (int i = 12; i > 6; i--) { //player 2's pits
+          System.out.print(" | " + a[i]);
+      }
+      System.out.print(" |");
+      System.out.println("");
+      System.out.print("\t    | " + a[0]);//player 1's pits
+      for (int i = 1; i < 6; i++) {
+          System.out.print(" | " + a[i]);
+      }
+      System.out.print(" | {" + a[6] + "}" + "\n" + "\n");//player 1's mancala
+      System.out.println("Player 1 Mancala: " + p1Mancala);
+      System.out.println("Player 2 Mancala: " + p2Mancala + "\n");
     }
-    System.out.print(" |");
-    System.out.println("");
-    System.out.print("\t    | " + a[0]);//player 1's pits
-    for (int i = 1; i < 6; i++) {
-        System.out.print(" | " + a[i]);
-    }
-    System.out.print(" | {" + a[6] + "}" + "\n" + "\n");//player 1's mancala
-    System.out.println("Player 1 Mancala: " + p1Mancala);
-    System.out.println("Player 2 Mancala: " + p2Mancala + "\n");
   }//end of printBoard
 
   //method to check if game is over (will return true if game is over)
@@ -182,7 +199,7 @@ public class Mancala2{
     //System.out.println(p2Mancala);//should be zero at start
     printBoard(board);//print the starting board
     //System.out.println(isGameOver());//test if game is over
-
+/*
     //loop for gameplay (will break when isGameOver evaluates to true in body)
     while(true){
 
@@ -259,7 +276,7 @@ public class Mancala2{
     } else{
       System.out.println("It's a tie!");
     }
-
+*/
   }//end of main
 
 }//end of class
