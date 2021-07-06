@@ -3,15 +3,13 @@ import java.io.*;
 import java.util.*;
 
 class Fib{
+  //this method will output the nth term of the fibonacci sequence
   public static int fibSeq (int n){
     if (n < 0){
       System.out.println("Only positive inputs please!");
     }
-    if (n == 0){
-      return 0;
-    }
-    if (n == 1){
-      return 1;
+    if (n == 0 || n == 1){
+      return n;
     }
     if (n > 1){
       return (fibSeq(n-1) + fibSeq(n-2));
@@ -39,3 +37,5 @@ class Fib{
       fibLoop(fibTerms());//anything more than 40 terms runs pretty slow!
     }//end main
 }//end of class
+
+//Note: if we want to make this more memory-efficient, then we should make an array to store the values of the terms we calculate, so that for any given term, we can just draw from the array.
