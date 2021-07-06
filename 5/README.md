@@ -47,3 +47,68 @@ Confident in your skills/knowledge? See how well you can explain it.
 ## DELIVERABLE:
 Save in your_work_repo: 5/Fib.java
 Include heading at top of file, as comment. List all collaborators and consultants.
+
+# Work:
+Intro to Classes and Objects
+
+## GOAL:
+Gain familiarity with basics of classes in Java.
+
+## GUIDELINES:
+
+##Starter kit:
+This daily directory has two Java files:
+
+Time.java
+Driver.java
+
+Time.java will hold the Time class. Driver.java holds the main method that will be used to test the functionality of Time.
+
+To compile, run javac Driver.java Time.java -- which will compile both Java files.
+To run, use java Driver.
+
+##YOUR CODING MISSION:
+
+Fetch KtS.
+
+Discuss questions/comments/concerns regarding chapter 10 in ThinkJava with your team.
+
+Copy Time.java and Driver.java into your work repo.
+
+Discuss questions/comments/concerns regarding chapter 11 in ThinkJava with your team.
+
+Fill in your Time class implementation in Time.java. Grow it incrementally, testing as you go. Some things you should be able to do below...
+
+Your driver file should contain code to (in suggested development order)
+
+instantiate a newly-created Time object (aka "instance of class Time") with default value(s)
+
+instantiate a newly-created Time object with specified value(s)
+assign a Time var the value null
+
+assign a Time var the value of an existing Time var
+
+print all of the above (See multiple ways to do this? Try all -- and document in comments!)
+
+test for equality of each of the Time instances above. Print results.
+
+add two Time objects and print results
+
+add two Time objects and save the result in another Time object
+
+Your Time class definition file should contain code to
+tell a Time object how to do the tasks necessary to achieve the above
+
+## PROTIPS:
+Copy the "todo-list" above into your code as comments, then use as your development guide...
+Design first. Sketch out your plan on paper ("keys to success"), transcribe into comments in your code file.
+Get something, however, minimal, to compile and run ASAP. Incrementally grow it until it aligns with your goal.
+Never stray far from runnable code.
+
+Grow cohort KB ("knowledge base") on slack:
+Have a Q/C/C? Post. Especially to the java channel, while working on this assignment...
+Confident in your skills/knowledge? See how well you can explain it.
+
+## DELIVERABLE:
+Save in your_work_repo: 5/Time.java and 5/Driver.java
+Include heading at top of file, as comment. List all collaborators and consultants.
