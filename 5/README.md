@@ -1,10 +1,10 @@
-#Work:
+# Work:
 Recursion -- Have it your way
 
-##GOAL:
+## GOAL:
 Implement a mechanism to calculate the nth value in the Fibonacci sequence.
 
-##GUIDELINES:
+## GUIDELINES:
 Some test calls and associated return values:
 
 fib(0) -> 0
@@ -22,7 +22,7 @@ A RECURSIVE REDUCTION, wherein the function calls a simpler version of itself or
 This must lead toward the base case... Or else?
 E.g., (n-1)! for factorial(n)
 
-##STEPS FOR DEVELOPING A RECURSIVE PROCEDURE:
+## STEPS FOR DEVELOPING A RECURSIVE PROCEDURE:
 Write down simple cases & expected outputs.
 Write down a case slightly more complex than base case (e.g. factorial(2) )
 Ask Q: How can I get from this case to a base case? (Ans is key to developing recursive reduction.)
@@ -44,6 +44,6 @@ Grow cohort KB ("knowledge base") on slack:
 Have a Q? Ask.
 Confident in your skills/knowledge? See how well you can explain it.
 
-##DELIVERABLE:
+## DELIVERABLE:
 Save in your_work_repo: 5/Fib.java
 Include heading at top of file, as comment. List all collaborators and consultants.
