@@ -56,7 +56,7 @@ Gain familiarity with basics of classes in Java.
 
 ## GUIDELINES:
 
-##Starter kit:
+## Starter kit:
 This daily directory has two Java files:
 
 Time.java
@@ -67,7 +67,7 @@ Time.java will hold the Time class. Driver.java holds the main method that will 
 To compile, run javac Driver.java Time.java -- which will compile both Java files.
 To run, use java Driver.
 
-##YOUR CODING MISSION:
+## YOUR CODING MISSION:
 
 Fetch KtS.
 
