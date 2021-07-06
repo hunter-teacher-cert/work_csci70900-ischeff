@@ -29,6 +29,6 @@ class Fib{
   public static void main(String[] args) {
       System.out.println("This program will recursively implement the Fibonacci sequence!");
       System.out.println(fibSeq(10));
-      fibLoop(100);
+      fibLoop(21);//tried printing 100 terms and computing was comically slow - 20 terms is much quicker! 
     }//end main
 }//end of class
