@@ -7,8 +7,24 @@
 import java.io.*;
 import java.util.*;
 
+//this class is an object that will serve as a blueprint for Time objects
 public class Time {
 
-  // your implementation of class Time here
+  //every time object will have the following instance variables
+  private int hour, minute;
+  private double second;
 
+  //this method, aka the constructor, initializes the default values of each instance variable for a Time object.
+  public Time(){
+    this.hour = 0;
+    this.minute = 0;
+    this.second = 0.0;
+  }
+
+  //this method, aka the value constructor, allows one to instantiate Time objects with instance variables of one's choice, i.e., not the default values
+  public Time(int hour, int minute, double second){
+    this.hour = hour;
+    this.minute = minute;
+    this.second = second;
+  }
 }//end class
