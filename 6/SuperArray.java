@@ -60,8 +60,22 @@ public class SuperArray
   }//end add()
 
   // overloaded method that allows for insertion
+         //  index:   0 1 2 3
+         // example: {8,9,7,0,0,0,0,0,0,0}
+  // add(1,6)
+  //desired outcome: {8,6,9,7,0,0,0,0,0,0}
+  //
   public void add(int index, int value){
+    if (numberElements == data.length){ // array is currently full
+      grow();
+    }
+    for(int i = numberElements; i > index; i--){ // starting at the last meaningful data point, moving left
+      data[i] = data[i - 1]; // current now equals previous, i.e. shift each data point one index to the right
+    }
+    data[index] = value;// replace the value at the chosen index with the new value
 
+    // increment numberElements
+    numberElements++;
   }
 
   public boolean isEmpty()//we are defining empty as a set of all zeroes.
@@ -75,10 +89,10 @@ public class SuperArray
     return true;
   }//end of isEmpty
 
-
+  //will tell us the value of the data at a given index.
   public int get(int index)
   {
-    return 0;
+    return data[index];
   }
 
   // example: {0,1,2,3,4,0,0,0,0,0}

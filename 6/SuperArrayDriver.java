@@ -35,7 +35,6 @@ public class SuperArrayDriver
     System.out.println(sa);
     System.out.println(sa.isEmpty());
 
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
     System.out.println("\nTesting add at index 5, 0 and 17(end)");
@@ -46,9 +45,13 @@ public class SuperArrayDriver
     sa.add(17, 100);
     System.out.println(sa);
 
+
+
     System.out.println("\nTesting remove at 0, 5, and 15 (end)");
     sa.remove(0);
     System.out.println(sa);
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
     sa.remove(5);
     System.out.println(sa);
