@@ -19,6 +19,17 @@
 * Finally, the Time class contains the methods that can [should?] be used to
 * manipulate Time objects--namely, as far as this lab goes, the ability to
 * print them, and to add them.
+*
+* Interestingly, I found that this method compiles, but if you try to run it, you
+* get the following error message:
+*
+* Error: Main method not found in class Time, please define the main method as:
+*    public static void main(String[] args)
+* or a JavaFX application class must extend javafx.application.Application
+*
+* I assume this is by design, since you only want one class to be able to start
+* the program, which is in this case the Driver program. (If you could start a
+* program from multiple classes, I assume that might cause problems of many types!)
 */
 import java.io.*;
 import java.util.*;
@@ -84,12 +95,24 @@ public class Time {
   }
 
   //note: to use this method, you need to create a String i.e., String s
-  //then set the string = t.toString; 
+  //then set the string = t.toString;
   //in other words, the syntax for this method is t.toString
   //(you just need a String variable to refer to to the string that results!
   public String toString() {
     return String.format("%02d:%02d:%04.1f\n",
         this.hour, this.minute, this.second);
+  }
+
+  /**
+  * This method sidesteps around the fact that ==, which we have used to compare
+  * primitives in other programs, doesn't work to evaluate whether two objects
+  * have equivalent contents. We need to actually compare their instance variables
+  * one at a time, by passing a Time object to the method.
+  */
+  public boolean equals(Time that) {
+    return this.hour == that.hour
+        && this.minute == that.minute
+        && this.second == that.second;
   }
 
 
