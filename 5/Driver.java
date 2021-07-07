@@ -1,5 +1,6 @@
 //This program was a collaboration among Eric Wilson, Dwayne Levene, and Ian Scheffler
-//Ian also got inspiration from Emma Wingreen's code, specifically in regards to the relatinoship of the Time methods and the Time class.
+//Ian also got inspiration from Emma Wingreen's code, specifically in regards to the
+//relationship of the Time methods and the Time class. (See comments in Time class)
 import java.io.*;
 import java.util.*;
 
@@ -25,7 +26,7 @@ public class Driver {
     //5) print all of the above (See multiple ways to do this? Try all -- and document in comments!)
 
     //this first round of printing uses the method printTime from the Time class
-    System.out.println("Testing the printTime method:");
+    System.out.println("Printing the Time objects with the printTime method:");
     t1.printTime(t1);//should equal 00:00:00.0
     t2.printTime(t2);//should equal 00:00:00.0
     t3.printTime(t3);//should equal 06:07:30.0
@@ -37,7 +38,7 @@ public class Driver {
     //this second round of printing use the .toString method
     //First, we instantiate string variables to hold the resulting strings.
     //The values should be the same as the printTime method above.
-    System.out.println("Testing the .toString method:");
+    System.out.println("Printing the Time objects using the .toString method:");
     String s1 = t1.toString();//should equal 00:00:00.0
     String s2 = t2.toString();//should equal 00:00:00.0
     String s3 = t3.toString();//should equal 06:07:30.0
@@ -62,6 +63,13 @@ public class Driver {
     System.out.println("actual: " + t5.equals(t1) + " | expected: false"); //false
     System.out.println("actual: " + t5.equals(t2) + " | expected: false"); //false
     System.out.println("actual: " + t5.equals(t3) + " | expected: true"); //true
+    System.out.println();//skip a line
+    //6) add two Time objects and print results
+
+    Time sum = Time.add(t1, t3);
+    System.out.println("The following is the sum of t1 and t3: " + sum);
+    System.out.println("The expected value of the sum is: 06:07:30.0");
+    //7) add two Time objects and save the result in another Time object
 
   }//end main
 
