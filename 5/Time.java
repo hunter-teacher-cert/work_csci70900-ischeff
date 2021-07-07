@@ -118,10 +118,10 @@ public class Time {
   }
 
   /**
-  * The following are methods for summing two time objects. There are two methods.
+  * The following are methods for summing two Time objects. There are two methods.
   * The first is a static method, which takes two parameters--the two Times
   * that you want to add. The second is an instance method, which uses dot
-  * notation to link the two times.
+  * notation to sum the two Times and only takes one Time as a parameter.
   */
 
   //static method for adding two Time objects
