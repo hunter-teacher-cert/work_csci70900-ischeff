@@ -109,6 +109,8 @@ public class Time {
   * have equivalent contents. We need to actually compare their instance variables
   * one at a time, by passing a Time object to the method.
   */
+
+  //note: syntax for this method is time1.equals(time2);
   public boolean equals(Time that) {
     return this.hour == that.hour
         && this.minute == that.minute
