@@ -77,11 +77,16 @@ public class Time {
   * or we can use the .toString method, which I believe exists in java.lang package.
   */
 
+  //note: syntax for using this method is t.printTime(t);
   public static void printTime(Time t) {
     System.out.printf("%02d:%02d:%04.1f\n",
         t.hour, t.minute, t.second);
   }
 
+  //note: to use this method, you need to create a String i.e., String s
+  //then set the string = t.toString; 
+  //in other words, the syntax for this method is t.toString
+  //(you just need a String variable to refer to to the string that results!
   public String toString() {
     return String.format("%02d:%02d:%04.1f\n",
         this.hour, this.minute, this.second);
