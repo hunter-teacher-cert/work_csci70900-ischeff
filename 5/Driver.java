@@ -23,6 +23,20 @@ public class Driver {
 
     //assign var the address of a newly-apportioned Time object
     t = new Time();
+    //test below should print hexadecimal address of Time object in memory
+    System.out.println(t);
+    //1)instantiate a newly-created Time object (aka "instance of class Time") with default value(s)
+    Time t1 = new Time();
+    //2) instantiate a newly-created Time object with specified value(s)
+    Time t2 = new Time(6, 7, 30.0);
+    //3) assign a Time var the value null
+    Time t3 = new Time();
+    t3 = null;
+    //4) assign a Time var the value of an existing Time var
+    //question: is this just aliasing?
+    t3 = t2; //this should now cause t3 to refer to the same object as t2
+
+
   }//end main()
 
 }//end class
