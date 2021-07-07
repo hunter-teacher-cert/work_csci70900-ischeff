@@ -117,5 +117,48 @@ public class Time {
         && this.second == that.second;
   }
 
+  /**
+  * The following are methods for summing two time objects. There are two methods.
+  * The first is a static method, which takes two parameters--the two Times
+  * that you want to add. The second is an instance method, which uses dot
+  * notation to link the two times.
+  */
+
+  //static method for adding two Time objects
+  public static Time add(Time t1, Time t2) {
+    Time sum = new Time();
+    sum.hour = t1.hour + t2.hour;
+    sum.minute = t1.minute + t2.minute;
+    sum.second = t1.second + t2.second;
+
+    if (sum.second >= 60.0) {
+        sum.second -= 60.0;
+        sum.minute += 1;
+    }
+    if (sum.minute >= 60) {
+        sum.minute -= 60;
+        sum.hour += 1;
+    }
+    return sum;
+  }
+
+  //instance method for adding two Time objects
+  public Time add(Time t2) {
+    Time sum = new Time();
+    sum.hour = this.hour + t2.hour;
+    sum.minute = this.minute + t2.minute;
+    sum.second = this.second + t2.second;
+
+    if (sum.second >= 60.0) {
+        sum.second -= 60.0;
+        sum.minute += 1;
+    }
+    if (sum.minute >= 60) {
+        sum.minute -= 60;
+        sum.hour += 1;
+    }
+    return sum;
+  }
+
 
 }//end class
