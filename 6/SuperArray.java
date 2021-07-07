@@ -101,9 +101,10 @@ public class SuperArray
   public String toString()
   {
     String s = "{";
-    for(int i = 0; i < data.length; i++){
+    for(int i = 0; i < data.length-1; i++){
       s += data[i] + ","; // TODO: remove trailing comma at end
     }
+    s += data[data.length-1];
     return s+"}";
   }//end toString()
 
@@ -126,7 +127,7 @@ public class SuperArray
   {
     // create a new array with extra space
     // Q: How did you decide how much to increase capacity by? we chose +10
-    int[] biggerData = new int[numberElements+10];
+    int[] biggerData = new int[numberElements + 10];
 
     // copy over all the elements from the old array to the new one
     for(int i = 0; i < data.length; i++) {
@@ -138,5 +139,41 @@ public class SuperArray
     // Q: How does this look when illustrated using encapsulation diagram?
 
   }//end grow()
+  // index:    0 1 2 3 4 5 6 7 8 9
+  // example: {0,1,2,3,4,0,0,0,0,0}
+  // 2 --> 3 (loop)
+  // 3 --> 4 (loop)
+  // 4 --> 0 (loop)
+  // numberElements ==> 5
+  // index ==> 2
+  // remove(2)
+  // index:    0 1 2 3 4 5 6 7 8 9
+  // becomes: {0,1,3,4,0,0,0,0,0,0}
+
+  // second example
+  // index:    0 1 2 3 4 5 6 7 8 9
+  // example: {7,8,9,7,8,9,7,8,9,0}
+  // remove(5)
+  // numberElements ==> 9
+  // index ==> 5
+  // 9 --> 7 (loop)
+  // 7 --> 8 (loop)
+  // 8 --> 9 (loop)
+  // 9 --> 0 (outside the loop)
+  // becomes: {7,8,9,7,8,7,8,9,0,0}
+  public void remove(int index){
+    for (int i = index; i < numberElements - 1; i++) { // how many elements to replace, minus 1 (the last one will get changed to a 0)
+      // replace a number with the number to its right
+      data[i] = data[i + 1];
+      // System.out.println(this.toString() + " i: " + i);
+    }
+    // change last number to 0
+    data[numberElements - 1] = 0;
+
+    //note: we need to remember to decrement numberElements!
+    numberElements--;
+  }
 
 }//end class
+
+// TODO:
