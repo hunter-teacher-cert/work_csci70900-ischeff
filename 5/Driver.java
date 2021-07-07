@@ -63,13 +63,19 @@ public class Driver {
     System.out.println("actual: " + t5.equals(t1) + " | expected: false"); //false
     System.out.println("actual: " + t5.equals(t2) + " | expected: false"); //false
     System.out.println("actual: " + t5.equals(t3) + " | expected: true"); //true
-    System.out.println();//skip a line
-    //6) add two Time objects and print results
 
-    Time sum = Time.add(t1, t3);
-    System.out.println("The following is the sum of t1 and t3: " + sum);
-    System.out.println("The expected value of the sum is: 06:07:30.0");
+    System.out.println();//skip a line
+
+    //6) add two Time objects and print results
+    System.out.println(Time.add(t1, t3));//sum using static method
+    System.out.println(t1.add(t3));//sum using instance method
+
     //7) add two Time objects and save the result in another Time object
+    Time sum = Time.add(t1, t3);//sum using static method
+    System.out.println(sum);
+    Time sum2 = t1.add(t3);//sum using instance method
+    System.out.println(sum2);
+    //System.out.println("The expected value of the sum is: 06:07:30.0");
 
   }//end main
 
