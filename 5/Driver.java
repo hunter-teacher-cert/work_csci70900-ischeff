@@ -31,7 +31,9 @@ public class Driver {
     t3.printTime(t3);//should equal 06:07:30.0
     //t4.printTime(t4);//should get NullPointerException
     t5.printTime(t5);//should equal 06:07:30.0
-
+    System.out.println();
+    System.out.println("The results of the printTime method should equal those of the .toString method");
+    System.out.println();
     //this second round of printing use the .toString method
     //First, we instantiate string variables to hold the resulting strings.
     //The values should be the same as the printTime method above.
@@ -43,11 +45,11 @@ public class Driver {
     String s5 = t5.toString();//should equal 06:07:30.0
 
     //The statements below will then print the strings.
-    System.out.println("actual: " + s1 + " | expected: 00:00:00.0");
-    System.out.println("actual: " + s2 + " | expected: 00:00:00.0");
-    System.out.println("actual: " + s3 + " | expected: 06:07:30.0");
+    System.out.println("actual: " + s1 + "expected: 00:00:00.0");
+    System.out.println("actual: " + s2 + "expected: 00:00:00.0");
+    System.out.println("actual: " + s3 + "expected: 06:07:30.0");
     //System.out.println(s4);
-    System.out.println("actual: " + s5 + " | expected: 06:07:30.0");
+    System.out.println("actual: " + s5 + "expected: 06:07:30.0");
     System.out.println();//linebreak
     //checking equivalence using the equals method
     System.out.println("Testing the equals method:");
