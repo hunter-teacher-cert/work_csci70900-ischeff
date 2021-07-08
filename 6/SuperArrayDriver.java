@@ -44,6 +44,8 @@ public class SuperArrayDriver
     System.out.println(sa);
     sa.add(17, 100);
     System.out.println(sa);
+    //sa.add(20, 100);//should throw an IndexOutOfBounds exception
+    //System.out.println(sa);
 
 
 
@@ -56,6 +58,8 @@ public class SuperArrayDriver
 
     sa.remove(15);
     System.out.println(sa);
+
+    System.out.println("\nTesting set, adding the value 91 at index 19.");
 
     sa.set(19,91);
     System.out.println(sa);

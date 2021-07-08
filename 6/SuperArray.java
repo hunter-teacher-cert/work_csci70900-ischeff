@@ -66,6 +66,9 @@ public class SuperArray
   //desired outcome: {8,6,9,7,0,0,0,0,0,0}
   //
   public void add(int index, int value){
+    if(index > numberElements || index < 0){
+      throw new ArrayIndexOutOfBoundsException();
+    }
     if (numberElements == data.length){ // array is currently full
       grow();
     }
