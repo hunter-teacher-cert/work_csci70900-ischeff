@@ -90,9 +90,12 @@ public class SuperArray
   }//end of isEmpty
 
   //will tell us the value of the data at a given index.
-  public int get(int index)
-  {
+  public int get(int index){
     return data[index];
+  }
+
+  public void set(int index, int value){
+    data[index] = value;
   }
 
   // example: {0,1,2,3,4,0,0,0,0,0}
