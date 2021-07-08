@@ -1,3 +1,6 @@
+// Group 0
+// Jovani Cardenas, Brian Mueller, Ian Scheffler
+
 /**
    lab -- Day 7 | 0b111 | 0x7
 
@@ -32,7 +35,7 @@ public class Foogle
   * passed as a parameter, using the equals method; if so, pos is returned and the loop ends.
   * If the method loop does not find a pos that equals target, then the method returns -1, which
   * functions sort of like an error message in this case.
-  * In a sense, foo might as well be called "find" since it functions more or less to 
+  * In a sense, foo might as well be called "find" since it functions more or less to
   * find the position of a target integer.
   */
   public static int foo( ArrayList al, int target )
