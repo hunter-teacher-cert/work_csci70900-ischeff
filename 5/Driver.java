@@ -75,6 +75,11 @@ public class Driver {
     System.out.println(sum);
     Time sum2 = t1.add(t3);//sum using instance method
     System.out.println(sum2);
+    Time sum3 = new Time();
+    sum3 = Time.add(t1, t3);
+    System.out.println(sum);
+    System.out.println(sum2);
+    System.out.println(sum3);
     //System.out.println("The expected value of the sum is: 06:07:30.0");
 
   }//end main
