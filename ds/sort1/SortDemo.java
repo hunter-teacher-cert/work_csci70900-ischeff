@@ -46,10 +46,15 @@ public class SortDemo{
 
     }
 
+    public int get(int index){
+      return this.data.get(index);
+    }
+
     /*
       return the index of the ArrayList data from index start to the end
       Example, if the arraylist has:
-      5,3,10,6,8
+      index: 0 1  2  3 4
+             5 3 10  6 8
       if start was 2 (start at index 2, value 10) then it woudl return 3 which is the index of the value
       6 which is the index with the smallest value from start to end
     */
@@ -57,11 +62,14 @@ public class SortDemo{
 	int smallIndex = start;
 
 	// start a variable at the one after start
-	// your code here
+	int next = start + 1;
 
 	// loop from that variable to end and update smallIndex as needed
-	// your code here
-
+	for(int i = next; i < data.size(); i++){
+    if (data.get(i) < data.get(smallIndex)){
+      smallIndex = i;
+    }
+  }
 	return smallIndex;
 
     }
