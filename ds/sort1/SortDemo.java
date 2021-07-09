@@ -23,19 +23,20 @@ Part 3:
 public class SortDemo{
 
     /* Instance Variables */
-    private ArrayList<Integer> data;  // to store the data
-    private Random r;
+    private ArrayList<Integer> data;  // to store the data (an Array List of integers)
+    private Random r; // a random integer is the other instance variable
 
-
+    //this is the default constructor and will initialize an ArrayList of random integers between 0 and 19 of length 15
     public SortDemo(){
-	data = new ArrayList<Integer>();
+	data = new ArrayList<Integer>(); //{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0} (an array list of zeroes)
 	r = new Random();
 	for (int i=0;i<15;i++){
-	    data.add(r.nextInt(20));
+	    data.add(r.nextInt(20));  //{array list is now full of random numbers between 0 and 19}
 	}
 
     }
 
+    //this is the value constructor and will initialize an ArrayList of random integers between 0 and 19 of length size
     public SortDemo(int size){
 	data = new ArrayList<Integer>();
 	r = new Random();
