@@ -93,11 +93,14 @@ public class SortDemo{
     /* If you finish the lab early you can get started on this */
     public int linearSearch(int value){
 	// loop through the ArrayList data
-	// and if the value you're searchign for is in the ArrayList, return it.
+  for(int i = 0; i < data.size(); i++){
+    // and if the value you're searchign for is in the ArrayList, return it.
+    if (data.get(i) == value){
+      return data.get(i);
+    }
+  }
 	// return -1 if it isn't there.
-
-
-	return 0; // replace this return
+	return -1;
     }
 
     /* If you finish the lab early you can get started on this */

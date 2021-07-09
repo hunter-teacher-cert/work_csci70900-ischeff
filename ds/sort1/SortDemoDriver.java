@@ -20,7 +20,12 @@ public class SortDemoDriver {
 	  System.out.println(sd);
 	  sd.sort();
 	  System.out.println(sd);
-    /* part 3 test lines */
-  	/**/
+
+  System.out.println("Does sd contain the numbers 5, 6, or 7?");
+  System.out.println("If so, the values will appear below. If not, the method will return -1.");
+  System.out.println(sd.linearSearch(5));
+  System.out.println(sd.linearSearch(6));
+  System.out.println(sd.linearSearch(7));
+
     }
 }
