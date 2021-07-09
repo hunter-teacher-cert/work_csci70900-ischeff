@@ -77,16 +77,15 @@ public class SortDemo{
 
 
     public void sort(){
-	int i;
-	for (i=0;i < data.size()-1; i++){
-	    // find the smallet index from i to end
-	    // your code here
-
-	    // swap the item at that index and i
-	    // your code here
-
-
-	}
+      int start, smallestIndex, temp;
+    	for (start = 0;start < data.size() - 1; start++){
+    	    // find the smallest index from i to end
+          smallestIndex = findSmallestIndex(start);
+    	    // swap the item at that index and i
+          temp = this.data.get(start); //equivalent of temp = data[start]
+          this.data.set(start, this.data.get(smallestIndex)); //equivalent of data[start] = data[smallestIndex]
+          this.data.set(smallestIndex, temp);//equivalent of data[smallestIndex] = temp
+  	     }
     }
 
 
