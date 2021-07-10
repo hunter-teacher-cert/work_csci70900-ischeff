@@ -104,34 +104,27 @@ public class SortDemo{
     }
 
     /* If you finish the lab early you can get started on this */
-    public int binarySearch(int value){
-	boolean replacethiswithrealexpression=false;
+  public int binarySearch(int value){
+	//boolean replacethiswithrealexpression=false; //not sure why we can't just have a statement that evaluates to true in the while statement!
 	int lowerIndex = 0;
 	int upperIndex = data.size();
-	int middleIndex = data.size()/2;
+	//int middleIndex = data.size()/2;//not sure why we can't just create the middle in the loop, based on upper and lower!
 
-	/* if upper crosses lower it's not there and the lop should exit the loop
-	   and if the item is at middle you should exit the loop
-
-           you have to replace the "replacethiswithrealexpression" boolean
-           with a correct expression based on lowerIndex and upperIndex
-	*/
-	while (replacethiswithrealexpression)
-	    {
-		// update lower and upper.
-		// remember if value is less than data.get(middleIndex) you want to search next time
-		// from lower to the middle and otherwise from the middle to the upper.
-		//
-		// then update middleIndex based on new lowerIndex and upperIndex.
-
-	    }
-
-	/* replace this return to either return the value if it was found and -1
-	   if upperIndex and lowerIndex crossed
-	*/
-
-	return 0; // replace this return
+  while (upperIndex >= lowerIndex){
+    //I moved the middleIndex here b/c we need to update it each time; not sure why it would need to be in two places (top and here otherwise)
+    int middleIndex = (lowerIndex + upperIndex) / 2;
+    if (value < data.get(middleIndex)){
+      upperIndex = middleIndex - 1;
     }
+    else if (value > data.get(middleIndex)){
+      lowerIndex = middleIndex + 1;
+    } else {
+      return data.get(middleIndex);
+    }
+  }
+
+	return -1;
+}
 
 
     public String toString(){

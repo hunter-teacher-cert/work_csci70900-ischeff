@@ -17,15 +17,25 @@ public class SortDemoDriver {
 	System.out.println("sd2["+ i + "] = "+sd2.get(i)+" : " + sd2);
 
 
-	  System.out.println(sd);
-	  sd.sort();
-	  System.out.println(sd);
+  System.out.println(sd);
+  sd.sort();
+  System.out.println(sd);
 
+  System.out.println();
+  System.out.println("Linear Search test:");
   System.out.println("Does sd contain the numbers 5, 6, or 7?");
   System.out.println("If so, the values will appear below. If not, the method will return -1.");
   System.out.println(sd.linearSearch(5));
   System.out.println(sd.linearSearch(6));
   System.out.println(sd.linearSearch(7));
+  System.out.println();
+  System.out.println("Binary Search test:");
+  System.out.println("Does sd contain the numbers 5, 6, or 7?");
+  System.out.println("If so, the values will appear below. If not, the method will return -1.");
+  System.out.println(sd.binarySearch(5));
+  System.out.println(sd.binarySearch(6));
+  System.out.println(sd.binarySearch(7));
+
 
     }
 }
