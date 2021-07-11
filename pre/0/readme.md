@@ -1,8 +1,9 @@
-* Assignment 1
+# Assignment 1:
+Hello, world!
 
 Link to assignment walkthrough video: [[https://youtu.be/Owqp3MIZG9E][link]]
 
-* First time only setup
+## First time only setup
 
 - Accept this GitHub assignment by following
   this [[https://classroom.github.com/a/BKJdJVBT][link]].
@@ -20,7 +21,7 @@ and then to this new repo). clone by doing the following:
 6. ~git commit README.org -m "added names"
 7. ~git push~
 
-* Every time Setup
+## Every time Setup:
 
 Make sure this repo is up to date by:
 1. opening a terminal
@@ -33,7 +34,7 @@ Set up the directory for the assignment.
    2. type ~mkdir pre01~ *note: all lower case letters*
    3. Move into that folder
 
-* Assignment
+## Assignment:
 
 You are going to write your first Java program. Open your editor
 (notepad++, gedit, other) and create a file named *Hello.java*. Note
