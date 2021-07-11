@@ -1,5 +1,4 @@
-# Assignment 2:
-## Data Types
+# Assignment 2 - Data Types
 
 References for this assignment:
 | Reference        | Chapter(s)    |
