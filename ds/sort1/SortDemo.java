@@ -62,7 +62,7 @@ public class SortDemo{
 	int smallIndex = start;
 
 	// start a variable at the one after start
-	int next = start + 1;
+	int next = start + 1;//note: you could have NOT used this variable and instead modified the loop starting point to be for(i = start + 1; )
 
 	// loop from that variable to end and update smallIndex as needed
 	for(int i = next; i < data.size(); i++){
