@@ -63,7 +63,36 @@ public class Maze{
     }
 
     public boolean solve(int col,int row){
-	return false;
+      boolean solved;
+      System.out.println(clearScreen+this);
+
+      //BASE CASE 1 - made it out!
+      //if we found the exit we are done - return true
+      if (board[col][row]=='$'){
+        return true;
+      }
+
+      //BASE CASE 2 - dead end
+      //if we hit a wall or our path we can't proceed further - return false
+      if(board[col][row] == ' ' || board[col][row] == 'z'){
+        return false;
+      }
+
+      //put ourselves in the Maze
+      board[col][row] = 'z';
+      //RECURSIVE CALLS
+      //try all the space we can
+      solved = solve(col+1,row);
+      if(!solved){
+        solved = solve(col-1,row);
+      }
+      if(!solved){
+        solved = solve(col,row+1);
+      }
+      if(!solved)
+        solved = solve(col,row-1);
+      
+  return solved;
     }
 
 
