@@ -24,6 +24,7 @@ How did you go about deciding what the steps should be?
 time: 10 minutes
 
 *Mini-lesson*:
+
 *Decomposition* = the process of breaking complex problems into smaller problems.
 
   *Question*: why do we do this in real life?
