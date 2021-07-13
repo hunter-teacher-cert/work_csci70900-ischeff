@@ -33,9 +33,14 @@ Decomposition = the process of breaking complex problems into smaller problems.
   *Question:* Why do we do this in computer science?
   Expected answers: to make life easier, to make coding easier, to make problems simpler.
 
-One way to *decompose* a problem is visually--*tree diagrams, bubble maps, concept map*
+One way to *decompose* a problem is visually. This is sometimes called *whiteboarding*
 
-This is sometimes called *whiteboarding* Demo whiteboarding with example from do-now (ask for a student volunteer)
+Some whiteboarding techniques are:
+- tree maps
+- concept maps
+- bubble maps
+- literal drawings
+
 ---
 
 ### Lesson Activity
