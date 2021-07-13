@@ -66,7 +66,7 @@ Students will break into pairs. Then, pairs will review a list of common problem
 Depending on student ability, each pair might try this more than once:
 - decompose the problem
 - attempt to follow the instructions
-- reflect (in writing) on how it went
+- reflect on how it went
 
 Students should have a graphic organizer / template for the different diagrams (tree, bubble, etc.) BUT they can also use blank paper.
 
