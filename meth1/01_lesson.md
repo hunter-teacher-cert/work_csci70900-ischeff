@@ -27,11 +27,11 @@ time: 10 minutes
 
 Decomposition = the process of breaking complex problems into smaller problems.
 
-  *Question:* why do we do this in real life?
-  Expected answer: to make life easier
+*Question:* why do we do this in real life?
+- Expected answer: to make life easier
 
-  *Question:* Why do we do this in computer science?
-  Expected answers: to make life easier, to make coding easier, to make problems simpler.
+*Question:* Why do we do this in computer science?
+- Expected answers: to make life easier, to make coding easier, to make problems simpler.
 
 One way to *decompose* a problem is visually. This is sometimes called *whiteboarding*
 
@@ -40,6 +40,10 @@ Some whiteboarding techniques are:
 - concept maps
 - bubble maps
 - literal drawings
+
+Warm call a student picked during the do now to demo their drawing on the board.
+
+Demo another drawing as necessary. 
 
 ---
 
