@@ -73,7 +73,7 @@ Students should have a graphic organizer / template for the different diagrams (
 Teacher will assess student understanding by walking among the pairs and observing, offering feedback as necessary.
 
 After 7-8 minutes, pairs will pair up in groups of 4. Each group will:
-- have one pair share their decomposition with the other
+- have one pair share one of their decompositions with the other
 - attempt to carry out the instructions the other group came up with.
 
 *Think-Pair-Share:*
@@ -85,6 +85,8 @@ What is easy about decomposition? What is hard? Why?
 time: 10 minutes
 
 *Think-Write-Pair-Share:*
-If you had to explain the process of decomposition to a younger sibling, how would you do it? What skills would they need to learn to be able to successfully decompose a more complex problem into a simpler one? 
+If you had to explain the process of decomposition to a younger sibling, how would you do it? What skills would they need to learn to be able to successfully decompose a more complex problem into a simpler one?
+
+Students will respond individually on notecards to be collected.  
 
 ---
