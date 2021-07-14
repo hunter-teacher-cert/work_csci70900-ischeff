@@ -75,7 +75,14 @@ public class Driver{
   l.addFront("Apple");
   System.out.println(l.toString());
   //I think issue right now is with one item, it just points to null at first
-
+  l.addFront("Pear");
+  System.out.println(l.toString());
+  l.addFront("Banana");
+  System.out.println(l.toString());
+  l.addFront("Raspberry");
+  System.out.println(l.toString());
+  l.addFront("Blueberry");
+  System.out.println(l.toString());
 
 
   //L.setNext(new Node("b"));
