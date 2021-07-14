@@ -47,7 +47,7 @@ public class BarGraph{
     for(int i = 0; i < pos.length; i++){
       pos[i] = rando.nextInt(10);
     }
-    //System.out.println(Arrays.toString(pos));
+    System.out.println(Arrays.toString(pos));//test print
     return pos;
   }
 
