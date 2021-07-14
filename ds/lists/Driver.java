@@ -70,6 +70,12 @@ public class Driver{
   }
   System.out.println("null");
 
+  //test for addFront
+  Llist l = new Llist();
+  l.addFront("Apple");
+  System.out.println(l.toString());
+  //I think issue right now is with one item, it just points to null at first
+
 
 
   //L.setNext(new Node("b"));
