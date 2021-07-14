@@ -26,6 +26,10 @@ public class BarGraph{
     Scanner in = new Scanner(System.in);
     System.out.println("How many values do you want in your bar graph?");
     input =in.nextInt();
+    while (input < 0){
+      System.out.println("Sorry! Non-negative integers only. Please try again!");
+      input =in.nextInt();
+    }
     //System.out.println(input);
     return input;
   }//end userInput
