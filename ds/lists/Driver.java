@@ -1,3 +1,5 @@
+//Group: Marina + Ian; note: we count as inspiration Tofr, as well as the code from Mike, and Liam and Alex's groups
+
 import java.io.*;
 import java.util.*;
 
@@ -36,7 +38,7 @@ public class Driver{
   a.setNext(b);
   b.setNext(c);
   c.setNext(d);
-  //test print
+  //test print (after mike's example)
   while (L != null){
     System.out.print(L + " --> ");
     L = L.getNext();
