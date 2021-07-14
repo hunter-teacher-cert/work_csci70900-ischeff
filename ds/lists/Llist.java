@@ -13,10 +13,13 @@ public class Llist{
     // at the front of the list
     public void addFront(String data){
 	// make the new node
+    Node n = new Node(data);//how can I make this variable more descripte?
 
 	// point it to what front points to
+    n.setNext(front.getNext());//set n's next to the node after front.
 
 	// point front to the new node
+    front.setNext(n);
 
     }
 
