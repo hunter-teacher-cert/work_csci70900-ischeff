@@ -21,16 +21,16 @@ public class BarGraph{
 
   /*
   * This method has no parameters, and is designed to solicit user input.
-  * It will validate user input, and only accept non-negative ints.
-  * It will then return one non-negative int.
+  * It will validate user input, and only accept non-negative and nonzero ints.
+  * It will then return one non-negative and nonzero int.
   */
   public static int userInput(){
     int input = 0;
     Scanner in = new Scanner(System.in);
     System.out.println("How many values do you want in your bar graph?");
     input =in.nextInt();
-    while (input < 0){
-      System.out.println("Sorry! Non-negative integers only. Please try again!");
+    while (input <= 0){
+      System.out.println("Sorry! Non-negative and nonzero integers only. Please try again!");
       input =in.nextInt();
     }
     return input;
@@ -47,7 +47,7 @@ public class BarGraph{
     for(int i = 0; i < pos.length; i++){
       pos[i] = rando.nextInt(10);
     }
-    System.out.println(Arrays.toString(pos));
+    //System.out.println(Arrays.toString(pos));
     return pos;
   }
 
