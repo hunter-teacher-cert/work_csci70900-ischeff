@@ -19,7 +19,7 @@ public class BarGraph{
     int[] pos = new int[a];
     Random rando = new Random();
     for(int i = 0; i < pos.length; i++){
-      pos[i] = rando.nextInt(5);
+      pos[i] = rando.nextInt(10);
     }//end of for loop
     System.out.println(Arrays.toString(pos));
     return pos;
@@ -40,7 +40,7 @@ public class BarGraph{
   }//horbar end
 
   public static void vertBar(int[] a){
-
+    //not sure how we would approach this yet--might be easier to actually approach the problem totally differently, since we can't really print things vertically (I'm imagining printing this as a 2D array makes more conceptual sense?)
   }//end of vertBar
 
   public static void main(String[] args){
@@ -49,5 +49,5 @@ public class BarGraph{
     horBar(arrayMaker(userInput()));
     //create a scanner
     //random input(4 ints)
-  }
-}
+  }//end of main
+}//end of class
