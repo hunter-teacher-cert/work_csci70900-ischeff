@@ -1,3 +1,19 @@
+//Collab between Steph and Ian; this program is for a pair programming exercise.
+/*
+barGraphify(nums) takes a list of non-negative integers and prints a horizontal bar for each index, commensurate with the value at said index. Exempli gratia, for x = {0,1,2,3}:
+barGraphify(x)
+0:
+1: =
+2: ==
+3: ===
+and for x = {1,0,3,2}
+barGraphify(x)
+0: =
+1:
+2: ===
+3: ==
+*/
+
 import java.io.*;
 import java.util.*;
 
