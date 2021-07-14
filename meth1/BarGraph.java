@@ -39,7 +39,7 @@ public class BarGraph{
   /*
   * This method accepts one int "a" as a parameter. It then creates an array
   * of size a, and populates the array with random numbers. The range of the
-  * random numbers is arbitrary and harcoded on line 49. The method returns an int array.
+  * random numbers is arbitrary and hardcoded on line 48. The method returns an int array.
   */
   public static int[] arrayMaker(int a){
     int[] pos = new int[a];
