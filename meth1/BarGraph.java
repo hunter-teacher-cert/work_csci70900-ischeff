@@ -33,9 +33,8 @@ public class BarGraph{
       System.out.println("Sorry! Non-negative integers only. Please try again!");
       input =in.nextInt();
     }
-    //System.out.println(input);
     return input;
-  }//end userInput
+  }
 
   /*
   * This method accepts one int "a" as a parameter. It then creates an array
@@ -47,10 +46,10 @@ public class BarGraph{
     Random rando = new Random();
     for(int i = 0; i < pos.length; i++){
       pos[i] = rando.nextInt(10);
-    }//end of for loop
+    }
     System.out.println(Arrays.toString(pos));
     return pos;
-  }//end arrayMaker
+  }
 
   /*
   * This method accepts an int array as a parameter. It then loops through
@@ -64,14 +63,11 @@ public class BarGraph{
       System.out.print(i + " :  ");
       int value = a[i];
         for(int j = 0;j < value; j++){
-            //String barLen = " ";
-            //barLen = barLen + "=";
             System.out.print("=");
-        }//end of nested for loop
+        }
       System.out.println();
-    }//end of for loop
-//  print out each index + : + number of = equal to the value at that index
-  }//horbar end
+    }
+  }
 
   /*
   * If I have time, this method will take the same array as horBar, but print it as a vertically
@@ -84,13 +80,9 @@ public class BarGraph{
 
   /*
   * The main method calls horBar, to generate the graph, taking arrayMaker as input.
-  * In turn, arrayMaker takes userInput as input. 
+  * In turn, arrayMaker takes userInput as input.
   */
   public static void main(String[] args){
-    //System.out.println("Hello, world!");
-    //userInput();
     horBar(arrayMaker(userInput()));
-    //create a scanner
-    //random input(4 ints)
   }//end of main
 }//end of class
