@@ -12,7 +12,6 @@ public class BarGraph{
     input =in.nextInt();
     //System.out.println(input);
     return input;
-
   }//end userInput
 
   public static int[] arrayMaker(int a){
@@ -34,7 +33,7 @@ public class BarGraph{
             //barLen = barLen + "=";
             System.out.print("=");
         }//end of nested for loop
-        System.out.println();
+      System.out.println();
     }//end of for loop
 //  print out each index + : + number of = equal to the value at that index
   }//horbar end
