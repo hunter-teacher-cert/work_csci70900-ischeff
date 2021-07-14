@@ -13,15 +13,9 @@ public class Llist{
   // at the front of the list
   public void addFront(String data){
 	// make the new node
-    Node n = new Node(data);//how can I make this variable more descripte?
-    n.setNext(front);
-    front = n;
-    // if(front == null){
-    //   front = n;
-    // } else{
-    //   n.setNext(front);
-    //   front = n;
-    // }
+    Node n = new Node(data);
+    n.setNext(front);//point n to front
+    front = n; //now n is the front
   }//end of addFront
 
   public String toString(){
