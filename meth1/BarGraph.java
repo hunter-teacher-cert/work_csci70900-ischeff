@@ -18,9 +18,12 @@ import java.io.*;
 import java.util.*;
 
 public class BarGraph{
-  // public static int bar(){
-  //
-  // }//end bar
+
+  /*
+  * This method has no parameters, and is designed to solicit user input.
+  * It will validate user input, and only accept non-negative ints.
+  * It will then return one non-negative int.
+  */
   public static int userInput(){
     int input = 0;
     Scanner in = new Scanner(System.in);
@@ -34,6 +37,11 @@ public class BarGraph{
     return input;
   }//end userInput
 
+  /*
+  * This method accepts one int "a" as a parameter. It then creates an array
+  * of size a, and populates the array with random numbers. The range of the
+  * random numbers is arbitrary and harcoded on line 49. The method returns an int array.
+  */
   public static int[] arrayMaker(int a){
     int[] pos = new int[a];
     Random rando = new Random();
@@ -44,6 +52,13 @@ public class BarGraph{
     return pos;
   }//end arrayMaker
 
+  /*
+  * This method accepts an int array as a parameter. It then loops through
+  * the array, and prints out each index on a separate line, along with
+  * a string of equals signs commensurate with the value at each index.
+  * In this way, the method generates the bar graph asked for in the instructions.
+  * The method does not return anything and must be called in main to print.
+  */
   public static void horBar(int[] a){
     for(int i =0;i < a.length;i++){
       System.out.print(i + " :  ");
@@ -58,10 +73,19 @@ public class BarGraph{
 //  print out each index + : + number of = equal to the value at that index
   }//horbar end
 
+  /*
+  * If I have time, this method will take the same array as horBar, but print it as a vertically
+  * oriented bar graph. Obviously, this will be more challenging, since you have to print one line at a time.
+  * Note to self: might make sense to use a 2-D array.
+  */
   public static void vertBar(int[] a){
     //not sure how we would approach this yet--might be easier to actually approach the problem totally differently, since we can't really print things vertically (I'm imagining printing this as a 2D array makes more conceptual sense?)
   }//end of vertBar
 
+  /*
+  * The main method calls horBar, to generate the graph, taking arrayMaker as input.
+  * In turn, arrayMaker takes userInput as input. 
+  */
   public static void main(String[] args){
     //System.out.println("Hello, world!");
     //userInput();
