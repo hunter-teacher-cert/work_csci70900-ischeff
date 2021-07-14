@@ -31,7 +31,7 @@ public class Driver{
   Node b = new Node("b");
   Node c = new Node("c");
   Node d = new Node("d");
-
+//Note: we really like how Lyuba's group went in reverse!
 
   //the code below links together the nodes
   L = a;
@@ -52,11 +52,23 @@ public class Driver{
   Node x = new Node("x");
   x.setNext(c);
   b.setNext(x);
+  L = a;//repointing L to the start of the list
+  while (L != null){//test print
+    System.out.print(L + " --> ");
+    L = L.getNext();
+  }
+  System.out.println("null");
 
   //L --> a --> b --> x --> c --> d --> Null
 
   // 3. Write the code to delete the c
   b.setNext(d);
+  L = a;//repointing L to the start of the list
+  while (L != null){//test print
+    System.out.print(L + " --> ");
+    L = L.getNext();
+  }
+  System.out.println("null");
 
 
 
