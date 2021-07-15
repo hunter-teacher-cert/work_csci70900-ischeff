@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Llist{
   private Node front; // the front of the list
-  private int size = 0; //the magnitude of the list
+  //private int size = 0; //the magnitude of the list
 
   public  Llist(){
 	   front = null;
@@ -16,7 +16,7 @@ public class Llist{
 	// make the new node, point to front (shout out to Liam for showing how to simplify this!)
     Node n = new Node(data, front);
     front = n; //now n is the front
-    size++;
+    //size++;
   }//end of addFront
 
   public String toString(){
@@ -59,19 +59,28 @@ public class Llist{
   // items. Starts with index 0
   public String get(int index){
     Node currentNode = front;
-    if (index >= size){
-      System.out.println(size);
-      return null;
-    }
-    for(int i = 0; i < index; i++){
+    int counter = 0;
+    while (currentNode!= null){
+      counter++;
+      if(counter == index + 1){
+        return currentNode.getData();
+      }
       currentNode = currentNode.getNext();
     }
-    return currentNode.getData();
+    return null;
+    // if (index >= size){
+    //   System.out.println(size);
+    //   return null;
+    // }
+    // for(int i = 0; i < index; i++){
+    //   currentNode = currentNode.getNext();
+    // }
+    // return currentNode.getData();
     //if the index is greater than the lenght of the linked list return null
     //return null;
   //Ian's questions: how do we create the index? Can we use the .length method?
 
-  }
+  }//end of get
 
   // sets the item at location index (starting
   // with 0) to value.
