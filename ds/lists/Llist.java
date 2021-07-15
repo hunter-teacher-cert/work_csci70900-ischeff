@@ -12,9 +12,8 @@ public class Llist{
   // Add a new node containing data
   // at the front of the list
   public void addFront(String data){
-	// make the new node
+	// make the new node, point to front (shout out to Liam for showing how to simplify this!)
     Node n = new Node(data, front);
-    //n.setNext(front);//point n to front
     front = n; //now n is the front
   }//end of addFront
 
