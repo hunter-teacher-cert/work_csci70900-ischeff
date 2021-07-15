@@ -104,19 +104,20 @@ public class Llist{
   // You will need a variable that refers to
   // the node BEFORE you want to do the insertion.
   public void insert(int index, String value){
-
+    //note to self: look at how you added an X into the list yesterday!
   }
 
   // returns the index of the first item with
   // data value key. Returns -1 if not found
   public int search(String key){
+    //traverse the list and if data equals key return index
 	return -1;
   }
 
   // removes the node at index.
   // does nothing if index out of bounds
   public void remove(int index){
-
+    //look at how you deleted the "c" yesterday! 
   }
 
 
