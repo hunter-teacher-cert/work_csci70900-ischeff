@@ -74,7 +74,6 @@ public class Driver{
   Llist l = new Llist();
   l.addFront("Apple");
   System.out.println(l.toString());
-  //I think issue right now is with one item, it just points to null at first
   l.addFront("Pear");
   System.out.println(l.toString());
   l.addFront("Banana");
