@@ -13,8 +13,8 @@ public class Llist{
   // at the front of the list
   public void addFront(String data){
 	// make the new node
-    Node n = new Node(data);
-    n.setNext(front);//point n to front
+    Node n = new Node(data, front);
+    //n.setNext(front);//point n to front
     front = n; //now n is the front
   }//end of addFront
 
