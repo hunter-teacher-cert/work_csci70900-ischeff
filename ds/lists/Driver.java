@@ -5,24 +5,6 @@ import java.util.*;
 
 public class Driver{
     public static void main(String[] args) {
-/*
-  Node n;
-	n = new Node();
-	n.setData("Eduardo");
-
-
-	Node n2 = new Node("Brian");
-	n.setNext(n2);
-
-	System.out.println(n);
-
-	System.out.println(n2);
-
-	System.out.println(n.getNext());
-	n.getNext().setNext(new Node("Steph"));
-	System.out.println(n2.getNext());
-	System.out.println(n.getNext().getNext());
-*/
 
 // 1.Create a new  list that looks like:
 //   L->"a"->"b"->"c"->"d"
@@ -70,52 +52,58 @@ public class Driver{
   }
   System.out.println("null");
 
-  //test for addFront
+  //Below are tests for the new methods add to the LList class;
   Llist l = new Llist();
-  System.out.println(l.isEmpty());//test for isEmpty (should return true)
+
+  System.out.print("Test for isEmpty: {");
+  System.out.println("expected: true | actual: " + l.isEmpty() + "}");//test for isEmpty (should return true)
+
+  System.out.print("Test for addFront: {");
+  System.out.print("expected: Apple --> null | actual: ");
   l.addFront("Apple");
-  System.out.println(l);
-  System.out.println(l.length()); //test for length (should return 1)
+  System.out.println(l + "}");
+
+  System.out.print("Test for length: {");
+  System.out.println("expected: 1 | actual: " + l.length() + "}");
+
+  System.out.println("Add more fruits to list:");
   l.addFront("Pear");
   System.out.println(l);
   l.addFront("Banana");
-  System.out.println(l.isEmpty());//test for isEmpty (should return false)
   System.out.println(l);
   l.addFront("Raspberry");
   System.out.println(l);
   l.addFront("Blueberry");
   System.out.println(l);
-  System.out.println(l.length()); //test for length (should return 5)
-  System.out.println(l.get(0));//test should return "blueberry"
-  System.out.println(l.get(1));
-  System.out.println(l.get(2));
-  System.out.println(l.get(3));
-  System.out.println(l.get(4));
-  System.out.println(l.get(5));
-  System.out.println(l.get(6));
-  l.set(1, "Kumquat");
-  System.out.println(l);
-  l.set(10, "Strawberry");
-  System.out.println(l);
 
+  System.out.print("Test for length: {");
+  System.out.println("expected: 5 | actual: " + l.length() + "}");
 
-  //L.setNext(new Node("b"));
-  //L.setNext(new Node("b")).setNext(new Node("c").setNext(new Node("d")));
-  // L.getNext().setNext(new Node("b"));
-  // System.out.println(L);
-  // System.out.println(L.getNext());
-  // System.out.println(L.getNext().getNext());
-  // System.out.println(L.getNext().getNext());
-  // L.getNext().setNext(new Node("c"));
-  // System.out.println(L);
-  // System.out.println(L.getNext().getNext());
+  System.out.print("Test for get at index 0: {");
+  System.out.println("expected: Blueberry | actual: " + l.get(0) + "}");
 
+  System.out.print("Test for get at index 6: {");
+  System.out.println("expected: null | actual: " + l.get(6) + "}");
 
+  System.out.println("Test for set(0, Kumquat):");
+  System.out.println("\t expected: Kumquat --> Raspberry --> Banana --> Pear --> Apple --> null");
+  l.set(0, "Kumquat");
+  System.out.println("\t actual: " + l);
 
+  System.out.println("Test for set(6, Kumquat):");
+  System.out.println("\t expected: Kumquat --> Raspberry --> Banana --> Pear --> Apple --> null");
+  l.set(6, "Kumquat");
+  System.out.println("\t actual: " + l);
 
+  System.out.println("Test for insert(2, Pluot):");
+  System.out.println("\t expected: Kumquat --> Raspberry --> Pluot --> Banana --> Pear --> Apple --> null");
+  l.insert(2, "Pluot");
+  System.out.println("\t actual: " + l);
 
-//Note: the below is based on Brian, Lyuba, and Mamudu's code, as well as Mike's code:
-
+  System.out.println("Test for insert(10, Pluot):");
+  System.out.println("\t expected: Kumquat --> Raspberry --> Pluot --> Banana --> Pear --> Apple --> null");
+  l.insert(10, "Pluot");
+  System.out.println("\t actual: " + l);
 
   }//end of main
 }//end of class

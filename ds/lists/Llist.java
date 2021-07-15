@@ -103,8 +103,24 @@ public class Llist{
   // traversal and draw out a diagram.
   // You will need a variable that refers to
   // the node BEFORE you want to do the insertion.
+  //note to self: look at how you added an X into the list yesterday!
+  //you will need to create a new node
+  //when you get to index - 1, current node should pass its data to the new node
+  //then you pass the input value (the parameter) into the data of the old node
+  //then you point the new node to the same thing the old node points to
+  //then you point the old node to the new node.
   public void insert(int index, String value){
-    //note to self: look at how you added an X into the list yesterday!
+    Node currentNode = front;
+    int counter = 0;
+    while (currentNode != null){
+      if (counter == index - 1){
+        Node newNode = new Node(value, currentNode.getNext());
+        currentNode.setNext(newNode);
+        break;
+      }
+      counter++;
+      currentNode = currentNode.getNext();
+    }
   }
 
   // returns the index of the first item with
@@ -117,7 +133,7 @@ public class Llist{
   // removes the node at index.
   // does nothing if index out of bounds
   public void remove(int index){
-    //look at how you deleted the "c" yesterday! 
+    //look at how you deleted the "c" yesterday!
   }
 
 
