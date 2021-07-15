@@ -73,15 +73,15 @@ public class Driver{
   //test for addFront
   Llist l = new Llist();
   l.addFront("Apple");
-  System.out.println(l.toString());
+  System.out.println(l);
   l.addFront("Pear");
-  System.out.println(l.toString());
+  System.out.println(l);
   l.addFront("Banana");
-  System.out.println(l.toString());
+  System.out.println(l);
   l.addFront("Raspberry");
-  System.out.println(l.toString());
+  System.out.println(l);
   l.addFront("Blueberry");
-  System.out.println(l.toString());
+  System.out.println(l);
 
 
   //L.setNext(new Node("b"));
