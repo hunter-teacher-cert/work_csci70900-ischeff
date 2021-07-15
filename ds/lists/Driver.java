@@ -105,5 +105,11 @@ public class Driver{
   l.insert(10, "Pluot");
   System.out.println("\t actual: " + l);
 
+  System.out.print("Test for search(Pluot): {");
+  System.out.println("expected: 2 | actual: " + l.search("Pluot") + "}");
+
+  System.out.print("Test for search(Orange): {");
+  System.out.println("expected: -1 | actual: " + l.search("Orange") + "}");
+
   }//end of main
 }//end of class
