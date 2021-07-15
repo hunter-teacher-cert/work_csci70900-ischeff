@@ -141,8 +141,16 @@ public class Llist{
   // removes the node at index.
   // does nothing if index out of bounds
   public void remove(int index){
-    //look at how you deleted the "c" yesterday!
+    Node currentNode = front;
+    int counter = 0;
+    while (currentNode != null){
+      if (counter == index - 1){//I think we need to redirect the previous node to the node after index
+      currentNode.setNext(currentNode.getNext().getNext());//need to get the next AFTER the next since we are at index - 1
+      break;
+      }
+     counter ++;
+     currentNode = currentNode.getNext();
+    }
   }
 
-
-  }//end of class
+}//end of class

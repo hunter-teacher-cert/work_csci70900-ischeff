@@ -44,7 +44,7 @@ public class Driver{
   //L --> a --> b --> x --> c --> d --> Null
 
   // 3. Write the code to delete the c
-  b.setNext(d);
+  x.setNext(d);
   L = a;//repointing L to the start of the list
   while (L != null){//test print
     System.out.print(L + " --> ");
@@ -110,6 +110,16 @@ public class Driver{
 
   System.out.print("Test for search(Orange): {");
   System.out.println("expected: -1 | actual: " + l.search("Orange") + "}");
+
+  System.out.println("Test for remove(2):");
+  System.out.println("\t expected: Kumquat --> Raspberry --> Banana --> Pear --> Apple --> null");
+  l.remove(2);
+  System.out.println("\t actual: " + l);
+
+  System.out.println("Test for remove(10):");
+  System.out.println("\t expected: Kumquat --> Raspberry --> Banana --> Pear --> Apple --> null");
+  l.remove(10);
+  System.out.println("\t actual: " + l);
 
   }//end of main
 }//end of class
