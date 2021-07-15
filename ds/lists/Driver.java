@@ -72,16 +72,23 @@ public class Driver{
 
   //test for addFront
   Llist l = new Llist();
+  System.out.println(l.isEmpty());//test for isEmpty (should return true)
   l.addFront("Apple");
   System.out.println(l);
+  System.out.println(l.length()); //test for length (should return 1)
   l.addFront("Pear");
   System.out.println(l);
   l.addFront("Banana");
+  System.out.println(l.isEmpty());//test for isEmpty (should return false)
   System.out.println(l);
   l.addFront("Raspberry");
   System.out.println(l);
   l.addFront("Blueberry");
   System.out.println(l);
+  System.out.println(l.length()); //test for length (should return 5)
+  System.out.println(l.get(0));//test should return "blueberry"
+  System.out.println(l.get(10));//test should return some kind of error
+  System.out.println(l.get(5));//test should be null
 
 
   //L.setNext(new Node("b"));
