@@ -87,8 +87,16 @@ public class Driver{
   System.out.println(l);
   System.out.println(l.length()); //test for length (should return 5)
   System.out.println(l.get(0));//test should return "blueberry"
-  System.out.println(l.get(10));//test should return some kind of error
-  System.out.println(l.get(5));//test should be null
+  System.out.println(l.get(1));
+  System.out.println(l.get(2));
+  System.out.println(l.get(3));
+  System.out.println(l.get(4));
+  System.out.println(l.get(5));
+  System.out.println(l.get(6));
+  l.set(1, "Kumquat");
+  System.out.println(l);
+  l.set(10, "Strawberry");
+  System.out.println(l);
 
 
   //L.setNext(new Node("b"));

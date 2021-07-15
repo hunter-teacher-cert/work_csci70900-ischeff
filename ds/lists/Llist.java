@@ -61,10 +61,10 @@ public class Llist{
     Node currentNode = front;
     int counter = 0;
     while (currentNode!= null){
-      counter++;
-      if(counter == index + 1){
+      if(counter == index){
         return currentNode.getData();
       }
+      counter++;
       currentNode = currentNode.getNext();
     }
     return null;
@@ -79,15 +79,23 @@ public class Llist{
     //if the index is greater than the lenght of the linked list return null
     //return null;
   //Ian's questions: how do we create the index? Can we use the .length method?
-
   }//end of get
 
   // sets the item at location index (starting
   // with 0) to value.
   // only sets if the index is within range
   public void set(int index, String value){
-
-  }
+    Node currentNode = front;
+    int counter = 0;
+    while (currentNode!= null){
+      if(counter == index){
+        currentNode.setData(value);
+        break;
+      }
+      counter++;
+      currentNode = currentNode.getNext();
+    }
+  }//end of set
 
   // insert an item before index.
   // only inserts if the index is within bounds
