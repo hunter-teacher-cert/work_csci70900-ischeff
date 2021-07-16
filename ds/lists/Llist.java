@@ -144,6 +144,10 @@ public class Llist{
     Node currentNode = front;
     int counter = 0;
     while (currentNode != null){
+      if (counter == 0){//edge case: you can't redirect the prior node when there isn't one! 
+        front = currentNode.getNext();
+        break;
+      }
       if (counter == index - 1){//I think we need to redirect the previous node to the node after index
       currentNode.setNext(currentNode.getNext().getNext());//need to get the next AFTER the next since we are at index - 1
       break;

@@ -116,6 +116,11 @@ public class Driver{
   l.remove(2);
   System.out.println("\t actual: " + l);
 
+  System.out.println("Test for remove(0):");
+  System.out.println("\t expected: Raspberry --> Pluot --> Banana --> Pear --> Apple --> null");
+  l.remove(0);
+  System.out.println("\t actual: " + l);
+
   System.out.println("Test for remove(10):");
   System.out.println("\t expected: Kumquat --> Raspberry --> Banana --> Pear --> Apple --> null");
   l.remove(10);
