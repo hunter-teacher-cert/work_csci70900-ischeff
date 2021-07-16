@@ -1,3 +1,5 @@
+//Group members: Peter, Ian, Dwayne, Eric W
+
 import java.io.*;
 import java.util.*;
 
@@ -20,8 +22,7 @@ public class Llist{
   }//end of addFront
 
   public String toString(){
-  	Node currentNode;
-  	currentNode = front;
+  	Node currentNode = front;
   	String result = "";
   	while (currentNode != null){
   	    result = result + currentNode + " --> ";
