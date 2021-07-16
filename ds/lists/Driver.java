@@ -95,13 +95,18 @@ public class Driver{
   l.set(6, "Kumquat");
   System.out.println("\t actual: " + l);
 
+  System.out.println("Test for insert(0, Starfruit):");
+  System.out.println("\t expected: Starfruit --> Kumquat --> Raspberry --> Banana --> Pear --> Apple --> null");
+  l.insert(0, "Starfruit");
+  System.out.println("\t actual: " + l);
+
   System.out.println("Test for insert(2, Pluot):");
-  System.out.println("\t expected: Kumquat --> Raspberry --> Pluot --> Banana --> Pear --> Apple --> null");
+  System.out.println("\t expected: Starfruit --> Kumquat --> Pluot --> Raspberry --> Banana --> Pear --> Apple --> null");
   l.insert(2, "Pluot");
   System.out.println("\t actual: " + l);
 
   System.out.println("Test for insert(10, Pluot):");
-  System.out.println("\t expected: Kumquat --> Raspberry --> Pluot --> Banana --> Pear --> Apple --> null");
+  System.out.println("\t expected: Starfruit --> Kumquat --> Pluot --> Raspberry --> Banana --> Pear --> Apple --> null");
   l.insert(10, "Pluot");
   System.out.println("\t actual: " + l);
 
@@ -111,18 +116,18 @@ public class Driver{
   System.out.print("Test for search(Orange): {");
   System.out.println("expected: -1 | actual: " + l.search("Orange") + "}");
 
-  System.out.println("Test for remove(2):");
-  System.out.println("\t expected: Kumquat --> Raspberry --> Banana --> Pear --> Apple --> null");
-  l.remove(2);
-  System.out.println("\t actual: " + l);
-
   System.out.println("Test for remove(0):");
-  System.out.println("\t expected: Raspberry --> Pluot --> Banana --> Pear --> Apple --> null");
+  System.out.println("\t expected: Kumquat --> Pluot --> Raspberry --> Banana --> Pear --> Apple --> null");
   l.remove(0);
   System.out.println("\t actual: " + l);
 
+  System.out.println("Test for remove(2):");
+  System.out.println("\t expected: Kumquat --> Pluot --> Banana --> Pear --> Apple --> null");
+  l.remove(2);
+  System.out.println("\t actual: " + l);
+
   System.out.println("Test for remove(10):");
-  System.out.println("\t expected: Kumquat --> Raspberry --> Banana --> Pear --> Apple --> null");
+  System.out.println("\t expected: Kumquat --> Pluot --> Banana --> Pear --> Apple --> null");
   l.remove(10);
   System.out.println("\t actual: " + l);
 
