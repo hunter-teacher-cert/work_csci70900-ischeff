@@ -140,30 +140,33 @@ public class SortDemo{
   //         of merging a and b. The new ArrayList
   //         should be in increasing order
   private ArrayList<Integer> merge(ArrayList<Integer> a, ArrayList<Integer> b){
-             return null;
-  }
+    ArrayList<Integer> c = new ArrayList<Integer>;//create the new array list that will contain the merged data
+    
+    return null;
+  }//end of merge
 
 
   private ArrayList<Integer> fillForMerge(int size){
-	ArrayList<Integer> a = new ArrayList<Integer>();
-	int lastVal = r.nextInt(10);
-	for (int i = 0 ; i < size ; i=i+1){
-	    a.add(lastVal);
-	    lastVal = lastVal + r.nextInt(10);
-	}
-	return a;
+  	ArrayList<Integer> a = new ArrayList<Integer>();
+  	int lastVal = r.nextInt(10);
+  	for (int i = 0 ; i < size ; i=i+1){
+  	    a.add(lastVal);
+  	    lastVal = lastVal + r.nextInt(10);
+  	}
+  	return a;
 
-  }
+  }//end of fillForMerge
+
   public void testMerge(){
 
-	ArrayList<Integer> a = new ArrayList<Integer>();
-	ArrayList<Integer> b = new ArrayList<Integer>();
-	a = fillForMerge(20);
-	b = fillForMerge(20);
-	System.out.println(a);
-	System.out.println(b);
+  	ArrayList<Integer> a = new ArrayList<Integer>();
+  	ArrayList<Integer> b = new ArrayList<Integer>();
+  	a = fillForMerge(20);
+  	b = fillForMerge(20);
+  	System.out.println(a);
+  	System.out.println(b);
 
-  }
+  }//end of testMerge
 
 
-}
+}//end of class
