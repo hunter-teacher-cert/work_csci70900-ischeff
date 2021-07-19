@@ -141,7 +141,8 @@ public class SortDemo{
   //         should be in increasing order
   private ArrayList<Integer> merge(ArrayList<Integer> a, ArrayList<Integer> b){
     ArrayList<Integer> c = new ArrayList<Integer>;//create the new array list that will contain the merged data
-    
+    //how do you conceptually turn arraylists a and b into inidivdual, already sorted arrays?
+    //once you do that, how do you merge the arrays? 
     return null;
   }//end of merge
 
