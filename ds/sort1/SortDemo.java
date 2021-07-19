@@ -140,13 +140,18 @@ public class SortDemo{
   //         of merging a and b. The new ArrayList
   //         should be in increasing order
   private ArrayList<Integer> merge(ArrayList<Integer> a, ArrayList<Integer> b){
-    ArrayList<Integer> c = new ArrayList<Integer>;//create the new array list that will contain the merged data
+    ArrayList<Integer> c = new ArrayList<Integer>();//create the new array list that will contain the merged data
     //how do you conceptually turn arraylists a and b into inidivdual, already sorted arrays?
     //once you do that, how do you merge the arrays?
     return null;
   }//end of merge
 
-
+  /*
+  * This method takes as input an int and returns an arraylist of corresponding size.
+  * This arraylist is already sorted, since it is created by first generating a random number
+  * between 0 and 9, then adding another random number between 0 and 9 to that number to create the
+  * following term; hence, every term is larger than the term that precedes it.
+  */
   private ArrayList<Integer> fillForMerge(int size){
   	ArrayList<Integer> a = new ArrayList<Integer>();
   	int lastVal = r.nextInt(10);
@@ -158,14 +163,18 @@ public class SortDemo{
 
   }//end of fillForMerge
 
+  
   public void testMerge(){
-
   	ArrayList<Integer> a = new ArrayList<Integer>();
   	ArrayList<Integer> b = new ArrayList<Integer>();
   	a = fillForMerge(20);
   	b = fillForMerge(20);
-  	System.out.println(a);
-  	System.out.println(b);
+    System.out.println("Here are two sorted ArrayLists, ready to be merged:");
+  	System.out.println("a[]: " + a);
+  	System.out.println("b[]: " + b);
+    System.out.println();
+    System.out.println("Now, here is the merged ArrayList:");
+    //merge(a, b);
 
   }//end of testMerge
 
