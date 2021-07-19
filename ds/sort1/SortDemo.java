@@ -142,7 +142,7 @@ public class SortDemo{
   private ArrayList<Integer> merge(ArrayList<Integer> a, ArrayList<Integer> b){
     ArrayList<Integer> c = new ArrayList<Integer>;//create the new array list that will contain the merged data
     //how do you conceptually turn arraylists a and b into inidivdual, already sorted arrays?
-    //once you do that, how do you merge the arrays? 
+    //once you do that, how do you merge the arrays?
     return null;
   }//end of merge
 
@@ -150,7 +150,7 @@ public class SortDemo{
   private ArrayList<Integer> fillForMerge(int size){
   	ArrayList<Integer> a = new ArrayList<Integer>();
   	int lastVal = r.nextInt(10);
-  	for (int i = 0 ; i < size ; i=i+1){
+  	for (int i = 0 ; i < size ; i++){
   	    a.add(lastVal);
   	    lastVal = lastVal + r.nextInt(10);
   	}

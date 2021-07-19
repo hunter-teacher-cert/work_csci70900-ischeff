@@ -35,6 +35,8 @@ public class SortDemoDriver {
   System.out.println(sd.binarySearch(5));
   System.out.println(sd.binarySearch(6));
   System.out.println(sd.binarySearch(7));
+  //test for merge from Mike's code
+  sd.testMerge();
 
 
     }
