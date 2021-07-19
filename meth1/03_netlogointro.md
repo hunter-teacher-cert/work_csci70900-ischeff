@@ -1,9 +1,6 @@
 # Prompt:
 Day 1 of Netlogo, how do you want to introduce it? (Might include some guided programming, i.e., look at Model X and do something with it. -- Why did you pick X model?) Some other questions: do you want folks to explore openly? Do you want to guide them? Focus on your own metacognition: why would you make the decisions you would make as a teacher in introducing the language? tl;dr - > make a text file (can be a narrative where you describe how you would intro Netlogo and why you would do it that way
 
-### Note:
-My response takes the form of the questions I would pose, organized in a narrative flow from the start to end of this hypothetical class period.
----
 ## Response:
 **Start:**
 - Raise your hand if you speak more than one language.
