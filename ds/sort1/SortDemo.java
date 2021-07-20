@@ -174,16 +174,16 @@ public class SortDemo{
 
 
   public void testMerge(){
-    	ArrayList<Integer> a = new ArrayList<Integer>();
-    	ArrayList<Integer> b = new ArrayList<Integer>();
-    	a = fillForMerge(20);
-    	b = fillForMerge(20);
-      System.out.println("Here are two sorted ArrayLists, ready to be merged:");
-    	System.out.println("a[]: " + a);
-    	System.out.println("b[]: " + b);
-      System.out.println();
-      System.out.println("Now, here is the merged ArrayList:");
-      System.out.println(merge(a, b));
+    ArrayList<Integer> a = new ArrayList<Integer>();
+    ArrayList<Integer> b = new ArrayList<Integer>();
+    a = fillForMerge(20);
+    b = fillForMerge(20);
+    System.out.println("Here are two sorted ArrayLists, ready to be merged:");
+    System.out.println("a[]: " + a);
+    System.out.println("b[]: " + b);
+    System.out.println();
+    System.out.println("Now, here is the merged ArrayList:");
+    System.out.println(merge(a, b));
 
   }//end of testMerge
 
