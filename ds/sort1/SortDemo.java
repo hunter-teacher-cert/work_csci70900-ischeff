@@ -151,16 +151,16 @@ public class SortDemo{
         c.add(b.get(j));
         j++;
       }//if statement to compare elements in arraylists
-  }//end of while loop
+    }//end of while loop
       //add anything left over!
-      while(i < a.size()){
-        c.add(a.get(i));
-        i++;
-      }
-      while(j < b.size()){
-        c.add(b.get(j));
-        j++;
-      }
+    while(i < a.size()){
+      c.add(a.get(i));
+      i++;
+    }
+    while(j < b.size()){
+      c.add(b.get(j));
+      j++;
+    }
     return c;
   }//end of merge
 
@@ -174,6 +174,7 @@ public class SortDemo{
         c.add(b.remove(0));
       }//if statement to compare elements in arraylists
     }//end of while loop
+    //add what remains
     while(!a.isEmpty()){
       c.add(a.remove(0));
     }
