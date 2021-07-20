@@ -152,7 +152,7 @@ public class SortDemo{
         j++;
       }//if statement to compare elements in arraylists
     }//end of while loop
-      //add anything left over!
+    //add anything left over!
     while(i < a.size()){
       c.add(a.get(i));
       i++;
@@ -216,7 +216,6 @@ public class SortDemo{
     System.out.println();
     System.out.println("And here is the merged ArrayList, using altMerge:");
     System.out.println(altMerge(a, b));
-
   }//end of testMerge
 
 
