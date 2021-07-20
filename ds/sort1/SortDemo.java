@@ -164,24 +164,21 @@ public class SortDemo{
     return c;
   }//end of merge
 
+  //note: this is less efficient since remove takes more memory
   private ArrayList<Integer> altMerge(ArrayList<Integer> a, ArrayList<Integer> b){
     ArrayList<Integer> c = new ArrayList<Integer>();//create the new array list that will contain the merged data
     while(!a.isEmpty() && !b.isEmpty()){//loop until each array is empty
       if (a.get(0) < b.get(0)){
-        c.add(a.get(0));
-        a.remove(0);
+        c.add(a.remove(0));
       } else{
-        c.add(b.get(0));
-        b.remove(0);
+        c.add(b.remove(0));
       }//if statement to compare elements in arraylists
     }//end of while loop
     while(!a.isEmpty()){
-      c.add(a.get(0));
-      a.remove(0);
+      c.add(a.remove(0));
     }
     while(!b.isEmpty()){
-      c.add(b.get(0));
-      b.remove(0);
+      c.add(b.remove(0));
     }
     return c;
   }//end of merge
