@@ -29,7 +29,14 @@ To deepen understanding of linkedlists by acting out the operations typically pe
 - Maybe divide into two groups - those getting/receiving directions
 - Those receiving are the nodes (they can only know what they are and who they point to.)
 - Those giving directions have to use the rules of linkedlists (for insertion and deletion) to add/remove nodes to the lists
-- There needs to be some kind of assessment mechanism--either housed in the nodes themselves or a third role--to make sure that everyone follows the rules for inserting/deleting from the lists. 
+- There needs to be some kind of assessment mechanism--either housed in the nodes themselves or a third role - to make sure that everyone follows the rules for inserting/deleting from the lists.
+- Is there a way to make this competitive?
+---
+- Alt version: make it creative performance
+- After direction instruction (learning the rules), then folks have to demonstrate understanding by creating a performance for a group of peers
+- Options include dance choreography, acting, singing, musical
+- Example might be: a song like "I'm just a bill" from Schoolhouse Rock, only "I'm just a node" that goes on to encapsulate how nodes get linked into linked lists
+- End product *is* the performance
 ---
 - (Music example)
 - Draw out your list
