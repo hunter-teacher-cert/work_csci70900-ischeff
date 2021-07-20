@@ -213,6 +213,7 @@ public class SortDemo{
     System.out.println();
     System.out.println("Now, here is the merged ArrayList, using merge:");
     System.out.println(merge(a, b));
+    System.out.println();
     System.out.println("And here is the merged ArrayList, using altMerge:");
     System.out.println(altMerge(a, b));
 
