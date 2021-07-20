@@ -37,6 +37,7 @@ To deepen understanding of linkedlists by acting out the operations typically pe
 - Options include dance choreography, acting, singing, musical
 - Example might be: a song like "I'm just a bill" from Schoolhouse Rock, only "I'm just a node" that goes on to encapsulate how nodes get linked into linked lists
 - End product *is* the performance
+- (There would be clear assessment criteria for the performance, including which concepts need to be represented in the performance)
 ---
 - (Music example)
 - Draw out your list
