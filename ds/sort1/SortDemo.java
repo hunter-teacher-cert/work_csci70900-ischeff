@@ -141,9 +141,18 @@ public class SortDemo{
   //         should be in increasing order
   private ArrayList<Integer> merge(ArrayList<Integer> a, ArrayList<Integer> b){
     ArrayList<Integer> c = new ArrayList<Integer>();//create the new array list that will contain the merged data
-    //how do you conceptually turn arraylists a and b into inidivdual, already sorted arrays?
-    //once you do that, how do you merge the arrays?
-    return null;
+    int i = 0; //index for ArrayList a
+    int j = 0; //index for ArrayList b
+    while(i < a.size() && j < b.size()){//loop until you reach the end of BOTH arraylists
+      if (a.get(i) < b.get(j)){
+        c.add(a.get(i));
+        i++;
+      } else{
+        c.add(b.get(j));
+        j++;
+      }//if statement to compare elements in arraylists
+    }//end of while loop
+    return c;
   }//end of merge
 
   /*
@@ -163,7 +172,7 @@ public class SortDemo{
 
   }//end of fillForMerge
 
-  
+
   public void testMerge(){
   	ArrayList<Integer> a = new ArrayList<Integer>();
   	ArrayList<Integer> b = new ArrayList<Integer>();
@@ -174,7 +183,7 @@ public class SortDemo{
   	System.out.println("b[]: " + b);
     System.out.println();
     System.out.println("Now, here is the merged ArrayList:");
-    //merge(a, b);
+    System.out.println(merge(a, b));
 
   }//end of testMerge
 
