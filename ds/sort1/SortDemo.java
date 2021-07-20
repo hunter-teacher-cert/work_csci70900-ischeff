@@ -155,6 +155,20 @@ public class SortDemo{
     return c;
   }//end of merge
 
+  private ArrayList<Integer> altMerge(ArrayList<Integer> a, ArrayList<Integer> b){
+    ArrayList<Integer> c = new ArrayList<Integer>();//create the new array list that will contain the merged data
+    while(!a.isEmpty() && !b.isEmpty()){//loop until each array is empty
+      if (a.get(0) < b.get(0)){
+        c.add(a.get(0));
+        a.remove(0);
+      } else{
+        c.add(b.get(0));
+        b.remove(0);
+      }//if statement to compare elements in arraylists
+    }//end of while loop
+    return c;
+  }//end of merge
+
   /*
   * This method takes as input an int and returns an arraylist of corresponding size.
   * This arraylist is already sorted, since it is created by first generating a random number
@@ -182,8 +196,10 @@ public class SortDemo{
     System.out.println("a[]: " + a);
     System.out.println("b[]: " + b);
     System.out.println();
-    System.out.println("Now, here is the merged ArrayList:");
+    System.out.println("Now, here is the merged ArrayList, using merge:");
     System.out.println(merge(a, b));
+    System.out.println("And here is the merged ArrayList, using altMerge:");
+    System.out.println(altMerge(a, b));
 
   }//end of testMerge
 
