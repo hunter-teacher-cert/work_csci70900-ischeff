@@ -40,11 +40,20 @@ public class Queue{
   // x = dequeue() <-- remove and return the value at the front of the queue
   public String dequeue(){
     Node currentNode = head;
+    if (head == null){
+      return null;
+    }
     head = currentNode.getNext();
     return currentNode.getData();
   }
 
   // x = front() <-- return but don't remove the value at the front
+  public String head(){
+    if(head == null){
+      return null;
+    }
+    return head.getData();
+  }
 
   // isEmpty() <-- returns true if the queue is empty
   public boolean isEmpty(){
