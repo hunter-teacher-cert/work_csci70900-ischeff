@@ -1,3 +1,5 @@
+//This code is a collaboration among Eric Wilson, Peter Tsun, Dwayne Levene, and Ian Scheffler
+
 import java.io.*;
 import java.util.*;
 
