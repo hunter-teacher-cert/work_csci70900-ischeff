@@ -14,27 +14,20 @@ public class Queue{
 
   // enqueue(value) <-- add value to the end of the queue
   public void enqueue(String data){
-    Node currentNode = head;
-    int counter = 0;
+    Node newNode = new Node(data); //create a new node
     //if the list is empty, the new (sole) node is BOTH head and tail.
     if (head = null){
-      Node newNode = new Node(data); //create a new node
       head = newNode;
       tail = newNode;
     }
-    //if the list is the same (i.e., head and tail point toward one node), new node goes AFTER head and becomes tail.
+    //if the list has one node (i.e., head and tail point toward one node), new node goes AFTER head and becomes tail.
     if (head = tail){
-      Node newNode = new Node(data); //create a new node
       head.setNext(newNode);
       tail = newNode;
     }
-    //if the list has only two items,
-    if(head.getNext() = tail){
-      Node newNode = new Node(data); //create a new node
-      tail.setNext(newNode);
-      tail = newNode;
-    }
-
+    //if the list has more than one node (i.e., head and tail are separate), new node goes after tail and becomes tail.
+    tail.setNext(newNode);
+    tail = newNode;
   }
   // x = dequeue() <-- remove and return the value at the front of the queue
 
