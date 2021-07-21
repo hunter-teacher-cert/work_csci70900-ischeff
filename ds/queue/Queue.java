@@ -12,22 +12,29 @@ public class Queue{
   //make value constructor
     //what should it include?
 
+  public String toString(){
+    Node currentNode = head;
+    String result = "";
+    while (currentNode != null){
+        result = result + currentNode + " --> ";
+        currentNode = currentNode.getNext();
+    }
+    result = result + "null";
+    return result;
+  }//end of toString
+
   // enqueue(value) <-- add value to the end of the queue
   public void enqueue(String data){
     Node newNode = new Node(data); //create a new node
     //if the list is empty, the new (sole) node is BOTH head and tail.
-    if (head = null){
+    if (head == null){
       head = newNode;
       tail = newNode;
-    }
-    //if the list has one node (i.e., head and tail point toward one node), new node goes AFTER head and becomes tail.
-    if (head = tail){
-      head.setNext(newNode);
+    } else {
+      tail.setNext(newNode);
       tail = newNode;
     }
-    //if the list has more than one node (i.e., head and tail are separate), new node goes after tail and becomes tail.
-    tail.setNext(newNode);
-    tail = newNode;
+
   }
   // x = dequeue() <-- remove and return the value at the front of the queue
 
