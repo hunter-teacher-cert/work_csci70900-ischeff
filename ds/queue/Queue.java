@@ -24,5 +24,14 @@ public class Queue{
   }
 
   // size() <-- returns the number of items in the queue
+  public int size(){
+    Node currentNode = head;
+    int counter = 0;
+    while (currentNode != null){
+        counter++;
+        currentNode = currentNode.getNext();
+    }
+    return counter;
+  }
 
 }//end of class
