@@ -23,7 +23,8 @@ public class Queue{
     }
     //if the list is the same (i.e., head and tail point toward one node), new node goes AFTER head and becomes tail.
     if (head = tail){
-      
+      head.setNext(newNode);
+      tail = newNode;
     }
     //if the list has only two items,
     if(head.getNext() = tail){
