@@ -5,7 +5,9 @@ public class Queue{
   private Node tail; //the end of the queue --> where nodes are added
 
   //make constructors
-    //default constructor - null?
+  public Queue(){
+    head = null;
+  }
 
   //make value constructor
     //what should it include?
