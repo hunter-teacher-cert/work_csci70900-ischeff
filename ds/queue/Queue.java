@@ -19,6 +19,9 @@ public class Queue{
   // x = front() <-- return but don't remove the value at the front
 
   // isEmpty() <-- returns true if the queue is empty
+  public boolean isEmpty(){
+    return(head == null); // this will return true if the list points to null
+  }
 
   // size() <-- returns the number of items in the queue
 
