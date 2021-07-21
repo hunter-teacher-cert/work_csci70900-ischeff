@@ -9,7 +9,6 @@ public class Queue{
     head = null;
     tail = null;
   }
-
   //make value constructor
     //what should it include?
 
