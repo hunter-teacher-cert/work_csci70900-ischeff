@@ -25,5 +25,10 @@ public class Driver{
     System.out.println(queue);//should print out "Apple --> Banana --> Pear --> Raspeberry --> null "
     System.out.println("isEmpty: " + queue.isEmpty());//should be false
     System.out.println("Size: " + queue.size());//should be 4
+    System.out.println();
+    System.out.println("You just dequeued: " + queue.dequeue());
+    System.out.println(queue);//should print out "Banana --> Pear --> Raspeberry --> null "
+    System.out.println("isEmpty: " + queue.isEmpty());//should be false
+    System.out.println("Size: " + queue.size());//should be 3
   }//end of main
 }//end of class

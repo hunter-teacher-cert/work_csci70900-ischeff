@@ -36,7 +36,13 @@ public class Queue{
       tail = newNode;
     }
   }//end of enqueue
+
   // x = dequeue() <-- remove and return the value at the front of the queue
+  public String dequeue(){
+    Node currentNode = head;
+    head = currentNode.getNext();
+    return currentNode.getData();
+  }
 
   // x = front() <-- return but don't remove the value at the front
 
