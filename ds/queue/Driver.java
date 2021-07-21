@@ -9,6 +9,7 @@ public class Driver{
     System.out.println(queue);//should print out "Apple --> Banana --> null"
     queue.enqueue("Pear");
     System.out.println(queue);//should print out "Apple --> Banana --> Pear --> null "
-
+    queue.enqueue("Raspberry");
+    System.out.println(queue);//should print out "Apple --> Banana --> Pear --> Raspeberry --> null "
   }//end of main
 }//end of class

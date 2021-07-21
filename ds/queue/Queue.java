@@ -12,6 +12,7 @@ public class Queue{
   //make value constructor
     //what should it include?
 
+  //custom toString method to print queue
   public String toString(){
     Node currentNode = head;
     String result = "";
@@ -34,8 +35,7 @@ public class Queue{
       tail.setNext(newNode);
       tail = newNode;
     }
-
-  }
+  }//end of enqueue
   // x = dequeue() <-- remove and return the value at the front of the queue
 
   // x = front() <-- return but don't remove the value at the front
