@@ -185,6 +185,44 @@ public class SortDemo{
   }//end of merge
 
   /*
+    Parameters: l - an ArrayList
+
+    Returns: a new, sorted ArrayList
+
+    This routine should implement the mergesort algorithm.
+  */
+  public ArrayList<Integer> msort(ArrayList<Integer> l){
+    ArrayList<Integer> left = null;
+    ArrayList<Integer> right = null;
+
+  // base case - if the input ArrayList is smaller than 2 elements
+    //if ArrayList has 0 or 1 elements, return it!
+    if(l.size() < 2){
+      return l;
+    }
+
+  // split l into left and right halves
+  left = new ArrayList<Integer>(l.subList(0, l.size()/2));
+  //System.out.println(left);
+  // sort the right half
+  right = new ArrayList<Integer>(l.subList(l.size()/2, l.size()));
+  //System.out.println(right);
+  // merge the two halves that have been sorted
+  return merge(msort(left), msort(right));
+  // return the result
+    }
+
+  public void msortTest(){
+    System.out.println("Here is the original data, pre-msort");
+    ArrayList<Integer> test = fillForMergeSort(31);
+    System.out.println(test);
+    System.out.println();
+    test = msort(test);
+    System.out.println("Here is the sorted data, post-msort");
+    System.out.println(test);
+  }
+
+  /*
   * This method takes as input an int and returns an arraylist of corresponding size.
   * This arraylist is already sorted, since it is created by first generating a random number
   * between 0 and 9, then adding another random number between 0 and 9 to that number to create the
@@ -198,6 +236,18 @@ public class SortDemo{
   	    lastVal = lastVal + r.nextInt(10);
   	}
   	return a;
+
+  }//end of fillForMerge
+
+  //generates random numbers for arraylist to test the mergesort
+  private ArrayList<Integer> fillForMergeSort(int size){
+    ArrayList<Integer> a = new ArrayList<Integer>();
+    int lastVal = r.nextInt(10);
+    for (int i = 0 ; i < size ; i++){
+        a.add(lastVal);
+        lastVal = r.nextInt(10);
+    }
+    return a;
 
   }//end of fillForMerge
 
