@@ -1,4 +1,5 @@
-//Collab among Jiyoon, Ian, and Mr. H
+//Ian, Jiyoon, Mr H
+
 import java.io.*;
 import java.util.*;
 
@@ -23,17 +24,11 @@ public class Mode{
     }
 
     /**
-     * Warmup 1
-
-     Find and return the smallest value in  InputData.
-    */
+     * Warmup 1: Find and return the smallest value in  InputData.
+     */
 
     public int findSmallestValue(){
       int smallIndex = 0;
-
-      // start a variable at the one after start
-      //int next = start + 1;//note: you could have NOT used this variable and instead modified the loop starting point to be for(i = start + 1; )
-
       // loop from that variable to end and update smallIndex as needed
       for(int i = 1; i < inputData.size(); i++){
       if (inputData.get(i) < inputData.get(smallIndex)){
@@ -75,20 +70,27 @@ public class Mode{
      this solution but not findSmallestValue. the findSmallestValue
      function will help you find a strategy for approaching finding the mode.
     */
+  public void allFreq(){
+    System.out.print("[");
+    for (int i = 0; i<inputData.size();i++){
+      System.out.print(this.frequency(inputData.get(i))+", ");
+    }
+  }
+  //returns first mode
   public int calcMode(){
-  //initiialize mode as int variable set to 0 that will store maximum frequency
-  int mode = this.frequency(this.get(0));
-  //for each check frequency (for loop as big as data.size())
-  for (int i = 1; i<inputData.size();i++){
-    //access element @ index/
-    //frequency
-    //compare frequency ^ to mode
-  }
-  //food for thought: how to find unique numbers to duplicate checking
+    //initiialize mode as int variable set to 0 that will store maximum frequency
+    int mode = inputData.get(0);
+    //for each check frequency (for loop as big as data.size())
+    for (int i = 1; i<inputData.size();i++){
+      //System.out.println(mode);//debugging
+      if(this.frequency(inputData.get(i)) > this.frequency(mode)){
+        mode = inputData.get(i);
+      }
+    }
+    //food for thought: how to find unique numbers to duplicate checking
+  	return mode;
 
-	return mode;
-
-  }
+    }
 
   public String toString(){
 	   return ""+inputData;
