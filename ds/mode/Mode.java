@@ -89,8 +89,7 @@ public class Mode{
     }
     //food for thought: how to find unique numbers to duplicate checking
   	return mode;
-
-    }
+  }
 
   public String toString(){
 	   return ""+inputData;
