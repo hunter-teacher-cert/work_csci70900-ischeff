@@ -88,8 +88,10 @@ public class Mode{
       }
     }
     //food for thought: how to find unique numbers to duplicate checking
+    //make an array of frequencies
+    //dont' update if already there
   	return mode;
-  }
+    }
 
   public String toString(){
 	   return ""+inputData;
