@@ -1,26 +1,25 @@
+//Collab among Jiyoon, Ian, and Mr. H
 import java.io.*;
 import java.util.*;
-
-
 
 public class Mode{
     private ArrayList<Integer> inputData;
     private Random r;
+
     public Mode(){
-	r = new Random();
-	inputData = new ArrayList<Integer>();
-
-	for (int i=0; i < 20; i++){
-	    inputData.add(r.nextInt(20));
-	}
+	    r = new Random();
+	    inputData = new ArrayList<Integer>();
+      for (int i=0; i < 20; i++){
+  	    inputData.add(r.nextInt(20));
+      }
     }
-    public Mode(int size){
-	r = new Random();
-	inputData = new ArrayList<Integer>();
 
-	for (int i=0; i < size; i++){
-	    inputData.add(r.nextInt(50));
-	}
+    public Mode(int size){
+    	r = new Random();
+    	inputData = new ArrayList<Integer>();
+    	for (int i=0; i < size; i++){
+    	    inputData.add(r.nextInt(50));
+    	}
     }
 
     /**
@@ -29,11 +28,20 @@ public class Mode{
      Find and return the smallest value in  InputData.
     */
 
-    public int findSmalletValue(){
+    public int findSmallestValue(){
+      int smallIndex = 0;
 
-	return 0;
+      // start a variable at the one after start
+      //int next = start + 1;//note: you could have NOT used this variable and instead modified the loop starting point to be for(i = start + 1; )
 
-    }
+      // loop from that variable to end and update smallIndex as needed
+      for(int i = 1; i < inputData.size(); i++){
+      if (inputData.get(i) < inputData.get(smallIndex)){
+        smallIndex = i;
+        }
+      }
+      return inputData.get(smallIndex);
+      }
 
     /**
      * Warmup 2
@@ -41,7 +49,17 @@ public class Mode{
      Returns the frequency of value in inputData, that is, how often value appears
     */
     public int frequency(int value){
-	return 0;
+      if (inputData.size() == 0){
+        System.out.println("empty array");
+        return 0;
+      }
+      int counter = 0;  //counter variable
+      for (int i = 0; i < inputData.size(); i++){ //for loop
+        if (inputData.get(i) == value){ //value @ index matches value arg --> increment counter
+          counter++;
+        }
+      }
+    return counter; //returns counter
     }
 
     /**
@@ -57,11 +75,22 @@ public class Mode{
      this solution but not findSmallestValue. the findSmallestValue
      function will help you find a strategy for approaching finding the mode.
     */
-    public int calcMode(){
+  public int calcMode(){
+  //initiialize mode as int variable set to 0 that will store maximum frequency
+  int mode = this.frequency(this.get(0));
+  //for each check frequency (for loop as big as data.size())
+  for (int i = 1; i<inputData.size();i++){
+    //access element @ index/
+    //frequency
+    //compare frequency ^ to mode
+  }
+  //food for thought: how to find unique numbers to duplicate checking
 
-	return 0;
-    }
-    public String toString(){
-	return ""+inputData;
-    }
-}
+	return mode;
+
+  }
+
+  public String toString(){
+	   return ""+inputData;
+  }
+}//end of class
