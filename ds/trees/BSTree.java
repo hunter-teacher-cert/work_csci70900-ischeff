@@ -47,11 +47,11 @@ public class BSTree {
         //instead, we rewrite the data in front with its child's data, then delete the child.
         //(this seemed conceptually more straightforward to me, but might be less efficient)
         if(front.getRight() == null){
-          front.setData(front.getLeft());
+          front.setData(front.getLeft().getData());
           front.setLeft(null);
           return;
         } else {
-          front.setData(front.getRight());
+          front.setData(front.getRight().getData());
           front.setRight(null);
           return;
         }
