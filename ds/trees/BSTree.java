@@ -8,9 +8,16 @@ public class BSTree {
     	root = null;//default constructor
     }
 
+    public TreeNode findMax(TreeNode start){
+      if (start.getRight()==null){ //base case
+        return start;
+      }
+      return findMax(start.getRight());
+    }
+
     public void delete(int key){
       // if the tree is empty, nothing to delete
-      if (root==null){
+      if (root == null){
         return;
       }
       // find the node that we want to delete
@@ -76,27 +83,9 @@ public class BSTree {
 
         //case 3 - front has two children
       } else {
-        //if the left child of front has no children, replace front with its left child
-        // if (front.getLeft().getLeft() == null && front.getLeft().getRight() == null){
-        //   front.setData(front.getLeft());
-        //   front.setLeft(null);
-        //if the left child of front has children
-        // } else {
-        //   //note: I think my idea of rewriting over a node doesn't work here as well
-        //   // I think I ought to create a separate routine to find the successor
-        //   //use a temporary varaible to hold the biggest value, but essentially look for
-        //   // and return the biggest value on the left hand branch of front
-        //   //then also delete that value?
-        //   //or when would I do that?
-        //   //I think I would find the new value, set front to the new data, and then delete the odl one; but wouldn't that destabilize the tree if I delete the old one?
-        //   // or is the biggest value always going to be a leaf?
-        // }
-        // find the node with the largest value
-        // on fronts left subtree (go left once, and right as far as you can)
-        // should I create a private method to find the replacement node?
-        // or the node with the smallest value on front's right subtree
-        // should I include both options?
-        // and replace front with it.
+            TreeNode max = findMax(front.getLeft());
+            this.delete(max.getData());
+            front.setData(max.getData());
       }
     }//end of delete
 
