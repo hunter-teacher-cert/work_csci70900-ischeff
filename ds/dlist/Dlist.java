@@ -50,33 +50,22 @@ public class Dlist{
   	return counter;
   }
 
-  // // returns the item at location index;
-  // // returns null if there aren't enough
-  // // items. Starts with index 0
-  // public String get(int index){
-  //   Node currentNode = front;
-  //   int counter = 0;
-  //   while (currentNode!= null){
-  //     if(counter == index){
-  //       return currentNode.getData();
-  //     }
-  //     counter++;
-  //     currentNode = currentNode.getNext();
-  //   }
-  //   return null;
-  //   // if (index >= size){
-  //   //   System.out.println(size);
-  //   //   return null;
-  //   // }
-  //   // for(int i = 0; i < index; i++){
-  //   //   currentNode = currentNode.getNext();
-  //   // }
-  //   // return currentNode.getData();
-  //   //if the index is greater than the lenght of the linked list return null
-  //   //return null;
-  // //Ian's questions: how do we create the index? Can we use the .length method?
-  // }//end of get
-  //
+  // returns the item at location index;
+  // returns null if there aren't enough
+  // items. Starts with index 0
+  public String get(int index){
+    Node currentNode = front;
+    int counter = 0;
+    while (currentNode!= null){
+      if(counter == index){
+        return currentNode.getData();
+      }
+      counter++;
+      currentNode = currentNode.getNext();
+    }
+    return null;
+  }//end of get
+
   // // sets the item at location index (starting
   // // with 0) to value.
   // // only sets if the index is within range
