@@ -8,6 +8,21 @@ public class BSTree {
     	root = null;//default constructor
     }
 
+    //method to search for a specified value in the BSTree
+    //returns value if found or null otherwise
+    public int search(int key){
+      TreeNode current = root;//start at root
+      //loop until you are off tree
+      while (current != null){
+        int currentValue = current.getValue();
+        if (currentValue == key){
+          return currentValue;//return value if found
+        }
+        
+      }
+
+    }
+
     //method below creates a tree of specified design
     public void seed(){
 	    TreeNode t;
