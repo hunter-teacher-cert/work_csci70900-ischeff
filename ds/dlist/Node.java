@@ -34,7 +34,7 @@ public class Node {
   }
 
   public void setPrev(Node p) {
-    prev = n;
+    prev = p;
   }
 
   public String getData() {
