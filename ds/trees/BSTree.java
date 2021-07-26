@@ -17,11 +17,14 @@ public class BSTree {
         int currentValue = current.getValue();
         if (currentValue == key){
           return currentValue;//return value if found
+        } else if (currentValue < key){
+          //move to right side of tree
+        } else {
+          //move to left side of tree
         }
-        
-      }
-
-    }
+      }//end of while loop
+      return null;//return null if key not found
+    } //end of search
 
     //method below creates a tree of specified design
     public void seed(){
