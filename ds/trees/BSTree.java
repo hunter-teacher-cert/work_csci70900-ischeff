@@ -18,7 +18,7 @@ public class BSTree {
       }
       //point front toward the root
       TreeNode front = root;
-	    TreeNode trailer;//piggyback off front
+	    TreeNode trailer = null;//piggyback off front
       //loop until you're off the tree
       while (front != null){
         int frontValue = front.getData();
@@ -34,10 +34,10 @@ public class BSTree {
         }
       }//end of while loop
       //trailer points to new node
-      if (key > front.getData()){
-        front.setRight(newNode);
+      if (key > trailer.getData()){
+        trailer.setRight(newNode);
       } else {
-        front.setLeft(newNode);
+        trailer.setLeft(newNode);
       }
     } //end of insert
 
