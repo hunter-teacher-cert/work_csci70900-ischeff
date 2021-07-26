@@ -47,6 +47,15 @@ public class Driver{
     System.out.println(d.search("Pineapple"));
     System.out.println(d.search("Pear"));
     System.out.println(d.search("Watermelon"));
+    System.out.println();
+    d.remove(2);
+    System.out.println(d);
+    d.remove(2);
+    System.out.println(d);
+    d.remove(0);
+    System.out.println(d);
+    d.remove(-1);
+    System.out.println(d);
 
 
 

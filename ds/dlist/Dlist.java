@@ -104,7 +104,8 @@ public class Dlist{
     while (currentNode != null){
       if (counter == index - 1){
         Node newNode = new Node(value, currentNode.getNext(), currentNode);
-        currentNode.setNext(newNode);
+        currentNode.setNext(newNode);//point current Node to new node
+        currentNode.getNext().getNext().setPrev(newNode);//point node formerly after current node back to new node
         break;
       }
       counter++;
@@ -139,6 +140,7 @@ public class Dlist{
     while (currentNode != null){
       if (counter == index - 1){//I think we need to redirect the previous node to the node after index
       currentNode.setNext(currentNode.getNext().getNext());//need to get the next AFTER the next since we are at index - 1
+      currentNode.getNext().setPrev(currentNode);//point new next node's prev pointer to current node
       break;
       }
      counter ++;
