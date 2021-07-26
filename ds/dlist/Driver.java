@@ -107,7 +107,7 @@ public class Driver{
     System.out.println(d);
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
-    d.remove(-1);
+    d.remove(0);
     System.out.println(d);
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
