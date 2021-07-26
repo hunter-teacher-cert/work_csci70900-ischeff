@@ -22,13 +22,14 @@ public class Driver {
       } catch (NullPointerException e) {
         System.out.println("17 not in tree");
       }
+      BSTree t2 = new BSTree()
       //insert tests
-      t.insert(10);
-      t.insert(20);
-      t.insert(5);
-      t.insert(7);
-      t.insert(8);
-      t.insert(3);
-      t.insert(25);
+      t2.insert(10);
+      t2.insert(20);
+      t2.insert(5);
+      t2.insert(7);
+      t2.insert(8);
+      t2.insert(3);
+      t2.insert(25);
     }//end of main
 }//end of class
