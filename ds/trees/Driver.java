@@ -31,5 +31,9 @@ public class Driver {
       t2.insert(8);
       t2.insert(3);
       t2.insert(25);
+      //traversal tests
+      t2.preorderTraverse();
+      t2.postorderTraverse();
+      t2.inorderTraverse();
     }//end of main
 }//end of class
