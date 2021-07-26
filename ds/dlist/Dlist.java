@@ -133,19 +133,23 @@ public class Dlist{
   public void remove(int index){
     Node currentNode = front;
     int counter = 0;
-    //edge case: you are trying to delete a node from a list with 1 or 0 nodes.
-    if (index == 0 && (this.length() == 1 || this.length() == 0)){
+    //edge case: you are trying to delete a node from an index that does not exist
+    if (index >= this.length()){
+      return;
+    }
+    //edge case: you are trying to delete the last node from a one-node list.
+    if (index == 0 && this.length() == 1){
       front = null;
       return;
     }
-    //edge case: you are triyng to delete the 0th node
+    //edge case: you are trying to delete the 0th node from a list with at least two nodes
     if (index == 0){
       front = currentNode.getNext();
       front.setPrev(null);//just to make sure the new front points back to null (not sure if this is necessary)
       return;
     }
     while (currentNode != null){
-      //edge case: you are trying to delete the last node
+      //edge case: you are trying to delete the last node from a list with multiple nodes
       if (counter == index - 1 && index == this.length() - 1){
         currentNode.getNext().setPrev(null);
         currentNode.setNext(null);
