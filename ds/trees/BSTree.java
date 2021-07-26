@@ -20,7 +20,7 @@ public class BSTree {
       TreeNode front = root;
 	    TreeNode trailer;//piggyback off front
       //loop until you're off the tree
-      while (current != null){
+      while (front != null){
         int frontValue = front.getData();
         if (frontValue == key){
           // in a real BSTree, we would update the value somehow
