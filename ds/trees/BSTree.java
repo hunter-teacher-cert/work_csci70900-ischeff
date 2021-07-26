@@ -34,10 +34,10 @@ public class BSTree {
         }
       }//end of while loop
       //trailer points to new node
-      if (key > trailer.getData()){
-        trailer.setRight(newNode);
+      if (key > front.getData()){
+        front.setRight(newNode);
       } else {
-        trailer.setLeft(newNode);
+        front.setLeft(newNode);
       }
     } //end of insert
 
