@@ -8,6 +8,54 @@ public class BSTree {
     	root = null;//default constructor
     }
 
+    private void preorderTraverse(TreeNode current){
+      if (current == null)
+      return;
+      //process the current node
+      System.out.print(current.getData()+", ");
+      // recursively print out the left subtree
+      preorderTraverse(current.getLeft());
+      // recursively print out the right subtree
+      preorderTraverse(current.getRight());
+    }
+
+    public void preorderTraverse(){
+      preorderTraverse(root);
+      System.out.println();
+    }
+
+    private void postorderTraverse(TreeNode current){
+      if (current == null)
+      return;
+      // recursively print out the left subtree
+      postorderTraverse(current.getLeft());
+      // recursively print out the right subtree
+      postorderTraverse(current.getRight());
+      //process the current node
+      System.out.print(current.getData()+", ");
+    }
+
+    public void postorderTraverse(){
+      postorderTraverse(root);
+      System.out.println();
+    }
+
+    private void inorderTraverse(TreeNode current){
+      if (current == null)
+      return;
+      // recursively print out the left subtree
+      inorderTraverse(current.getLeft());
+      //process the current node
+      System.out.print(current.getData()+", ");
+      // recursively print out the right subtree
+      inorderTraverse(current.getRight());
+    }
+
+    public void inorderTraverse(){
+      inorderTraverse(root);
+      System.out.println();
+    }
+
     //this method inserts an int into the tree
     public void insert(int key){
       TreeNode newNode = new TreeNode(key); //create new node
