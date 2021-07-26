@@ -23,7 +23,7 @@ public class BSTree {
           current = current.getLeft();//go left on tree for values < current
         }
       }//end of while loop
-      return -1;//return null if key not found
+      throw new NullPointerException();//return null if key not found
     } //end of search
 
     //method below creates a tree of specified design
