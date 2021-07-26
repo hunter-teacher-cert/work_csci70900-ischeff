@@ -96,6 +96,11 @@ public class Dlist{
       front = newNode;
     }
     while (currentNode != null){
+      if (counter == index - 1 && index == this.length()){//edge case: adding to end of list
+        Node newNode = new Node(value, null, currentNode);
+        currentNode.setNext(newNode);
+        break;
+      }
       if (counter == index - 1){
         Node newNode = new Node(value, currentNode.getNext(), currentNode);
         currentNode.getNext().setPrev(newNode);//point node after current node back to new node

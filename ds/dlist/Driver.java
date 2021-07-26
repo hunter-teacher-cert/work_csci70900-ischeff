@@ -79,6 +79,11 @@ public class Driver{
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
     System.out.println();
+    d.insert(7, "Raspberry");
+    System.out.println(d);
+    System.out.println("IsEmpty: " + d.isEmpty());
+    System.out.println("Length: " + d.length());
+    System.out.println();
     System.out.println(d.search("Pineapple"));
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
