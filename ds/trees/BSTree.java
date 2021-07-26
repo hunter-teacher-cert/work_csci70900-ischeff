@@ -18,7 +18,7 @@ public class BSTree {
       }
       //point front toward the root
       TreeNode front = root;
-	    TreeNode trailer = null;//piggyback off front
+	    TreeNode trailer = root;//piggyback off front
       //loop until you're off the tree
       while (front != null){
         int frontValue = front.getData();

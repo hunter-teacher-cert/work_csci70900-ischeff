@@ -30,6 +30,5 @@ public class Driver {
       t.insert(8);
       t.insert(3);
       t.insert(25);
-
     }//end of main
 }//end of class
