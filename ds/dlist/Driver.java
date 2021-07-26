@@ -35,6 +35,7 @@ public class Driver{
     d.set(0, "Pear");
     System.out.println(d);
     d.set(-1, "Peach");
+    System.out.println();
     System.out.println(d);
     d.insert(1, "Pineapple");
     System.out.println(d);
@@ -42,6 +43,11 @@ public class Driver{
     System.out.println(d);
     d.insert(2, "Durian");
     System.out.println(d);
+    System.out.println();
+    System.out.println(d.search("Pineapple"));
+    System.out.println(d.search("Pear"));
+    System.out.println(d.search("Watermelon"));
+
 
 
 ;  }//end of main

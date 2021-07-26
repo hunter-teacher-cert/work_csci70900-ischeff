@@ -112,20 +112,20 @@ public class Dlist{
     }
   }
 
-  // // returns the index of the first item with
-  // // data value key. Returns -1 if not found
-  // public int search(String key){
-  //   Node currentNode = front;
-  //   int counter = 0;
-  //   while (currentNode != null){
-  //     if (currentNode.getData() == key){
-  //       return counter;
-  //     }
-  //     counter ++;
-  //     currentNode = currentNode.getNext();
-  //   }
-	// return -1;
-  // }
+  // returns the index of the first item with
+  // data value key. Returns -1 if not found
+  public int search(String key){
+    Node currentNode = front;
+    int counter = 0;
+    while (currentNode != null){
+      if (currentNode.getData() == key){
+        return counter;
+      }
+      counter ++;
+      currentNode = currentNode.getNext();
+    }
+	return -1;
+  }
   //
   // // removes the node at index.
   // // does nothing if index out of bounds
