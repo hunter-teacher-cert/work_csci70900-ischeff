@@ -1,4 +1,4 @@
-//Group members: Peter, Ian, Dwayne, Eric W
+//Group members: Peter, Ian, Dwayne, Eric W.
 
 import java.io.*;
 import java.util.*;
