@@ -46,21 +46,33 @@ public class BSTree {
         }
       //case 2 = the node we want to delete has one child
       } else if (front.getLeft() == null || front.getRight() == null){
-
-        // //~~~~~~~~~~~~~~~~~~~~~~~~
-        // //note: this implementation of the second case doesn't use trailer
-        // //instead, we rewrite the data in front with its child's data, then delete the child.
-        // //(this seemed conceptually more straightforward to me, but might be less efficient)
-        if(front.getRight() == null){
-          front.setData(front.getLeft().getData());
-          front.setLeft(null);
-          return;
+        if(front.getData() < trailer.getData()){
+          if(front.getRight() == null){
+            trailer.setLeft(front.getLeft());
+          } else {
+            trailer.setLeft(front.getRight());
+          }
         } else {
-          front.setData(front.getRight().getData());
-          front.setRight(null);
-          return;
+          if(front.getRight() == null){
+            trailer.setRight(front.getLeft());
+          } else {
+            trailer.setRight(front.getRight());
+          }
         }
-        // //~~~~~~~~~~~~~~~~~~~~~~~~~
+        // // //~~~~~~~~~~~~~~~~~~~~~~~~
+        // // //note: this implementation of the second case doesn't use trailer
+        // // //instead, we rewrite the data in front with its child's data, then delete the child.
+        // // //(this seemed conceptually more straightforward to me, but might be less efficient)
+        // if(front.getRight() == null){
+        //   front.setData(front.getLeft().getData());
+        //   front.setLeft(null);
+        //   return;
+        // } else {
+        //   front.setData(front.getRight().getData());
+        //   front.setRight(null);
+        //   return;
+        // }
+        // // //~~~~~~~~~~~~~~~~~~~~~~~~~
         //note: below is me trying to write the second case using trailer
 
         //case 3 - front has two children
