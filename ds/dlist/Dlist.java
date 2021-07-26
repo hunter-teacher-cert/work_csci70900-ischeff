@@ -4,25 +4,29 @@ import java.util.*;
 
 public class Dlist{
   private Node front; // the front of the list
+  //private Node tail; //the end of the list
 
   public  Dlist(){
 	   front = null;
+     //tail = null; //should there be another instance variable that points to the end?
   }
   // Add a new node containing data
   // at the front of the list
   public void addFront(String data){
 	// make the new node, point to front (shout out to Liam for showing how to simplify this!), and prev to null
     Node n = new Node(data, front, null);
-    front = n; //now n is the front
-  }//end of addFront
+    front = n;
+  }
+  // should we create this method?
+  // public void addTail(String data){
+  //
+  // }
 
   public String toString(){
   	Node currentNode = front;
   	String result = "";
   	while (currentNode != null){
   	    result = result + currentNode + " --> ";
-  	    // this is like i=i+1 is for arrays
-  	    // but for linked lists
   	    currentNode = currentNode.getNext();
   	}
   	result = result + "null";
@@ -84,16 +88,6 @@ public class Dlist{
 
   // insert an item before index.
   // only inserts if the index is within bounds
-  // Hint: look at toString for hints on
-  // traversal and draw out a diagram.
-  // You will need a variable that refers to
-  // the node BEFORE you want to do the insertion.
-  //note to self: look at how you added an X into the list yesterday!
-  //you will need to create a new node
-  //when you get to index - 1, current node should pass its data to the new node
-  //then you pass the input value (the parameter) into the data of the old node
-  //then you point the new node to the same thing the old node points to
-  //then you point the old node to the new node.
   public void insert(int index, String value){
     Node currentNode = front;
     int counter = 0;
@@ -133,52 +127,37 @@ public class Dlist{
   public void remove(int index){
     Node currentNode = front;
     int counter = 0;
-    //loop as long as you are not in nullspace
+    //edge case: you are trying to delete a node from an index that does not exist
+    if (index >= this.length()){
+      return;
+    }
+    //edge case: you are trying to delete the last node from a one-node list.
+    if (index == 0 && this.length() == 1){
+      front = null;
+      return;
+    }
+    //edge case: you are trying to delete the 0th node from a list with at least two nodes
+    if (index == 0){
+      front = currentNode.getNext();
+      front.setPrev(null);//just to make sure the new front points back to null (not sure if this is necessary)
+      return;
+    }
     while (currentNode != null){
-      //edge case: you are trying to delete the 0th node
-      if (index == 0){
-        //edge case: you are trying to delete the last node from a one-node list.
-        if (this.length() == 1){
-          front = null;
-          break;
-        //edge case: you are trying to delete the 0th node from a multi-node list
-        } else {
-        front = currentNode.getNext();
-        front.setPrev(null);//just to make sure the new front points back to null (not sure if this is necessary)
+      //edge case: you are trying to delete the last node from a list with multiple nodes
+      if (counter == index - 1 && index == this.length() - 1){
+        currentNode.getNext().setPrev(null);
+        currentNode.setNext(null);
         break;
-        }
-      } else if (counter == index - 1){
-        //edge case: you are trying to delete a node from an index that does not exist
-        if (index >= this.length()){
-          break;
-          //edge case: you are trying to delete the last node from a list with multiple nodes
-        } else if(index == this.length() - 1){
-          currentNode.getNext().setPrev(null);
-          currentNode.setNext(null);
-          break;
-        } else {
-          currentNode.setNext(currentNode.getNext().getNext());//need to get the next AFTER the next since we are at index - 1
-          currentNode.getNext().setPrev(currentNode);//point new next node's prev pointer to current node
-          break;
-        }
+      }
+      //"regular" case: if you are trying to remove a node NOT at the beginning or end in a multi-node list
+      if (counter == index - 1){
+        currentNode.setNext(currentNode.getNext().getNext());//need to get the next AFTER the next since we are at index - 1
+        currentNode.getNext().setPrev(currentNode);//point new next node's prev pointer to current node
+        break;
       }
      counter ++;
      currentNode = currentNode.getNext();
     }
-  }
-
-//   public void remove(int index){
-//   int i = 0;
-//   Node currentNode = front;
-//   while(currentNode != null){
-//     if(i == index-1){
-//       currentNode.setNext(currentNode.getNext().getNext());
-//       currentNode.getNext().setPrev(currentNode);
-//       break;
-//     }
-//     i++;
-//     currentNode = currentNode.getNext();
-//   }
-// }
+  }//end of remove
 
 }//end of class
