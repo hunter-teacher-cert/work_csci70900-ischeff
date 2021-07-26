@@ -39,13 +39,18 @@ public class BSTree {
 
       // case 1 -- the node we want to delete is a leaf (no children)
       if (front.getLeft() == null && front.getRight() == null) {
-        trailer.setRight(null);//do we set both to null?
-        trailer.setLeft(null);//do we set both to null?
+        if(front.getData() < trailer.getData()){
+          trailer.setLeft(null);
+        } else{
+          trailer.setRight(null);
+        }
       //case 2 = the node we want to delete has one child
       } else if (front.getLeft() == null || front.getRight() == null){
-        //note: this implementation of the second case doesn't use trailer
-        //instead, we rewrite the data in front with its child's data, then delete the child.
-        //(this seemed conceptually more straightforward to me, but might be less efficient)
+
+        // //~~~~~~~~~~~~~~~~~~~~~~~~
+        // //note: this implementation of the second case doesn't use trailer
+        // //instead, we rewrite the data in front with its child's data, then delete the child.
+        // //(this seemed conceptually more straightforward to me, but might be less efficient)
         if(front.getRight() == null){
           front.setData(front.getLeft().getData());
           front.setLeft(null);
@@ -55,8 +60,26 @@ public class BSTree {
           front.setRight(null);
           return;
         }
+        // //~~~~~~~~~~~~~~~~~~~~~~~~~
+        //note: below is me trying to write the second case using trailer
+
         //case 3 - front has two children
       } else {
+        //if the left child of front has no children, replace front with its left child
+        // if (front.getLeft().getLeft() == null && front.getLeft().getRight() == null){
+        //   front.setData(front.getLeft());
+        //   front.setLeft(null);
+        //if the left child of front has children
+        // } else {
+        //   //note: I think my idea of rewriting over a node doesn't work here as well
+        //   // I think I ought to create a separate routine to find the successor
+        //   //use a temporary varaible to hold the biggest value, but essentially look for
+        //   // and return the biggest value on the left hand branch of front
+        //   //then also delete that value?
+        //   //or when would I do that?
+        //   //I think I would find the new value, set front to the new data, and then delete the odl one; but wouldn't that destabilize the tree if I delete the old one?
+        //   // or is the biggest value always going to be a leaf?
+        // }
         // find the node with the largest value
         // on fronts left subtree (go left once, and right as far as you can)
         // should I create a private method to find the replacement node?
