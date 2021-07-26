@@ -2,10 +2,10 @@ import java.io.*;
 import java.util.*;
 
 
-public class Llist{
+public class Dlist{
   private Node front; // the front of the list
 
-  public  Llist(){
+  public  Dlist(){
 	   front = null;
   }
   // Add a new node containing data
@@ -50,110 +50,110 @@ public class Llist{
   	return counter;
   }
 
-  // returns the item at location index;
-  // returns null if there aren't enough
-  // items. Starts with index 0
-  public String get(int index){
-    Node currentNode = front;
-    int counter = 0;
-    while (currentNode!= null){
-      if(counter == index){
-        return currentNode.getData();
-      }
-      counter++;
-      currentNode = currentNode.getNext();
-    }
-    return null;
-    // if (index >= size){
-    //   System.out.println(size);
-    //   return null;
-    // }
-    // for(int i = 0; i < index; i++){
-    //   currentNode = currentNode.getNext();
-    // }
-    // return currentNode.getData();
-    //if the index is greater than the lenght of the linked list return null
-    //return null;
-  //Ian's questions: how do we create the index? Can we use the .length method?
-  }//end of get
-
-  // sets the item at location index (starting
-  // with 0) to value.
-  // only sets if the index is within range
-  public void set(int index, String value){
-    Node currentNode = front;
-    int counter = 0;
-    while (currentNode!= null){
-      if(counter == index){
-        currentNode.setData(value);
-        break;
-      }
-      counter++;
-      currentNode = currentNode.getNext();
-    }
-  }//end of set
-
-  // insert an item before index.
-  // only inserts if the index is within bounds
-  // Hint: look at toString for hints on
-  // traversal and draw out a diagram.
-  // You will need a variable that refers to
-  // the node BEFORE you want to do the insertion.
-  //note to self: look at how you added an X into the list yesterday!
-  //you will need to create a new node
-  //when you get to index - 1, current node should pass its data to the new node
-  //then you pass the input value (the parameter) into the data of the old node
-  //then you point the new node to the same thing the old node points to
-  //then you point the old node to the new node.
-  public void insert(int index, String value){
-    Node currentNode = front;
-    int counter = 0;
-    if (index == 0){
-      Node newNode = new Node(value, front);
-      front = newNode;
-    }
-    while (currentNode != null){
-      if (counter == index - 1){
-        Node newNode = new Node(value, currentNode.getNext());
-        currentNode.setNext(newNode);
-        break;
-      }
-      counter++;
-      currentNode = currentNode.getNext();
-    }
-  }
-
-  // returns the index of the first item with
-  // data value key. Returns -1 if not found
-  public int search(String key){
-    Node currentNode = front;
-    int counter = 0;
-    while (currentNode != null){
-      if (currentNode.getData() == key){
-        return counter;
-      }
-      counter ++;
-      currentNode = currentNode.getNext();
-    }
-	return -1;
-  }
-
-  // removes the node at index.
-  // does nothing if index out of bounds
-  public void remove(int index){
-    Node currentNode = front;
-    int counter = 0;
-    if (index == 0){//edge case: you can't redirect the prior node when there isn't one!
-      front = currentNode.getNext();
-    }
-    while (currentNode != null){
-      if (counter == index - 1){//I think we need to redirect the previous node to the node after index
-      currentNode.setNext(currentNode.getNext().getNext());//need to get the next AFTER the next since we are at index - 1
-      break;
-      }
-     counter ++;
-     currentNode = currentNode.getNext();
-    }
-  }
+  // // returns the item at location index;
+  // // returns null if there aren't enough
+  // // items. Starts with index 0
+  // public String get(int index){
+  //   Node currentNode = front;
+  //   int counter = 0;
+  //   while (currentNode!= null){
+  //     if(counter == index){
+  //       return currentNode.getData();
+  //     }
+  //     counter++;
+  //     currentNode = currentNode.getNext();
+  //   }
+  //   return null;
+  //   // if (index >= size){
+  //   //   System.out.println(size);
+  //   //   return null;
+  //   // }
+  //   // for(int i = 0; i < index; i++){
+  //   //   currentNode = currentNode.getNext();
+  //   // }
+  //   // return currentNode.getData();
+  //   //if the index is greater than the lenght of the linked list return null
+  //   //return null;
+  // //Ian's questions: how do we create the index? Can we use the .length method?
+  // }//end of get
+  //
+  // // sets the item at location index (starting
+  // // with 0) to value.
+  // // only sets if the index is within range
+  // public void set(int index, String value){
+  //   Node currentNode = front;
+  //   int counter = 0;
+  //   while (currentNode!= null){
+  //     if(counter == index){
+  //       currentNode.setData(value);
+  //       break;
+  //     }
+  //     counter++;
+  //     currentNode = currentNode.getNext();
+  //   }
+  // }//end of set
+  //
+  // // insert an item before index.
+  // // only inserts if the index is within bounds
+  // // Hint: look at toString for hints on
+  // // traversal and draw out a diagram.
+  // // You will need a variable that refers to
+  // // the node BEFORE you want to do the insertion.
+  // //note to self: look at how you added an X into the list yesterday!
+  // //you will need to create a new node
+  // //when you get to index - 1, current node should pass its data to the new node
+  // //then you pass the input value (the parameter) into the data of the old node
+  // //then you point the new node to the same thing the old node points to
+  // //then you point the old node to the new node.
+  // public void insert(int index, String value){
+  //   Node currentNode = front;
+  //   int counter = 0;
+  //   if (index == 0){
+  //     Node newNode = new Node(value, front);
+  //     front = newNode;
+  //   }
+  //   while (currentNode != null){
+  //     if (counter == index - 1){
+  //       Node newNode = new Node(value, currentNode.getNext());
+  //       currentNode.setNext(newNode);
+  //       break;
+  //     }
+  //     counter++;
+  //     currentNode = currentNode.getNext();
+  //   }
+  // }
+  //
+  // // returns the index of the first item with
+  // // data value key. Returns -1 if not found
+  // public int search(String key){
+  //   Node currentNode = front;
+  //   int counter = 0;
+  //   while (currentNode != null){
+  //     if (currentNode.getData() == key){
+  //       return counter;
+  //     }
+  //     counter ++;
+  //     currentNode = currentNode.getNext();
+  //   }
+	// return -1;
+  // }
+  //
+  // // removes the node at index.
+  // // does nothing if index out of bounds
+  // public void remove(int index){
+  //   Node currentNode = front;
+  //   int counter = 0;
+  //   if (index == 0){//edge case: you can't redirect the prior node when there isn't one!
+  //     front = currentNode.getNext();
+  //   }
+  //   while (currentNode != null){
+  //     if (counter == index - 1){//I think we need to redirect the previous node to the node after index
+  //     currentNode.setNext(currentNode.getNext().getNext());//need to get the next AFTER the next since we are at index - 1
+  //     break;
+  //     }
+  //    counter ++;
+  //    currentNode = currentNode.getNext();
+  //   }
+  // }
 
 }//end of class
