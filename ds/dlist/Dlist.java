@@ -81,37 +81,37 @@ public class Dlist{
       currentNode = currentNode.getNext();
     }
   }//end of set
-  //
-  // // insert an item before index.
-  // // only inserts if the index is within bounds
-  // // Hint: look at toString for hints on
-  // // traversal and draw out a diagram.
-  // // You will need a variable that refers to
-  // // the node BEFORE you want to do the insertion.
-  // //note to self: look at how you added an X into the list yesterday!
-  // //you will need to create a new node
-  // //when you get to index - 1, current node should pass its data to the new node
-  // //then you pass the input value (the parameter) into the data of the old node
-  // //then you point the new node to the same thing the old node points to
-  // //then you point the old node to the new node.
-  // public void insert(int index, String value){
-  //   Node currentNode = front;
-  //   int counter = 0;
-  //   if (index == 0){
-  //     Node newNode = new Node(value, front);
-  //     front = newNode;
-  //   }
-  //   while (currentNode != null){
-  //     if (counter == index - 1){
-  //       Node newNode = new Node(value, currentNode.getNext());
-  //       currentNode.setNext(newNode);
-  //       break;
-  //     }
-  //     counter++;
-  //     currentNode = currentNode.getNext();
-  //   }
-  // }
-  //
+
+  // insert an item before index.
+  // only inserts if the index is within bounds
+  // Hint: look at toString for hints on
+  // traversal and draw out a diagram.
+  // You will need a variable that refers to
+  // the node BEFORE you want to do the insertion.
+  //note to self: look at how you added an X into the list yesterday!
+  //you will need to create a new node
+  //when you get to index - 1, current node should pass its data to the new node
+  //then you pass the input value (the parameter) into the data of the old node
+  //then you point the new node to the same thing the old node points to
+  //then you point the old node to the new node.
+  public void insert(int index, String value){
+    Node currentNode = front;
+    int counter = 0;
+    if (index == 0){
+      Node newNode = new Node(value, front, null);
+      front = newNode;
+    }
+    while (currentNode != null){
+      if (counter == index - 1){
+        Node newNode = new Node(value, currentNode.getNext(), currentNode);
+        currentNode.setNext(newNode);
+        break;
+      }
+      counter++;
+      currentNode = currentNode.getNext();
+    }
+  }
+
   // // returns the index of the first item with
   // // data value key. Returns -1 if not found
   // public int search(String key){
