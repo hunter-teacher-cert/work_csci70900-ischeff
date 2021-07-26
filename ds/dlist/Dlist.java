@@ -98,14 +98,13 @@ public class Dlist{
     Node currentNode = front;
     int counter = 0;
     if (index == 0){
-      Node newNode = new Node(value, front, null);
-      front = newNode;
+      addFront(value);
     }
     while (currentNode != null){
       if (counter == index - 1){
         Node newNode = new Node(value, currentNode.getNext(), currentNode);
+        currentNode.getNext().setPrev(newNode);//point node after current node back to new node
         currentNode.setNext(newNode);//point current Node to new node
-        currentNode.getNext().getNext().setPrev(newNode);//point node formerly after current node back to new node
         break;
       }
       counter++;
