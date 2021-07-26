@@ -27,6 +27,16 @@ public class Driver{
     System.out.println(d.get(2));
     System.out.println(d.get(3));
     System.out.println(d.get(-1));
+    System.out.println();
+    d.set(0, "Pear");
+    System.out.println(d);
+    d.set(1, "Peach");
+    System.out.println(d);
+    d.set(0, "Pear");
+    System.out.println(d);
+    d.set(-1, "Peach");
+    System.out.println(d);
+
 
 ;  }//end of main
 }//end of class
