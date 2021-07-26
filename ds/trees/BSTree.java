@@ -58,9 +58,10 @@ public class BSTree {
         //case 3 - front has two children
       } else {
         // find the node with the largest value
-        // on fronts left subtree
+        // on fronts left subtree (go left once, and right as far as you can)
+        // should I create a private method to find the replacement node?
         // or the node with the smallest value on front's right subtree
-        // should I include both options? 
+        // should I include both options?
         // and replace front with it.
       }
     }//end of delete
