@@ -8,6 +8,32 @@ public class BSTree {
     	root = null;//default constructor
     }
 
+    //this method inserts an int into the tree
+    public void insert(int key){
+      TreeNode newNode = new TreeNode(key); //create new node
+      //edge case: if tree is empty, make root the new node
+      if(root == null){
+        root = newNode;
+        return;//exit if this happens
+      }
+      //point front toward the root
+      TreeNode front = root;
+	    TreeNode trailer;//piggyback off front
+      //loop until you're off the tree
+      while (current != null){
+        int frontValue = front.getData();
+        if (frontValue == key){
+          // add here
+          return;//exit loop
+        } else if (frontValue < key){
+          current = current.getRight();//go right on tree for values > current
+        } else {
+          current = current.getLeft();//go left on tree for values < current
+        }
+      }//end of while loop
+      throw new NullPointerException();//return null if key not found
+    } //end of insert
+
     //method to search for a specified value in the BSTree
     //returns value if found or null otherwise
     public int search(int key){
