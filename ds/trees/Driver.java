@@ -35,5 +35,6 @@ public class Driver {
       t2.preorderTraverse();
       t2.postorderTraverse();
       t2.inorderTraverse();
+      //deletion tests
     }//end of main
 }//end of class

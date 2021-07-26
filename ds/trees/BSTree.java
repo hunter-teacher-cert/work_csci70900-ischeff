@@ -37,12 +37,24 @@ public class BSTree {
       // front points to the node we want to delete
       // and trailer points to the one above it
 
-      // case 1 -- the node we want to delete is a leaf
+      // case 1 -- the node we want to delete is a leaf (no children)
       if (front.getLeft() == null && front.getRight() == null) {
         trailer.setRight(null);//do we set both to null?
         trailer.setLeft(null);//do we set both to null?
+      //case 2 = the node we want to delete has one child
       } else if (front.getLeft() == null || front.getRight() == null){
-        // repoint front's parent to front's child
+        //note: this implementation of the second case doesn't use trailer
+        //instead, we rewrite the data in front with its child's data, then delete the child.
+        //(this seemed conceptually more straightforward to me, but might be less efficient)
+        if(front.getRight() == null){
+          front.setData(front.getLeft());
+          front.setLeft(null);
+          return;
+        } else {
+          front.setData(front.getRight());
+          front.setRight(null);
+          return;
+        }
       } else {
         // front has two children
         //
