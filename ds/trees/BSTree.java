@@ -23,15 +23,22 @@ public class BSTree {
       while (current != null){
         int frontValue = front.getData();
         if (frontValue == key){
-          // add here
+          // in a real BSTree, we would update the value somehow
           return;//exit loop
         } else if (frontValue < key){
-          current = current.getRight();//go right on tree for values > current
+          trailer = front;
+          front = front.getRight();//go right on tree for values > current
         } else {
-          current = current.getLeft();//go left on tree for values < current
+          trailer = front;
+          front = front.getLeft();//go left on tree for values < current
         }
       }//end of while loop
-      throw new NullPointerException();//return null if key not found
+      //trailer points to new node
+      if (key > trailer.getData()){
+        trailer.setRight(newNode);
+      } else {
+        trailer.setLeft(newNode);
+      }
     } //end of insert
 
     //method to search for a specified value in the BSTree
