@@ -98,7 +98,8 @@ public class Dlist{
     Node currentNode = front;
     int counter = 0;
     if (index == 0){
-      addFront(value);
+      Node newNode = new Node(value, front, null);
+      front = newNode;
     }
     while (currentNode != null){
       if (counter == index - 1){
@@ -129,22 +130,41 @@ public class Dlist{
 
   // removes the node at index.
   // does nothing if index out of bounds
+  // public void remove(int index){
+  //   Node currentNode = front;
+  //   int counter = 0;
+  //   //edge case: you can't redirect the prior node when there isn't one!
+  //   if (index == 0){
+  //     front = currentNode.getNext();
+  //     front.setPrev(null);//just to make sure the new front points back to null (not sure if this is necessary)
+  //   }
+  //   while (currentNode != null){
+  //     if (counter == index - 1 && index == this.length() - 1){
+  //       currentNode.getNext().setPrev(null);
+  //       currentNode.setNext(null);
+  //     }
+  //     if (counter == index - 1){
+  //       currentNode.setNext(currentNode.getNext().getNext());//need to get the next AFTER the next since we are at index - 1
+  //       currentNode.getNext().setPrev(currentNode);//point new next node's prev pointer to current node
+  //       break;
+  //     }
+  //    counter ++;
+  //    currentNode = currentNode.getNext();
+  //   }
+  // }
+
   public void remove(int index){
-    Node currentNode = front;
-    int counter = 0;
-    if (index == 0){//edge case: you can't redirect the prior node when there isn't one!
-      front = currentNode.getNext();
-      front.setPrev(null);//just to make sure the new front points back to null (not sure if this is necessary)
-    }
-    while (currentNode != null){
-      if (counter == index - 1){//I think we need to redirect the previous node to the node after index
-      currentNode.setNext(currentNode.getNext().getNext());//need to get the next AFTER the next since we are at index - 1
-      currentNode.getNext().setPrev(currentNode);//point new next node's prev pointer to current node
+  int i = 0;
+  Node currentNode = front;
+  while(currentNode != null){
+    if(i == index-1){
+      currentNode.setNext(currentNode.getNext().getNext());
+      currentNode.getNext().setPrev(currentNode);
       break;
-      }
-     counter ++;
-     currentNode = currentNode.getNext();
     }
+    i++;
+    currentNode = currentNode.getNext();
   }
+}
 
 }//end of class
