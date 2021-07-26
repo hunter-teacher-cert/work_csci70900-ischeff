@@ -36,6 +36,12 @@ public class Driver{
     System.out.println(d);
     d.set(-1, "Peach");
     System.out.println(d);
+    d.insert(1, "Pineapple");
+    System.out.println(d);
+    d.insert(1, "Starfruit");
+    System.out.println(d);
+    d.insert(2, "Durian");
+    System.out.println(d);
 
 
 ;  }//end of main
