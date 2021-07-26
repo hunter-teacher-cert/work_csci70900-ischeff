@@ -12,7 +12,7 @@ public class Driver {
       //search for 10 in the tree (should be there--it's the root!)
       value = t.search(10);
       System.out.println(value);
-      search for 15 in the tree (should be there)
+      //search for 15 in the tree (should be there)
       value = t.search(15);
       System.out.println(value);
       // //search for 17 in tree (should NOT be there)
