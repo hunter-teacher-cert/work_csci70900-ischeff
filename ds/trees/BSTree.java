@@ -86,6 +86,7 @@ public class BSTree {
             TreeNode max = findMax(front.getLeft());
             this.delete(max.getData());
             front.setData(max.getData());
+            //if you are deleting the root, make sure to repoint root to its replacement
             if (root.getData() == key){
               root = max;
             }
