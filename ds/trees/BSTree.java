@@ -55,11 +55,12 @@ public class BSTree {
           front.setRight(null);
           return;
         }
+        //case 3 - front has two children
       } else {
-        // front has two children
-        //
         // find the node with the largest value
         // on fronts left subtree
+        // or the node with the smallest value on front's right subtree
+        // should I include both options? 
         // and replace front with it.
       }
     }//end of delete
