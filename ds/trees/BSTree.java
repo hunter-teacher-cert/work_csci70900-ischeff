@@ -73,7 +73,6 @@ public class BSTree {
         //   return;
         // }
         // // //~~~~~~~~~~~~~~~~~~~~~~~~~
-        //note: below is me trying to write the second case using trailer
 
         //case 3 - front has two children
       } else {

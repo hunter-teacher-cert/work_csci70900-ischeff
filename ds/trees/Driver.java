@@ -36,11 +36,13 @@ public class Driver {
       t2.postorderTraverse();
       t2.inorderTraverse();
       //deletion tests
-      t2.delete(25);
-      t2.inorderTraverse();
-      t2.delete(3);
-      t2.inorderTraverse();
-      // t2.delete(20);
+      // t2.delete(25);
       // t2.inorderTraverse();
+      // t2.delete(3);
+      // t2.inorderTraverse();
+      t2.delete(20);
+      t2.inorderTraverse();
+      t2.delete(7);
+      t2.inorderTraverse();
     }//end of main
 }//end of class
