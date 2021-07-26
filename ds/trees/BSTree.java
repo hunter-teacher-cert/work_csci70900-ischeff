@@ -18,9 +18,9 @@ public class BSTree {
         if (currentValue == key){
           return currentValue;//return value if found
         } else if (currentValue < key){
-          currentValue = current.getRight();//go right on tree for values > current
+          current = current.getRight();//go right on tree for values > current
         } else {
-          currentValue = current.getLeft();//go left on tree for values < current
+          current = current.getLeft();//go left on tree for values < current
         }
       }//end of while loop
       return -1;//return null if key not found
