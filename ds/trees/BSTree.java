@@ -2,31 +2,25 @@ import java.io.*;
 import java.util.*;
 
 public class BSTree {
-    private TreeNode root;
+    private TreeNode root;//instance variable
 
     public BSTree(){
-	root = null;
+    	root = null;//default constructor
     }
 
+    //method below creates a tree of specified design
     public void seed(){
-	TreeNode t;
-
-	t = new TreeNode(10);
-	root = t;
-	t = new TreeNode(5);
-	root.setLeft(t);
-	t = new TreeNode(20);
-	root.setRight(t);
-
-	root.getLeft().setRight( new TreeNode(8));
-
-	t = new TreeNode(15);
-	root.getRight().setLeft(t);
-
-	t = new TreeNode(22);
-	root.getRight().setRight(t);
-
-	}
-
-
-}
+	    TreeNode t;
+    	t = new TreeNode(10);
+    	root = t;
+    	t = new TreeNode(5);
+    	root.setLeft(t);
+    	t = new TreeNode(20);
+    	root.setRight(t);
+    	root.getLeft().setRight(new TreeNode(8));
+    	t = new TreeNode(15);
+    	root.getRight().setLeft(t);
+    	t = new TreeNode(22);
+    	root.getRight().setRight(t);
+  	}
+}//end of class
