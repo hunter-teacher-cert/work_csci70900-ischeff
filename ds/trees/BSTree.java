@@ -87,9 +87,10 @@ public class BSTree {
             this.delete(max.getData());
             front.setData(max.getData());
             //if you are deleting the root, make sure to repoint root to its replacement
-            if (root.getData() == key){
-              root = max;
-            }
+            // note: as Brian pointed out, root still points to the same object, so we don't need the code below!
+            // if (root.getData() == key){
+            //   root = max;
+            // }
       }
     }//end of delete
 
