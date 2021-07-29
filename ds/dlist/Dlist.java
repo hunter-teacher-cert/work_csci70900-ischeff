@@ -4,11 +4,11 @@ import java.util.*;
 
 public class Dlist{
   private Node front; // the front of the list
-  //private Node tail; //the end of the list
+  private Node tail; //the end of the list
 
   public  Dlist(){
 	   front = null;
-     //tail = null; //should there be another instance variable that points to the end?
+     tail = null; //should there be another instance variable that points to the end?
   }
   // Add a new node containing data
   // at the front of the list
@@ -18,9 +18,16 @@ public class Dlist{
     front = n;
   }
   // should we create this method?
-  // public void addTail(String data){
-  //
-  // }
+  public void addTail(String data){
+    Node currentNode = front;
+    counter = 0;
+    while (currentNode!= null){
+      if (counter == this.length()){
+        Node newNode = newNode(value, null, currentNode);
+        currentNode.setNext(newNode);
+      }
+    }
+  }
 
   public String toString(){
   	Node currentNode = front;
@@ -96,11 +103,6 @@ public class Dlist{
       front = newNode;
     }
     while (currentNode != null){
-      if (counter == index - 1 && index == this.length()){//edge case: adding to end of list
-        Node newNode = new Node(value, null, currentNode);
-        currentNode.setNext(newNode);
-        break;
-      }
       if (counter == index - 1){
         Node newNode = new Node(value, currentNode.getNext(), currentNode);
         currentNode.getNext().setPrev(newNode);//point node after current node back to new node
