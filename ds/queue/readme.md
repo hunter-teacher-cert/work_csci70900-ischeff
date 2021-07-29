@@ -5,6 +5,7 @@
 - This class should use a linked list that you build (not the built in Java class) with at least two pointers.
 - Your class should implement the following methods:
 ___
+## Methods: 
 - constructor(s)
 - enqueue(value) <-- add value to the end of the queue
 - x = dequeue() <-- remove and return the value at the front of the queue
