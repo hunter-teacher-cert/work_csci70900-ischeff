@@ -2,7 +2,6 @@
 * Queue is a class that instantiates queues.
 */
 
-
 public class Queue{
 
   /**
