@@ -1,3 +1,8 @@
+## Note:
+- Below is the list of assignments completed in this class, for easy reference.
+- For the final projects, I chose to complete the **Queue** and **Doubly-linked List**.
+- Time permitting, I'd also like to try creating a poetry generator using a Markov chain.
+___
 # Daily Assignments / Notes
 
 ## Deliverables
