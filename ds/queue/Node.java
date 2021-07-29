@@ -14,7 +14,7 @@ public class Node {
   private Node next;
 
   /**
-  * Default constructor. Each queue object is intialized to contain an empty string and point to null.
+  * Default constructor. Each node object is intialized to contain an empty string and point to null.
   */
   public Node() {
     data = "";
@@ -22,7 +22,7 @@ public class Node {
   }
 
   /**
-  * Value constructor. Each queue object can be intialized to contain a given string.
+  * Value constructor. Each node object can be intialized to contain a given string.
   *
   * @param value - whatever string you want the node to contain.
   */
@@ -32,7 +32,7 @@ public class Node {
   }
 
   /**
-  * Value constructor. Each queue object can be intialized to contain a given string and point to a given node.
+  * Value constructor. Each node object can be intialized to contain a given string and point to a given node.
   *
   * @param value - whatever string you want the node to contain.
   * @param next - whichever node you want the new node to point to.
@@ -83,7 +83,7 @@ public class Node {
   /**
   * Returns the string contained in a given node. .
   *
-  * @return he string contained in a given node.  
+  * @return he string contained in a given node.
   */
   public String toString() {
     return data;
