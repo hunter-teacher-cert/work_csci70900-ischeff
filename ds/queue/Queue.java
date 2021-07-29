@@ -46,12 +46,13 @@ public class Queue{
   // x = dequeue() <-- remove and return the value at the front of the queue
   public String dequeue(){
     Node currentNode = head;
-    if (head == null){
+    if (this.isEmpty()){
       throw new NullPointerException("Queue is empty!");
+    } else{
+      size--;
+      head = currentNode.getNext();
+      return currentNode.getData();
     }
-    head = currentNode.getNext();
-    return currentNode.getData();
-    size--;
   }
 
   // x = front() <-- return but don't remove the value at the front
