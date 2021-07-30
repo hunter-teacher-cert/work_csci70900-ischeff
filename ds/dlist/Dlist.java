@@ -21,8 +21,8 @@ public class Dlist{
   * The initial size of the dlist object is zero.
   */
   public Dlist(){
-	   front = null;
-     tail = null;
+	   front = new Node("", tail, null);
+     tail = new Node("", null, front);
      size = 0;
   }
 
@@ -37,10 +37,11 @@ public class Dlist{
   public void addFront(String data){
     if(size == 0){
       Node n = new Node(data, tail, front);
+      size++;
     } else{
       Node n = new Node(data, front.getNext(), front);
+      size++;
     }
-    size++;
   }
 
   /**
@@ -53,11 +54,11 @@ public class Dlist{
   * @return void
   */
   public void addTail(String data){
-    if(size == 0){
-      Node n = new Node(data, tail, front);
-    } else{
+    // if(size == 0){
+    //   Node n = new Node(data, tail, front);
+    // } else{
       Node n = new Node(data, tail, tail.getPrev());
-    }
+    // }
     size++;
   }
 
@@ -72,7 +73,7 @@ public class Dlist{
   	Node currentNode = front.getNext();
   	String result = "";
   	while (currentNode != tail){
-  	    result = result + currentNode + " --> ";//do I need currentNode.getData()?
+  	    result = result + currentNode.getData() + " --> ";//do I need currentNode.getData()?
   	    currentNode = currentNode.getNext();
   	}
   	result = result + "null";
@@ -197,7 +198,7 @@ public class Dlist{
     } else if (size == 0){
       this.addFront(value);
       size++;
-      return;
+    //  return;
     } else if (index > size / 2){
         Node currentNode = tail.getPrev();
         int counter = size - 1;
@@ -205,7 +206,7 @@ public class Dlist{
           if (counter == index){
             Node newNode = new Node(value, currentNode, currentNode.getPrev());
             size++;
-            break;
+        //    break;
           }
           counter--;
           currentNode = currentNode.getPrev();
@@ -217,7 +218,7 @@ public class Dlist{
         if (counter == index){
           Node newNode = new Node(value, currentNode, currentNode.getPrev());
           size++;
-          break;
+        //  break;
         }
         counter++;
         currentNode = currentNode.getNext();
@@ -271,7 +272,7 @@ public class Dlist{
           currentNode.setPrev(null);
           currentNode.setNext(null);
           size--;
-          break;
+          //break;
         }
       }
     } else {
@@ -284,7 +285,7 @@ public class Dlist{
           currentNode.setPrev(null);
           currentNode.setNext(null);
           size--;
-          break;
+          //break;
         }
       }
     }
