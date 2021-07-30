@@ -35,6 +35,7 @@ public class Driver{
     // System.out.println("What's at index 3? " + d.get(3)); //(should throw exception)
     // d.insert(-1, "Apple");//should throw exception
     // d.insert(-15, "Apple");//should throw exception
+    // d.insert(25, "Apple");//should throw exception
     System.out.println();
     d.set(2, "Plum");
     System.out.println(d);
@@ -43,6 +44,9 @@ public class Driver{
     System.out.println("Front: " + d.getFront());
     System.out.println("Tail: " + d.getTail());
     System.out.println();
+    System.out.println("At what index is Apple? " + d.search("Apple"));
+    System.out.println("At what index is Papaya? " + d.search("Papaya"));
+    System.out.println("At what index is Plum? " + d.search("Plum"));
     // d.set(-15, "Plum");//should throw an exception
     // d.set(25, "Plum");//should throw an exception
     // System.out.println(d);
