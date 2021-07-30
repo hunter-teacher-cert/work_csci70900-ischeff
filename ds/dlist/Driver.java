@@ -31,6 +31,12 @@ public class Driver{
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
     System.out.println(d);
+    System.out.println();
+    d.addTail("Kumquat");
+    System.out.println("IsEmpty: " + d.isEmpty());
+    System.out.println("Length: " + d.length());
+    System.out.println(d);
+
 
     // System.out.println(d.get(0));
     // System.out.println(d.get(1));

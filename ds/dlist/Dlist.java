@@ -46,23 +46,23 @@ public class Dlist{
     return(size == 0);
   }
 
-  //method to check header
-  public String getFront(){
-    if(isEmpty()){
-      return null;
-    } else {
-      return front.getNext().getData();
-    }
-  }
-
-  //method to check tail
-  public String getTail(){
-    if(isEmpty()){
-      return null;
-    } else {
-      return tail.getPrev().getData();
-    }
-  }
+  // //method to check header
+  // public String getFront(){
+  //   if(isEmpty()){
+  //     return null;
+  //   } else {
+  //     return front.getNext().getData();
+  //   }
+  // }
+  //
+  // //method to check tail
+  // public String getTail(){
+  //   if(isEmpty()){
+  //     return null;
+  //   } else {
+  //     return tail.getPrev().getData();
+  //   }
+  // }
 
   /**
   * Adds a node to the front of the dlist. When the list is empty (i.e., size == 0),
@@ -119,17 +119,13 @@ public class Dlist{
       Node currentNode = front.getNext();
       String result = "";
       while (currentNode != tail){
-    	    result = result + currentNode + " --> ";//do I need currentNode.getData()?
+    	    result = result + currentNode + " <--> ";//do I need currentNode.getData()?
     	    currentNode = currentNode.getNext();
       }
-      result = result + "null";
+      result = "null <--> " + result + "null";
     	return result;
   	}
   }
-
-
-
-
 
   /**
   * Returns the data contained in a node at a given index.
