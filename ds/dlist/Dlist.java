@@ -5,18 +5,24 @@ import java.util.*;
 public class Dlist{
   private Node front; // the front of the list
   private Node tail; //the end of the list
+  private int size; //size of list
 
-  public  Dlist(){
+  public Dlist(){
 	   front = null;
-     tail = null; //should there be another instance variable that points to the end?
+     tail = null;
+     size = 0;
   }
   // Add a new node containing data
   // at the front of the list
   public void addFront(String data){
-	// make the new node, point to front (shout out to Liam for showing how to simplify this!), and prev to null
-    Node n = new Node(data, front, null);
-    front = n;
+    if(size ==0){
+      Node n = new Node(data, tail, front);
+    } else{
+      Node n = new Node(data, front.getNext(), front);
+    }
+    size++;
   }
+
   // should we create this method?
   public void addTail(String data){
     Node currentNode = front;
@@ -32,7 +38,7 @@ public class Dlist{
   public String toString(){
   	Node currentNode = front;
   	String result = "";
-  	while (currentNode != null){
+  	while (currentNode != null && (currentNode!= front || tail)){
   	    result = result + currentNode + " --> ";
   	    currentNode = currentNode.getNext();
   	}
