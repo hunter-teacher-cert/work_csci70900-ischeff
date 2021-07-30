@@ -308,7 +308,7 @@ public class Dlist{
           currentNode.setPrev(null);
           currentNode.setNext(null);
           size--;
-          //break;
+          break;
         }
       }
     } else {
@@ -321,7 +321,7 @@ public class Dlist{
           currentNode.setPrev(null);
           currentNode.setNext(null);
           size--;
-          //break;
+          break;
         }
       }
     }

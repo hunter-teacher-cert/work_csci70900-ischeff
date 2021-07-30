@@ -26,6 +26,7 @@ public class Driver{
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
     System.out.println(d);
+    System.out.println();
     d.remove(2);
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
