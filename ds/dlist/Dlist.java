@@ -46,23 +46,33 @@ public class Dlist{
     return(size == 0);
   }
 
-  // //method to check header
-  // public String getFront(){
-  //   if(isEmpty()){
-  //     return null;
-  //   } else {
-  //     return front.getNext().getData();
-  //   }
-  // }
-  //
-  // //method to check tail
-  // public String getTail(){
-  //   if(isEmpty()){
-  //     return null;
-  //   } else {
-  //     return tail.getPrev().getData();
-  //   }
-  // }
+  /**
+  * This method returns the front of the dlist. First, the method checks if the list is empty.
+  * If the list is not empty, the dlist returns the data of the node after the front sentinel node.
+  *
+  * @return the data of the first node after the front sentinel node of the dlist.
+  */
+  public String getFront(){
+    if(isEmpty()){
+      return null;
+    } else {
+      return front.getNext().getData();
+    }
+  }
+
+  /**
+  * This method returns the tail of the dlist. First, the method checks if the list is empty.
+  * If the list is not empty, the dlist returns the data of the node before the tail sentinel node.
+  *
+  * @return the data of the first node before the tail sentinel node of the dlist.
+  */
+  public String getTail(){
+    if(isEmpty()){
+      return null;
+    } else {
+      return tail.getPrev().getData();
+    }
+  }
 
   /**
   * Adds a node to the front of the dlist. When the list is empty (i.e., size == 0),
@@ -74,15 +84,11 @@ public class Dlist{
   */
   public void addFront(String data){
     insertBetween(data, front, front.getNext());
-      // Node n = new Node(data, front.getNext(), front);
-      // size++;
-    // }
   }
 
   /**
-  * Adds a node to the tail of the dlist. When the list is empty (i.e., size == 0),
-  * the node is positioned between tail and front. When the list is non-empty (i.e., size > 0),
-  * the node is positioned between tail and the node that precedes tail.
+  * Adds a node to the tail of the dlist. Uses the private subroutine insertBetween
+  * to create and insert a new node between the node before the tail and the tail.
   *
   * @param data - the data the node will contain.
   *
@@ -90,21 +96,24 @@ public class Dlist{
   */
   public void addTail(String data){
     insertBetween(data, tail.getPrev(), tail);
-    // if(size == 0){
-    //   Node n = new Node(data, tail, front);
-    // } else{
-    //   Node n = new Node(data, tail, tail.getPrev());
-    // // }
-    // size++;
   }
 
-  //method to insert node in between existing nodes (private methodt o be used in other methods)
+  /**
+  * Private method to insert a node between two other given nodes.
+  *
+  * @param value - the String you want the new node to include
+  * @param predecessor - the Node before the node you want to insert
+  * @param successor - the Node after the node you want to insert
+  *
+  * @return void
+  */
   private void insertBetween(String value, Node predecessor, Node successor){
     Node newNode = new Node(value, successor, predecessor);
     predecessor.setNext(newNode);
     successor.setPrev(newNode);
     size++;
   }
+
   /**
   * Returns a string representing the dlist. Traverses the dlist and adds the data from each
   * node to an initially empty string; then appends an "-->" between nodes. Note that the traversal
@@ -140,7 +149,7 @@ public class Dlist{
   * @return string data contained by the node at the given index.
   */
   public String get(int index){
-    if(index > size || index < 0){
+    if(index >= size || index < 0){
       throw new NullPointerException("Not a valid index!");
     } else if (index > size / 2){
         Node currentNode = tail.getPrev();
@@ -180,7 +189,7 @@ public class Dlist{
   * @return void
   */
   public void set(int index, String value){
-    if(index > size || index < 0){
+    if(index >= size || index < 0){
       throw new NullPointerException("Not a valid index!");
     } else if(index > size / 2){
         Node currentNode = tail.getPrev();
@@ -222,7 +231,7 @@ public class Dlist{
   * @return void
   */
   public void insert(int index, String value){
-    if (index > size || index < 0){
+    if (index >= size || index < 0){
       throw new NullPointerException("Can't insert there!");
     } else if (size == 0){
       this.addFront(value);
