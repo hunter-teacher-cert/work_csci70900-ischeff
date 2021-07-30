@@ -257,7 +257,7 @@ public class Dlist{
         int counter = size - 1;
         while (currentNode != front){
           if (counter == index){
-            insertBetween(value, tail.getPrev(), tail);
+            insertBetween(value, currentNode.getPrev(), currentNode);
             break;
           }
           counter--;
@@ -268,7 +268,7 @@ public class Dlist{
       int counter = 0;
       while (currentNode != tail){
         if (counter == index){
-          insertBetween(value, tail, tail.getPrev());
+          insertBetween(value, currentNode.getPrev(), currentNode);
           break;
         }
         counter++;
