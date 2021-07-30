@@ -1,18 +1,39 @@
+/**
+* Dlist is a class that instantiates doubly-linked lists, or Dlist objects.
+*/
+
 import java.io.*;
 import java.util.*;
 
 public class Dlist{
+
+  /**
+  * Instance variables. Each dlist object begins with two nodes, head and tail.
+  * These nodes serve as sentinels. That is, they serve to bookend the data-containing nodes.
+  * Each dlist also contains a reference to its own size.
+  */
   private Node front; // the front of the list
   private Node tail; //the end of the list
   private int size; //size of list
 
+  /**
+  * Default constructor. Each dlist object has its head and tail initially point to null.
+  * The initial size of the dlist object is zero.
+  */
   public Dlist(){
 	   front = null;
      tail = null;
      size = 0;
   }
-  // Add a new node containing data
-  // at the front of the list
+
+  /**
+  * Adds a node to the front of the dlist. When the list is empty (i.e., size == 0),
+  * the node is positioned between tail and front. When the list is non-empty (i.e., size > 0),
+  * the node is positioned between front and the node that follows front.
+  *
+  * @param data - the data the node will contain.
+  * @return void
+  */
   public void addFront(String data){
     if(size == 0){
       Node n = new Node(data, tail, front);
@@ -22,7 +43,14 @@ public class Dlist{
     size++;
   }
 
-  // should we create this method?
+  /**
+  * Adds a node to the tail of the dlist. When the list is empty (i.e., size == 0),
+  * the node is positioned between tail and front. When the list is non-empty (i.e., size > 0),
+  * the node is positioned between tail and the node that precedes tail.
+  *
+  * @param data - the data the node will contain.
+  * @return void
+  */
   public void addTail(String data){
     if(size == 0){
       Node n = new Node(data, tail, front);
