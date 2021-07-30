@@ -197,7 +197,7 @@ public class Dlist{
     } else if (size == 0){
       this.addFront(value);
       size++;
-      //break;//do I need these break statements?
+      return;
     } else if (index > size / 2){
         Node currentNode = tail.getPrev();
         int counter = size - 1;
@@ -205,7 +205,7 @@ public class Dlist{
           if (counter == index){
             Node newNode = new Node(value, currentNode, currentNode.getPrev());
             size++;
-          //  break;
+            break;
           }
           counter--;
           currentNode = currentNode.getPrev();
@@ -217,7 +217,7 @@ public class Dlist{
         if (counter == index){
           Node newNode = new Node(value, currentNode, currentNode.getPrev());
           size++;
-        //  break;
+          break;
         }
         counter++;
         currentNode = currentNode.getNext();
@@ -225,8 +225,15 @@ public class Dlist{
     }
   }
 
-  // returns the index of the first item with
-  // data value key. Returns -1 if not found
+  /**
+  * Returns the index of the first node with the data value key.
+  * Returns -1 if the key is not found in the dlist.
+  *
+  * @param key - the data for which you are searching in the dlist.
+  *
+  * @return the index of the first node with the data value key.
+  * @return -1 if the key is not found.
+  */
   public int search(String key){
     Node currentNode = front.getNext();
     int counter = 0;
@@ -237,44 +244,49 @@ public class Dlist{
       counter ++;
       currentNode = currentNode.getNext();
     }
-	return -1;
+	  return -1;
   }
 
-  // removes the node at index.
-  // does nothing if index out of bounds
+  /**
+  * Removes the node at the given index by pointing the previous and next nodes to each other.
+  * Severs all connection to the node at index by also pointing that node to null for prev and next.
+  * Throws NullPointerException if the index is out of bounds or the dlist is already empty.
+  *
+  * @param index - the index at which you want to remove a node from the dlist.
+  *
+  * @return void
+  */
   public void remove(int index){
-    Node currentNode = front;
-    int counter = 0;
-    //edge case: you are trying to delete a node from an index that does not exist
-    if (index >= this.length()){
-      return;
-    }
-    //edge case: you are trying to delete the last node from a one-node list.
-    if (index == 0 && this.length() == 1){
-      front = null;
-      return;
-    }
-    //edge case: you are trying to delete the 0th node from a list with at least two nodes
-    if (index == 0){
-      front = currentNode.getNext();
-      front.setPrev(null);//just to make sure the new front points back to null (not sure if this is necessary)
-      return;
-    }
-    while (currentNode != null){
-      //edge case: you are trying to delete the last node from a list with multiple nodes
-      if (counter == index - 1 && index == this.length() - 1){
-        currentNode.getNext().setPrev(null);
-        currentNode.setNext(null);
-        break;
+    if (index > size || index < 0){
+      throw new NullPointerException("Not a valid index!");
+    } else if (size == 0){
+      throw new NullPointerException("List is aleady empty!");
+    } else if (index > size / 2){
+      Node currentNode = tail.getPrev();
+      int counter = size - 1;
+      while (currentNode != front){
+        if (counter == index){
+          (currentNode.getPrev()).setNext(currentNode.getNext());
+          (currentNode.getNext()).setPrev(currentNode.getPrev());
+          currentNode.setPrev(null);
+          currentNode.setNext(null);
+          size--;
+          break;
+        }
       }
-      //"regular" case: if you are trying to remove a node NOT at the beginning or end in a multi-node list
-      if (counter == index - 1){
-        currentNode.setNext(currentNode.getNext().getNext());//need to get the next AFTER the next since we are at index - 1
-        currentNode.getNext().setPrev(currentNode);//point new next node's prev pointer to current node
-        break;
+    } else {
+      Node currentNode = front.getNext();
+      int counter = 0;
+      while (currentNode != tail){
+        if (counter == index){
+          (currentNode.getPrev()).setNext(currentNode.getNext());
+          (currentNode.getNext()).setPrev(currentNode.getPrev());
+          currentNode.setPrev(null);
+          currentNode.setNext(null);
+          size--;
+          break;
+        }
       }
-     counter ++;
-     currentNode = currentNode.getNext();
     }
   }//end of remove
 
