@@ -237,8 +237,10 @@ public class Dlist{
         while (currentNode != front){
           if (counter == index){
             Node newNode = new Node(value, currentNode, currentNode.getPrev());
+            currentNode.getPrev().setNext(newNode);//think this was missing!
+            currentNode.setPrev(newNode);
             size++;
-        //    break;
+            break;
           }
           counter--;
           currentNode = currentNode.getPrev();
@@ -249,8 +251,10 @@ public class Dlist{
       while (currentNode != tail){
         if (counter == index){
           Node newNode = new Node(value, currentNode, currentNode.getPrev());
+          currentNode.getPrev().setNext(newNode);//think this was missing!
+          currentNode.setPrev(newNode);
           size++;
-        //  break;
+          break;
         }
         counter++;
         currentNode = currentNode.getNext();
