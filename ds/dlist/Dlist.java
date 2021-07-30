@@ -115,6 +115,22 @@ public class Dlist{
   }
 
   /**
+  * Private method to remove a node between two other given nodes.
+  *
+  * @param node - the node you want to remove 
+  *
+  * @return string contained by the node you want to remove.
+  */
+  private String removeBetween(Node node){
+    Node predecessor = node.getPrev();
+    Node successor = node.getNext();
+    predecessor.setNext(successor);
+    successor.setPrev(predecessor);
+    size--;
+    return node.getData();
+  }
+
+  /**
   * Returns a string representing the dlist. Traverses the dlist and adds the data from each
   * node to an initially empty string; then appends an "-->" between nodes. Note that the traversal
   * starts from the node after the front, and ends when we reach the tail.
@@ -235,7 +251,6 @@ public class Dlist{
       throw new NullPointerException("Can't insert there!");
     } else if (size == 0){
       this.addFront(value);
-    //  return;
     } else if (index > size / 2){
         Node currentNode = tail.getPrev();
         int counter = size - 1;
@@ -259,7 +274,7 @@ public class Dlist{
         currentNode = currentNode.getNext();
       }
     }
-  }
+  }//end of insert
 
   /**
   * Returns the index of the first node with the data value key.
@@ -302,26 +317,28 @@ public class Dlist{
       int counter = size - 1;
       while (currentNode != front){
         if (counter == index){
-          (currentNode.getPrev()).setNext(currentNode.getNext());
-          (currentNode.getNext()).setPrev(currentNode.getPrev());
-          currentNode.setPrev(null);
-          currentNode.setNext(null);
-          size--;
+          removeBetween(currentNode);
+          // (currentNode.getPrev()).setNext(currentNode.getNext());
+          // (currentNode.getNext()).setPrev(currentNode.getPrev());
+          // size--;
           break;
         }
+        counter--;
+        currentNode = currentNode.getPrev();
       }
     } else {
       Node currentNode = front.getNext();
       int counter = 0;
       while (currentNode != tail){
         if (counter == index){
-          (currentNode.getPrev()).setNext(currentNode.getNext());
-          (currentNode.getNext()).setPrev(currentNode.getPrev());
-          currentNode.setPrev(null);
-          currentNode.setNext(null);
-          size--;
+          removeBetween(currentNode);
+          // (currentNode.getPrev()).setNext(currentNode.getNext());
+          // (currentNode.getNext()).setPrev(currentNode.getPrev());
+          // size--;
           break;
         }
+        counter++;
+        currentNode = currentNode.getNext();
       }
     }
   }//end of remove
