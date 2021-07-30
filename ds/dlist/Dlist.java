@@ -21,8 +21,9 @@ public class Dlist{
   * The initial size of the dlist object is zero.
   */
   public Dlist(){
-	   front = new Node("", tail, null);
-     tail = new Node("", null, front);
+	   front = new Node();
+     tail = new Node();
+     front.setNext(tail);
      size = 0;
   }
 
@@ -35,13 +36,13 @@ public class Dlist{
   * @return void
   */
   public void addFront(String data){
-    if(size == 0){
-      Node n = new Node(data, tail, front);
-      size++;
-    } else{
+    // if(size == 0){
+    //   Node n = new Node(data, tail, front);
+    //   size++;
+    // } else{
       Node n = new Node(data, front.getNext(), front);
       size++;
-    }
+    // }
   }
 
   /**
@@ -70,14 +71,18 @@ public class Dlist{
   * @return the string to be printed.
   */
   public String toString(){
-  	Node currentNode = front.getNext();
-  	String result = "";
-  	while (currentNode != tail){
-  	    result = result + currentNode.getData() + " --> ";//do I need currentNode.getData()?
-  	    currentNode = currentNode.getNext();
+    if (size == 0){
+      return ("List is empty!");
+    } else {
+      Node currentNode = front;
+      String result = "";
+      while (currentNode != null){
+    	    result = result + currentNode + " --> ";//do I need currentNode.getData()?
+    	    currentNode = currentNode.getNext();
+      }
+      result = result + "null";
+    	return result;
   	}
-  	result = result + "null";
-  	return result;
   }
 
   /**

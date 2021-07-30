@@ -10,10 +10,16 @@ public class Driver{
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
     System.out.println(d);
-  //   d.addFront("Apple");
+    d.addFront("Apple");
+    System.out.println("IsEmpty: " + d.isEmpty());
+    System.out.println("Length: " + d.length());
+    System.out.println(d.get(0));
+    System.out.println(d.get(1));
+    System.out.println(d.get(2));
+    // System.out.println(d);
   //   System.out.println("Length: " + d.length());
   //   try{
-  //   System.out.println(d.get(0));
+  //
   // } catch (Exception e){
   //   System.out.println("Null pointer exception");
   // }
