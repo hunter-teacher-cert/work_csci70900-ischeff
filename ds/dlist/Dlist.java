@@ -25,14 +25,12 @@ public class Dlist{
 
   // should we create this method?
   public void addTail(String data){
-    Node currentNode = front;
-    counter = 0;
-    while (currentNode!= null){
-      if (counter == this.length()){
-        Node newNode = newNode(value, null, currentNode);
-        currentNode.setNext(newNode);
-      }
+    if(size == 0){
+      Node n = new Node(data, tail, front);
+    } else{
+      Node n = new Node(data, tail.getPrev(), tail)
     }
+    size++;
   }
 
   public String toString(){
