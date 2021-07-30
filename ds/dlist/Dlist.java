@@ -56,7 +56,7 @@ public class Dlist{
     if(size == 0){
       Node n = new Node(data, tail, front);
     } else{
-      Node n = new Node(data, tail.getPrev(), tail);
+      Node n = new Node(data, tail, tail.getPrev());
     }
     size++;
   }
@@ -109,16 +109,18 @@ public class Dlist{
   * @return string data contained by the node at the given index.
   */
   public String get(int index){
-    if (index > size / 2){
-      Node currentNode = tail.getPrev();
-      int counter = size - 1;
-      while (currentNode != front){
-        if (counter == index){
-          return currentNode.getData();
+    if(index > size || index < 0){
+      throw new NullPointerException("Not a valid index!");
+    } else if (index > size / 2){
+        Node currentNode = tail.getPrev();
+        int counter = size - 1;
+        while (currentNode != front){
+          if (counter == index){
+            return currentNode.getData();
+          }
+          counter--;
+          currentNode = currentNode.getPrev();
         }
-        counter--;
-        currentNode = currentNode.getPrev();
-      }
     } else {
       Node currentNode = front.getNext();
       int counter = 0;
@@ -174,14 +176,20 @@ public class Dlist{
   // insert an item before index.
   // only inserts if the index is within bounds
   public void insert(int index, String value){
-    if (size == 0){
+    if (index > size || index < 0){
+      throw new NullPointerException("Can't insert there!");
+    } else if (size == 0){
       this.addFront(value);
+      size++;
+      //break;//do I need these break statements?
     } else if (index > size / 2){
         Node currentNode = tail.getPrev();
         int counter = size - 1;
         while (currentNode != front){
           if (counter == index){
             Node newNode = new Node(value, currentNode, currentNode.getPrev());
+            size++;
+          //  break;
           }
           counter--;
           currentNode = currentNode.getPrev();
@@ -191,29 +199,13 @@ public class Dlist{
       int counter = 0;
       while (currentNode != tail){
         if (counter == index){
-          Node newNode = new Node(value, currentNode.getNext(), currentNode);
+          Node newNode = new Node(value, currentNode, currentNode.getPrev());
+          size++;
+        //  break;
         }
         counter++;
         currentNode = currentNode.getNext();
       }
-    }
-
-
-    Node currentNode = front;
-    int counter = 0;
-    if (index == 0){
-      Node newNode = new Node(value, front, null);
-      front = newNode;
-    }
-    while (currentNode != null){
-      if (counter == index - 1){
-        Node newNode = new Node(value, currentNode.getNext(), currentNode);
-        currentNode.getNext().setPrev(newNode);//point node after current node back to new node
-        currentNode.setNext(newNode);//point current Node to new node
-        break;
-      }
-      counter++;
-      currentNode = currentNode.getNext();
     }
   }
 
