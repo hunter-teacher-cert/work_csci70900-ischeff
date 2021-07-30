@@ -47,7 +47,6 @@ public class Dlist{
   // False otherwise
   //note: if the list points to null, it is empty.
   public boolean isEmpty(){
-    //return(front.getNext() = null); // this will return true if the list points to null
     return(size == 0);
   }
 
@@ -94,15 +93,24 @@ public class Dlist{
   // with 0) to value.
   // only sets if the index is within range
   public void set(int index, String value){
-    Node currentNode = front;
-    int counter = 0;
-    while (currentNode!= null){
-      if(counter == index){
-        currentNode.setData(value);
-        break;
+    if(index > size / 2){
+      Node currentNode = tail.getPrev();
+      int counter = 0;
+      while (currentNode != front){
+        if (counter == size - 1){
+          currentNode.setData(value);
+          break;
+        }
       }
-      counter++;
-      currentNode = currentNode.getNext();
+    } else {
+      Node currentNode = front.getNext();
+      into counter = 0;
+      while (curentNode != tail){
+        if (counter == index){
+          currentNode.setData(value);
+          break;
+        }
+      }
     }
   }//end of set
 
