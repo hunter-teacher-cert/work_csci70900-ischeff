@@ -132,7 +132,7 @@ public class Dlist{
 
   /**
   * Returns a string representing the dlist. Traverses the dlist and adds the data from each
-  * node to an initially empty string; then appends an "-->" between nodes. Note that the traversal
+  * node to an initially empty string; then appends an "<-->" between nodes. Note that the traversal
   * starts from the node after the front, and ends when we reach the tail.
   *
   * @return the string to be printed.
@@ -302,14 +302,14 @@ public class Dlist{
   /**
   * Removes the node at the given index by pointing the previous and next nodes to each other.
   * Throws NullPointerException if the index is out of bounds or the dlist is already empty.
-  * Uses the private subroutine removeBetween to repoint the predecessor and successor nodes to each other. 
+  * Uses the private subroutine removeBetween to repoint the predecessor and successor nodes to each other.
   *
   * @param index - the index at which you want to remove a node from the dlist.
   *
   * @return void
   */
   public void remove(int index){
-    if (index > size || index < 0){
+    if (index >= size || index < 0){
       throw new NullPointerException("Not a valid index!");
     } else if (size == 0){
       throw new NullPointerException("List is aleady empty!");
@@ -319,9 +319,6 @@ public class Dlist{
       while (currentNode != front){
         if (counter == index){
           removeBetween(currentNode);
-          // (currentNode.getPrev()).setNext(currentNode.getNext());
-          // (currentNode.getNext()).setPrev(currentNode.getPrev());
-          // size--;
           break;
         }
         counter--;
@@ -333,9 +330,6 @@ public class Dlist{
       while (currentNode != tail){
         if (counter == index){
           removeBetween(currentNode);
-          // (currentNode.getPrev()).setNext(currentNode.getNext());
-          // (currentNode.getNext()).setPrev(currentNode.getPrev());
-          // size--;
           break;
         }
         counter++;
