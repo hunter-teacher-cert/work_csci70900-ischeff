@@ -3,9 +3,6 @@ import java.util.*;
 
 public class Driver{
   public static void main(String[] args){
-    // System.out.println("Hello, world!");
-    // Node d = new Node("Banana");
-    // System.out.println(d);
     Dlist d = new Dlist();
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
@@ -72,9 +69,9 @@ public class Driver{
     System.out.println(d);
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
-    // System.out.println();
-    // System.out.println(d.get(0));
-    // System.out.println(d.get(1));
+    System.out.println();
+    System.out.println(d.get(0));
+    System.out.println(d.get(1));
     // System.out.println(d.get(2));
     // System.out.println(d.get(3));
     // System.out.println(d.get(-1));
@@ -97,12 +94,11 @@ public class Driver{
     try{
       d.set(-1, "Peach");
     } catch (Exception e){
-      System.out.println("Not a valid index!");
+      System.out.println(e);
+      System.out.println(d);
+      System.out.println("IsEmpty: " + d.isEmpty());
+      System.out.println("Length: " + d.length());
     }
-    System.out.println();
-    System.out.println(d);
-    System.out.println("IsEmpty: " + d.isEmpty());
-    System.out.println("Length: " + d.length());
     System.out.println();
     d.insert(1, "Pineapple");
     System.out.println(d);
@@ -124,25 +120,34 @@ public class Driver{
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
     System.out.println();
+    try{
     d.insert(5, "Blackberry");
+  } catch (Exception e){
+    System.out.println(e);
     System.out.println(d);
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
+  }
     System.out.println();
+
     try{
     d.insert(10, "Raspberry");
   } catch (Exception e){
-    System.out.println("Not a valid index!");
+    System.out.println(e);
+    System.out.println(d);
+    System.out.println("IsEmpty: " + d.isEmpty());
+    System.out.println("Length: " + d.length());
   }
-    System.out.println(d);
-    System.out.println("IsEmpty: " + d.isEmpty());
-    System.out.println("Length: " + d.length());
     System.out.println();
+    try{
     d.insert(7, "Raspberry");
+  } catch (Exception e){
+    System.out.println(e);
     System.out.println(d);
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
     System.out.println();
+  }
     System.out.println(d.search("Pineapple"));
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
@@ -158,7 +163,12 @@ public class Driver{
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
     System.out.println();
-    d.remove(7);
+    d.remove(2);
+    System.out.println(d);
+    System.out.println("IsEmpty: " + d.isEmpty());
+    System.out.println("Length: " + d.length());
+    System.out.println();
+    d.remove(2);
     System.out.println(d);
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());

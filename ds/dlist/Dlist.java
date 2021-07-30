@@ -117,7 +117,7 @@ public class Dlist{
   /**
   * Private method to remove a node between two other given nodes.
   *
-  * @param node - the node you want to remove 
+  * @param node - the node you want to remove
   *
   * @return string contained by the node you want to remove.
   */
@@ -239,7 +239,8 @@ public class Dlist{
   * If the given index is closer to head, method starts at head and traverses forward to find the index.
   * Once the index is found, the method creates a new node using the data passed as a parameter.
   * The new node is then inserted into the dlist before the node at index.
-  * If the index is not in bounds, will throw a NullPointerException.
+  * This method uses the private subroutine insertBetween to create and add the node.
+  * If the index is not in bounds, method will throw a NullPointerException.
   *
   * @param index - the index at which to insert the new node.
   * @param value - the data that the new node will contain.
@@ -300,8 +301,8 @@ public class Dlist{
 
   /**
   * Removes the node at the given index by pointing the previous and next nodes to each other.
-  * Severs all connection to the node at index by also pointing that node to null for prev and next.
   * Throws NullPointerException if the index is out of bounds or the dlist is already empty.
+  * Uses the private subroutine removeBetween to repoint the predecessor and successor nodes to each other. 
   *
   * @param index - the index at which you want to remove a node from the dlist.
   *
