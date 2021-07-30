@@ -10,12 +10,19 @@ public class Driver{
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
     System.out.println(d);
-    d.addFront("Apple");
+    System.out.println();
+    // d.addFront("Apple");
+    d.insert(0, "Apple");
     System.out.println("IsEmpty: " + d.isEmpty());
     System.out.println("Length: " + d.length());
-    System.out.println(d.get(0));
-    System.out.println(d.get(1));
-    System.out.println(d.get(2));
+    System.out.println(d);
+    d.addFront("Peach");
+    System.out.println("IsEmpty: " + d.isEmpty());
+    System.out.println("Length: " + d.length());
+    System.out.println(d);
+    // System.out.println(d.get(0));
+    // System.out.println(d.get(1));
+    // System.out.println(d.get(2));
     // System.out.println(d);
   //   System.out.println("Length: " + d.length());
   //   try{

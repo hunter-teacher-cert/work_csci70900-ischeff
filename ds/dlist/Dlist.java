@@ -51,7 +51,7 @@ public class Dlist{
     if(isEmpty()){
       return null;
     } else {
-      return front.getNext().getValue();
+      return front.getNext().getData();
     }
   }
 
@@ -60,7 +60,7 @@ public class Dlist{
     if(isEmpty()){
       return null;
     } else {
-      return tail.getPrev().getValue();
+      return tail.getPrev().getData();
     }
   }
 
