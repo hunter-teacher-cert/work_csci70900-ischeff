@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.*;
 
-
 public class Dlist{
   private Node front; // the front of the list
   private Node tail; //the end of the list
@@ -15,7 +14,7 @@ public class Dlist{
   // Add a new node containing data
   // at the front of the list
   public void addFront(String data){
-    if(size ==0){
+    if(size == 0){
       Node n = new Node(data, tail, front);
     } else{
       Node n = new Node(data, front.getNext(), front);
@@ -34,15 +33,15 @@ public class Dlist{
   }
 
   public String toString(){
-  	Node currentNode = front;
+  	Node currentNode = front.getNext();
   	String result = "";
-  	while (currentNode != null && (currentNode!= front || tail)){
-  	    result = result + currentNode + " --> ";
+  	while (currentNode != tail){
+  	    result = result + currentNode + " --> ";//do I need currentNode.getData()?
   	    currentNode = currentNode.getNext();
   	}
   	result = result + "null";
   	return result;
-  }//end of toString
+  }
 
 
   // returns True if there is nothing in the list
