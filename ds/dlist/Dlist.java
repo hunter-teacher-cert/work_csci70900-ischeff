@@ -43,39 +43,49 @@ public class Dlist{
   	return result;
   }
 
-
   // returns True if there is nothing in the list
   // False otherwise
   //note: if the list points to null, it is empty.
   public boolean isEmpty(){
-    return(front == null); // this will return true if the list points to null
+    //return(front.getNext() = null); // this will return true if the list points to null
+    return(size == 0);
   }
 
   // returns the number of items in the list
   // Hint: look at the toString
   // to remind you how to traverse down the list
   public int length(){
-    Node currentNode = front;
-  	int counter = 0;
-  	while (currentNode != null){
-  	    counter++;
-  	    currentNode = currentNode.getNext();
-  	}
-  	return counter;
+    return size;
   }
+
+  //need to refactor get, set, and insert to take advantage of double linkage
+  //you should compare the index to the size --> if closer to tail (i.e., greater than half of size, then traverse in reverse)
+  //otherwise, traverse going forwards.
 
   // returns the item at location index;
   // returns null if there aren't enough
   // items. Starts with index 0
   public String get(int index){
-    Node currentNode = front;
-    int counter = 0;
-    while (currentNode!= null){
-      if(counter == index){
-        return currentNode.getData();
+    if (index > size / 2){
+      Node currentNode = tail.getPrev();
+      int counter = 0;
+      while (currentNode != front){
+        if (counter == size - 1){
+          return currentNode.getData();
+        }
+        counter++
+        currentNode = currentNode.getPrev();
       }
-      counter++;
-      currentNode = currentNode.getNext();
+    } else {
+      Node currentNode = front.getNext();
+      int counter = 0;
+      while (currentNode != tail){
+        if(counter = index){
+          return currentNode.getData();
+        }
+        counter++;
+        currentNode = currentNode.getNext();
+      }
     }
     return null;
   }//end of get
@@ -120,9 +130,9 @@ public class Dlist{
   // returns the index of the first item with
   // data value key. Returns -1 if not found
   public int search(String key){
-    Node currentNode = front;
+    Node currentNode = front.getNext();
     int counter = 0;
-    while (currentNode != null){
+    while (currentNode != tail){
       if (currentNode.getData() == key){
         return counter;
       }
