@@ -166,7 +166,7 @@ public class Dlist{
   */
   public String get(int index){
     if(index >= size || index < 0){
-      throw new NullPointerException("Not a valid index!");
+      throw new NullPointerException(index + " is not a valid index!");
     } else if (index > size / 2){
         Node currentNode = tail.getPrev();
         int counter = size - 1;
@@ -206,7 +206,7 @@ public class Dlist{
   */
   public void set(int index, String value){
     if(index >= size || index < 0){
-      throw new NullPointerException("Not a valid index!");
+      throw new NullPointerException(index + " is not a valid index!");
     } else if(index > size / 2){
         Node currentNode = tail.getPrev();
         int counter = size - 1;
@@ -249,7 +249,7 @@ public class Dlist{
   */
   public void insert(int index, String value){
     if (index >= size || index < 0){
-      throw new NullPointerException("Can't insert there!");
+      throw new NullPointerException("Can't insert at " + index + "!");
     } else if (size == 0){
       this.addFront(value);
     } else if (index > size / 2){
@@ -310,7 +310,7 @@ public class Dlist{
   */
   public void remove(int index){
     if (index >= size || index < 0){
-      throw new NullPointerException("Not a valid index!");
+      throw new NullPointerException(index + " is not a valid index!");
     } else if (size == 0){
       throw new NullPointerException("List is aleady empty!");
     } else if (index > size / 2){
