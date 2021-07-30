@@ -24,7 +24,44 @@ public class Dlist{
 	   front = new Node();
      tail = new Node();
      front.setNext(tail);
+     tail.setNext(front);
      size = 0;
+  }
+
+  /**
+  * This method returns the size of the queue as an integer.
+  *
+  * @return the size of the queue, as an integer.
+  */
+  public int length(){
+    return size;
+  }
+
+  /**
+  * This method returns true if the dlist is empty. This is true if the size is zero.
+  *
+  * @return true if size of dlist is zero, otherwise false.
+  */
+  public boolean isEmpty(){
+    return(size == 0);
+  }
+
+  //method to check header
+  public String getFront(){
+    if(isEmpty()){
+      return null;
+    } else {
+      return front.getNext().getValue();
+    }
+  }
+
+  //method to check tail
+  public String getTail(){
+    if(isEmpty()){
+      return null;
+    } else {
+      return tail.getPrev().getValue();
+    }
   }
 
   /**
@@ -36,12 +73,9 @@ public class Dlist{
   * @return void
   */
   public void addFront(String data){
-    // if(size == 0){
-    //   Node n = new Node(data, tail, front);
-    //   size++;
-    // } else{
-      Node n = new Node(data, front.getNext(), front);
-      size++;
+    insertBetween(data, front, front.getNext());
+      // Node n = new Node(data, front.getNext(), front);
+      // size++;
     // }
   }
 
@@ -55,14 +89,22 @@ public class Dlist{
   * @return void
   */
   public void addTail(String data){
+    insertBetween(data, tail.getPrev(), tail);
     // if(size == 0){
     //   Node n = new Node(data, tail, front);
     // } else{
-      Node n = new Node(data, tail, tail.getPrev());
-    // }
-    size++;
+    //   Node n = new Node(data, tail, tail.getPrev());
+    // // }
+    // size++;
   }
 
+  //method to insert node in between existing nodes (private methodt o be used in other methods)
+  private void insertBetween(String value, Node predecessor, Node successor){
+    Node newNode = new Node(value, successor, predecessor);
+    predecessor.setNext(newNode);
+    successor.setPrev(newNode);
+    size++;
+  }
   /**
   * Returns a string representing the dlist. Traverses the dlist and adds the data from each
   * node to an initially empty string; then appends an "-->" between nodes. Note that the traversal
@@ -74,9 +116,9 @@ public class Dlist{
     if (size == 0){
       return ("List is empty!");
     } else {
-      Node currentNode = front;
+      Node currentNode = front.getNext();
       String result = "";
-      while (currentNode != null){
+      while (currentNode != tail){
     	    result = result + currentNode + " --> ";//do I need currentNode.getData()?
     	    currentNode = currentNode.getNext();
       }
@@ -85,23 +127,9 @@ public class Dlist{
   	}
   }
 
-  /**
-  * This method returns true if the dlist is empty. This is true if the size is zero.
-  *
-  * @return true if size of dlist is zero, otherwise false.
-  */
-  public boolean isEmpty(){
-    return(size == 0);
-  }
 
-  /**
-  * This method returns the size of the queue as an integer.
-  *
-  * @return the size of the queue, as an integer.
-  */
-  public int length(){
-    return size;
-  }
+
+
 
   /**
   * Returns the data contained in a node at a given index.
@@ -202,7 +230,6 @@ public class Dlist{
       throw new NullPointerException("Can't insert there!");
     } else if (size == 0){
       this.addFront(value);
-      size++;
     //  return;
     } else if (index > size / 2){
         Node currentNode = tail.getPrev();

@@ -37,12 +37,12 @@ public class Node {
   /**
   * Value constructor. Each node object can be intialized to contain a given string and point to a given node from prev and next.
   *
-  * @param value - whatever string you want the node to contain.
+  * @param data - whatever string you want the node to contain.
   * @param next - whichever node you want the new node to point to.
   * @param prev - whichever node you want the new node to point to.
   */
   public Node(String value, Node next, Node prev) {
-    data = value;
+    this.data = value;
     this.next = next;
     this.prev = prev;
   }
@@ -54,7 +54,7 @@ public class Node {
   * @return void
   */
   public void setData(String value) {
-    data = value;
+    this.data = value;
   }
 
   /**
@@ -64,7 +64,7 @@ public class Node {
   * @return void
   */
   public void setNext(Node n) {
-    next = n;
+    this.next = n;
   }
 
   /**
@@ -74,7 +74,7 @@ public class Node {
   * @return void
   */
   public void setPrev(Node p) {
-    prev = p;
+    this.prev = p;
   }
 
   /**
