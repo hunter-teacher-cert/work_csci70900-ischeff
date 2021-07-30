@@ -12,9 +12,9 @@ public class Dlist{
   * These nodes serve as sentinels. That is, they serve to bookend the data-containing nodes.
   * Each dlist also contains a reference to its own size.
   */
-  private Node front; // the front of the list
-  private Node tail; //the end of the list
-  private int size; //size of list
+  private Node front;
+  private Node tail;
+  private int size;
 
   /**
   * Default constructor. Each dlist object has its head and tail initially point to null.
@@ -49,17 +49,25 @@ public class Dlist{
   * the node is positioned between tail and the node that precedes tail.
   *
   * @param data - the data the node will contain.
+  *
   * @return void
   */
   public void addTail(String data){
     if(size == 0){
       Node n = new Node(data, tail, front);
     } else{
-      Node n = new Node(data, tail.getPrev(), tail)
+      Node n = new Node(data, tail.getPrev(), tail);
     }
     size++;
   }
 
+  /**
+  * Returns a string representing the dlist. Traverses the dlist and adds the data from each
+  * node to an initially empty string; then appends an "-->" between nodes. Note that the traversal
+  * starts from the node after the front, and ends when we reach the tail.
+  *
+  * @return the string to be printed.
+  */
   public String toString(){
   	Node currentNode = front.getNext();
   	String result = "";
@@ -71,43 +79,51 @@ public class Dlist{
   	return result;
   }
 
-  // returns True if there is nothing in the list
-  // False otherwise
-  //note: if the list points to null, it is empty.
+  /**
+  * This method returns true if the dlist is empty. This is true if the size is zero.
+  *
+  * @return true if size of dlist is zero, otherwise false.
+  */
   public boolean isEmpty(){
     return(size == 0);
   }
 
-  // returns the number of items in the list
-  // Hint: look at the toString
-  // to remind you how to traverse down the list
+  /**
+  * This method returns the size of the queue as an integer.
+  *
+  * @return the size of the queue, as an integer.
+  */
   public int length(){
     return size;
   }
 
-  //need to refactor get, set, and insert to take advantage of double linkage
-  //you should compare the index to the size --> if closer to tail (i.e., greater than half of size, then traverse in reverse)
-  //otherwise, traverse going forwards.
-
-  // returns the item at location index;
-  // returns null if there aren't enough
-  // items. Starts with index 0
+  /**
+  * Returns the data contained in a node at a given index.
+  * Checks to see if the index is in the half of the dlist closer to head or tail.
+  * If the given index is closer to tail, method starts at tail and traverses in reverse to find the index.
+  * If the given index is closer to head, method starts at head and traverses forward to find the index.
+  * Once the index is found, the method returns the data contained in the node at the given index.
+  *
+  * @param index - the index from which to return the node's data.
+  *
+  * @return string data contained by the node at the given index.
+  */
   public String get(int index){
     if (index > size / 2){
       Node currentNode = tail.getPrev();
-      int counter = 0;
+      int counter = size - 1;
       while (currentNode != front){
-        if (counter == size - 1){
+        if (counter == index){
           return currentNode.getData();
         }
-        counter++
+        counter--;
         currentNode = currentNode.getPrev();
       }
     } else {
       Node currentNode = front.getNext();
       int counter = 0;
       while (currentNode != tail){
-        if(counter = index){
+        if(counter == index){
           return currentNode.getData();
         }
         counter++;
@@ -117,27 +133,40 @@ public class Dlist{
     return null;
   }//end of get
 
-  // sets the item at location index (starting
-  // with 0) to value.
-  // only sets if the index is within range
+  /**
+  * Sets the data contained in a node at a given index.
+  * Checks to see if the index is in the half of the dlist closer to head or tail.
+  * If the given index is closer to tail, method starts at tail and traverses in reverse to find the index.
+  * If the given index is closer to head, method starts at head and traverses forward to find the index.
+  * Once the index is found, the method sets the data contained in the node at the given index to the data in the parameter value.
+  *
+  * @param index - the index at which to set the node's data.
+  * @param value - the string with which to set the data of the node at the given index.
+  *
+  * @return void
+  */
   public void set(int index, String value){
     if(index > size / 2){
       Node currentNode = tail.getPrev();
-      int counter = 0;
+      int counter = size - 1;
       while (currentNode != front){
-        if (counter == size - 1){
-          currentNode.setData(value);
-          break;
-        }
-      }
-    } else {
-      Node currentNode = front.getNext();
-      into counter = 0;
-      while (curentNode != tail){
         if (counter == index){
           currentNode.setData(value);
           break;
         }
+        counter--;
+        currentNode = currentNode.getPrev();
+      }
+    } else {
+      Node currentNode = front.getNext();
+      int counter = 0;
+      while (currentNode != tail){
+        if (counter == index){
+          currentNode.setData(value);
+          break;
+        }
+        counter++;
+        currentNode = currentNode.getNext();
       }
     }
   }//end of set
@@ -145,6 +174,31 @@ public class Dlist{
   // insert an item before index.
   // only inserts if the index is within bounds
   public void insert(int index, String value){
+    if (size == 0){
+      this.addFront(value);
+    } else if (index > size / 2){
+        Node currentNode = tail.getPrev();
+        int counter = size - 1;
+        while (currentNode != front){
+          if (counter == index){
+            Node newNode = new Node(value, currentNode, currentNode.getPrev());
+          }
+          counter--;
+          currentNode = currentNode.getPrev();
+        }
+    } else {
+      Node currentNode = front.getNext();
+      int counter = 0;
+      while (currentNode != tail){
+        if (counter == index){
+          Node newNode = new Node(value, currentNode.getNext(), currentNode);
+        }
+        counter++;
+        currentNode = currentNode.getNext();
+      }
+    }
+
+
     Node currentNode = front;
     int counter = 0;
     if (index == 0){
