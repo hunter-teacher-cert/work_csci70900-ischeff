@@ -5,7 +5,7 @@ public class Concatenation{
 
   public static void main(String[] args){
 
-        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~DO NOW~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~DO NOW~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //Think-Pair-Share: what do you notice and wonder about lines 9 and 10?
     int temp = 15;
     System.out.println("The temperature today will be " + temp + " degrees.");
@@ -13,7 +13,7 @@ public class Concatenation{
     //What are some other ways we might be able to use this technique?
     //Your answer here:
 
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ACTIVITY 1~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~ACTIVITY 1~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // Now, create variables to represent today's day, date, month, and year.
     // Print each variable after you assign it to check that it contains what you want!
     // YOUR CODE HERE
@@ -23,6 +23,8 @@ public class Concatenation{
     // YOUR CODE HERE
     // European Format: Friday 30 July, 2021.
     // YOUR CODE HERE
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~ACTIVITY 2~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
   }
