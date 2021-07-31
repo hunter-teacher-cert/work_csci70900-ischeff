@@ -2,10 +2,10 @@
 Concatenation
 
 ## Lesson objective:
-Students will be able to concatenate Strings and concatenate Strings and integers.
+Students will be able to concatenate different data types.  
 
 ### Aim:
-How can we concatenate different primitive types?
+How can we concatenate different data types?
 
 ### Vocab:
 Concatenate, concatenation, String, variable, primitive, data type
@@ -14,12 +14,8 @@ Concatenate, concatenation, String, variable, primitive, data type
 time: 5 minutes
 
 *Think-Pair-Share:*
-Take a look at lines TK - TK in today's code. What do you think the result of X will be? Why?
-
-*Follow-up questions:*
-- Why did you break the process down into steps?
-- What makes a step the right size in this situation?
-- How did you go about deciding what the steps should be?
+- Have you heard the term concatenation before? If so, where have you heard it? What do you recall it signified?
+- If you haven't heard the term before, what do you predict it will mean?
 
 ---
 
@@ -28,43 +24,26 @@ time: 10 minutes
 
 *Mini-lesson:*
 
-Decomposition = the process of breaking complex problems into smaller problems.
+Concatenation = when you use the addition operator to combine different data types, typically strings with other strings, or strings with integers.
 
-*Question:* why do we do this in real life?
-- Expected answer: to make life easier
+Data type = another term for primitives in Java, i.e., ints, Strings, Booleans.
 
-*Question:* Why do we do this in computer science?
-- Expected answers: to make life easier, to make coding easier, to make problems simpler.
+*Think-Pair-Share* What do you predict lines 9 and 10 of Concatenation.java will do?
+- Expected answer: They will print out the sentence "The temperature today will be 15 degrees."
 
-One way to *decompose* a problem is visually. This is sometimes called *whiteboarding*
+*Question:*
+- Compile and run the program--did it behave as you expected?
 
-Some whiteboarding techniques are:
-- tree maps
-- concept maps
-- bubble maps
-- literal drawings
-
-Warm call a student picked during the do now to demo their drawing on the board.
-
-*Questions:*
-- Why did you draw it like that?
-- How did you decide to break it down?
-- What are some other ways he/she/they could have drawn this?
-
-Demo another drawing as necessary.
+*Follow-up Questions:*
+- How did you predict the result?
+- What is the "+" operator doing?
+- Why do you think this works?
+- In what situations do you think this might be useful?
 
 ---
 
 ### Lesson Activity
 time: 15 minutes
-
-Students will break into pairs. Then, pairs will review a list of common problems, such as:
-- how to open a door
-- how to make a sandwich
-- how to get dressed
-- how to brush your teeth
-- *harder option:* come up with your own problem!
-(*Note: the above are just examples; if I were to make student-facing materials, there would be between 8 and 10 problems to choose from.*)
 
 Depending on student ability, each pair might try this more than once:
 - decompose the problem
