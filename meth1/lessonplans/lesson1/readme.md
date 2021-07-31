@@ -28,38 +28,34 @@ Concatenation = when you use the addition operator to combine different data typ
 
 Data type = another term for primitives in Java, i.e., ints, Strings, Booleans.
 
-*Think-Pair-Share* What do you predict lines 9 and 10 of Concatenation.java will do?
+*Think-Pair-Share* What do you notice and what do you wonder about lines 9 and 10?
+- Expected noticings: there is one variable, the variables and strings are combined, the variable represents temperature, the variable is int type
+- Expected wonderings: Why didn't they just write 15 in the print statement?
+
+*Think-Pair-Share* What do you predict lines 9 and 10 will do?
 - Expected answer: They will print out the sentence "The temperature today will be 15 degrees."
 
 *Question:*
 - Compile and run the program--did it behave as you expected?
 
 *Follow-up Questions:*
-- How did you predict the result?
+- What led you to predict the result?
 - What is the "+" operator doing?
 - Why do you think this works?
-- In what situations do you think this might be useful?
+
+*Quickwrite*
+- What are some other ways we might be able to use this technique?
 
 ---
 
-### Lesson Activity
+### Lesson Activity #1
 time: 15 minutes
 
-Depending on student ability, each pair might try this more than once:
-- decompose the problem
-- attempt to follow the instructions
-- reflect on how it went
-
-Students should have a graphic organizer / template for the different diagrams (tree, bubble, etc.) BUT they can also use blank paper.
-
-Teacher will assess student understanding by walking among the pairs and observing, offering feedback as necessary.
-
-After 7-8 minutes, pairs will pair up in groups of 4. Each group will:
-- have one pair share one of their decompositions with the other
-- attempt to carry out the instructions the other group came up with.
+- Students will individually complete either the mild, medium or spicy versions of this activity.
+- They should open the code file of their choice, then follow the instructions. (Everyone will ultimately write lines that print out today's date in both European and American formats.)
 
 *Think-Pair-Share:*
-What is easy about decomposition? What is hard? Why?
+What was easy about this activity? What was hard? Why?
 
 ---
 
