@@ -5,6 +5,7 @@ public class Concatenation{
 
   public static void main(String[] args){
 
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~DO NOW~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //Think-Pair-Share: what do you notice and wonder about lines 9 and 10?
     int temp = 15;
     System.out.println("The temperature today will be " + temp + " degrees.");
@@ -12,6 +13,7 @@ public class Concatenation{
     //What are some other ways we might be able to use this technique?
     //Your answer here:
 
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ACTIVITY 1~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // Uncomment the lines below, and fill in the variables to match today.
     // Print as you go, to make sure each variable contains the correct information!
 
