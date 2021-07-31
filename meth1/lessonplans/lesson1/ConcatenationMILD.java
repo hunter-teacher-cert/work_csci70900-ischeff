@@ -5,11 +5,14 @@ public class Concatenation{
 
   public static void main(String[] args){
 
-    //Think-Pair-Share: what do you think the two lines of code below will do?
+    //Think-Pair-Share: what do you notice and wonder about lines 9 and 10?
     int temp = 15;
     System.out.println("The temperature today will be " + temp + " degrees.");
 
-    // Uncomment out lines 15-22, and fill in the variables to match today.
+    //What are some other ways we might be able to use this technique?
+    //Your answer here:
+
+    // Uncomment the lines below, and fill in the variables to match today.
     // Print as you go, to make sure each variable contains the correct information!
 
     // String day = "";
