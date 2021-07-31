@@ -1,5 +1,4 @@
-# Lesson 1:
-Concatenation
+# Lesson 1: Concatenation
 
 ## Lesson objective:
 Students will be able to concatenate different data types.  
