@@ -10,7 +10,7 @@ How can we concatenate different data types?
 Concatenate, concatenation, String, variable, primitive, data type
 
 ### Standards:
-- 
+- 9-12.CT.4: Implement a program using a combination of student-defined and third-party functions to organize the computation.
 
 ### Warm up
 time: 5 minutes
