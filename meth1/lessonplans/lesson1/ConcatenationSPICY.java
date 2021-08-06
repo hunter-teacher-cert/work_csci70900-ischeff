@@ -26,6 +26,11 @@ public class Concatenation{
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~ACTIVITY 2~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+    // Look back at your answer to the final question from the warmup,
+    // when you brainstormed other ways to apply this concept.
+
+    // Use the space below to write pseudocode to plan out
+    // your idea! 
 
   }
 }

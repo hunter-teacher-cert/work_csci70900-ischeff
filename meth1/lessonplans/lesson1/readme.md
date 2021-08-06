@@ -67,7 +67,7 @@ time: 15 minutes
 TK
 
 ### Closing
-time: 10 minutes
+time: 5 minutes
 
 *Think-Write-Pair-Share:*
 If you were to analogize concatenation--that is, to compare concatenation to something else, to help express what concatenation is--what would you compare it to and why?
