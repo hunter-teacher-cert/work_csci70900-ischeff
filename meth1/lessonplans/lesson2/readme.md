@@ -45,11 +45,11 @@ time: 10 minutes
 ```Java
 public class Methods{
   //This is ANOTHER method, outside main
-  public String myAgeIs(String firstName, String lastName, int age){
+  public static String myAgeIs(String firstName, String lastName, int age){
     //first, we create an empty string to store the output.
     String result = "";
     //then we assign the empty string to the concatenation of the parameters.
-    result = firstName + " " + lastName + "is " + age + " years old.";
+    result = firstName + " " + lastName + " is " + age + " years old.";
     //then we return the result.
     return result;
   }
@@ -57,7 +57,7 @@ public class Methods{
   //This is my main method
   public static void main(String[] args){
     //We can simultaneously print and invoke this method.
-    System.out.println(myAgeIs(Ian, Scheffler, 30));
+    System.out.println(myAgeIs("Ian", "Scheffler", 30));
 
   }
 }
@@ -88,26 +88,49 @@ time: 20 minutes
 - If anyone finishes early, they should ask the instructor for feedback; if they still have extra time after implementing any revisions, they can assist their peers.
 - Note: there is an extension activity in the Spicy file, in which students create a scanner to solicit user input.
 
-**Expected/Desired Code (Mild/Medium):**
+**Expected/Desired Code (Mild):**
 ```java
 public class Methods{
 
-  public String euroDate(String month, String day, int date, int year){
+  public static String euroDate(String month, String day, int date, int year){
     String result = "";
     result = day + " " + date + " " + month + ", " + year + ".";
     return result;
   }
 
-  public String amDate(String month, String day, int date, int year){
+  public static String amDate(String month, String day, int date, int year){
     String result = "";
-    result = day + ", " + month + " " + date + ", " + year ".";
+    result = day + ", " + month + " " + date + ", " + year + ".";
     return result;
   }
 
   public static void main(String[] args){
-    System.out.println(euroDate(August, Thursday, 5, 2021));
-    System.out.println(amDate(August, Thursday, 5, 2021));
+    System.out.println(euroDate("August", "Thursday", 5, 2021));
+    System.out.println(amDate("August", "Thursday", 5, 2021));
 
+  }
+}
+```
+**Expected/Desired Code (Medium):**
+```Java
+import java.io.*;
+import java.util.*;
+
+public class Methods{
+
+  public static String date(String month, String day, int date, int year, boolean euroFormat){
+    String result = "";
+    if(euroFormat == true){
+      result = day + " " + date + " " + month + ", " + year + ".";
+    } else {
+      result = day + ", " + month + " " + date + ", " + year + ".";
+    }
+    return result;
+  }
+
+  public static void main(String[] args){
+    System.out.println(date("August", "Thursday", 5, 2021, true));
+    System.out.println(date("August", "Thursday", 5, 2021, false));
   }
 }
 ```
@@ -117,21 +140,55 @@ import java.io.*;
 import java.util.*;
 
 public class Methods{
+//Note: since it's not part of the lesson, validating user input (i.e. restricting the inputs to actual real months etc. is nice to have but not necessary!)
+//If this were a real lesson, I would probably have EVERYBODY add userinput the next day, and have the spicy group from today model their work, as a starting point, to then discuss how we make sure that users put in valid data. 
+  public static String getMonth(){
+    Scanner in = new Scanner(System.in);
+    System.out.println("What is the current month?");
+    String month = in.nextLine();
+    return month;
+  }
 
-  public String date(String month, String day, int date, int year, boolean euroFormat){
+  public static String getDay(){
+    Scanner in = new Scanner(System.in);
+    System.out.println("What is the current day of the week?");
+    String day = in.nextLine();
+    return day;
+  }
+
+  public static int getYear(){
+    Scanner in = new Scanner(System.in);
+    System.out.println("What year is it?");
+    int year = in.nextInt();
+    return year;
+  }
+
+  public static int getDate(){
+    Scanner in = new Scanner(System.in);
+    System.out.println("What day of the month is it?");
+    int date = in.nextInt();
+    return date;
+  }
+
+  public static Boolean getFormat(){
+    Scanner in = new Scanner(System.in);
+    System.out.println("Would you prefer the date in American (1) or European (2) format?");
+    int format = in.nextInt();
+    return(format == 2);
+  }
+
+  public static String date(String month, String day, int date, int year, boolean euroFormat){
     String result = "";
     if(euroFormat == true){
       result = day + " " + date + " " + month + ", " + year + ".";
     } else {
-      result = day + ", " + month + " " + date + ", " + year ".";
+      result = day + ", " + month + " " + date + ", " + year + ".";
     }
     return result;
   }
 
   public static void main(String[] args){
-    System.out.println(date(August, Thursday, 5, 2021, false));
-    System.out.println(date(August, Thursday, 5, 2021, true));
-
+    System.out.println(date(getMonth(), getDay(), getDate(), getYear(), getFormat()));
   }
 }
 ```
@@ -160,6 +217,6 @@ time: 10 minutes
 time: 5 minutes
 
 *Think-Write-Pair-Share:*
-Based on the feedback you received, what next steps--if any-should you take tonight to revise your code? s
+Based on the feedback you received, what next steps--if any--should you take tonight to revise your code?
 
 ---
