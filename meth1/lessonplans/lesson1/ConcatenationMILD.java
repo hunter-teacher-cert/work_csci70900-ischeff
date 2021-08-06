@@ -33,28 +33,12 @@ public class Concatenation{
     // System.out.println();
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~ACTIVITY 2~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    // Look back at your answer to the final question from the warmup,
-    // when you brainstormed other ways to apply this concept.
+    //The code above is for a SPECIFIC date. How can we write code that GENERALIZES
+    // the relationship between the data types that we concatenated?
 
-    // Using the prompts below to guide you, write pseudocode to plan out your idea! 
+    //Write out your plan in pseudocode and/or with a diagram.
 
-    // What do you want to represent using concatenation? Why?
-    // (if you're stuck, scroll to the bottom for some ideas!)
-
-    // What variables do you need?
-
-    // What type will the variables be?
-
-    // How will the variables relate to each other?
-
-
-
-
-
-
-
-    // Ideas: telling the time of day, making a grocery list, making our class attendance roster,
-    // calculating your graddes, planning your commute, wishing someone happy birthday, calculating your age.
+    //Be prepared to share out your plan! (We will code this up tomorrow!)
 
   }
 }

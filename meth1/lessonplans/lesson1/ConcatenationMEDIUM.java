@@ -34,17 +34,11 @@ public class Concatenation{
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~ACTIVITY 2~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    // Look back at your answer to the final question from the warmup,
-    // when you brainstormed other ways to apply this concept.
+    //The code above is for a SPECIFIC date. How can we write code that GENERALIZES
+    // the relationship between the data types that we concatenated?
 
-    // Using the prompts below to guide you, write pseudocode to plan out your idea! 
+    //Write out your plan in pseudocode and/or with a diagram.
 
-    // What do you want to represent using concatenation? Why?
-
-    // What variables do you need?
-
-    // What type will the variables be?
-
-    // How will the variables relate to each other?
+    //Be prepared to share out your plan! (We will code this up tomorrow!)
   }
 }
