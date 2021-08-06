@@ -9,6 +9,9 @@ How can we concatenate different data types?
 ### Vocab:
 Concatenate, concatenation, String, variable, primitive, data type
 
+### Standards:
+- 
+
 ### Warm up
 time: 5 minutes
 
@@ -61,10 +64,11 @@ What was easy about this activity? What was hard? Why?
 ### Lesson Activity #2
 time: 15 minutes
 
-- TK
+- Using the idea(s) they brainstormed during the quickwrite, students will write pseudocode to plan out creating their idea, now that they have had some experience using concatenation!
 
 *Question*
-TK
+- What was easy? What was hard? Why?
+- What next steps will you take tomorrow?
 
 ### Closing
 time: 5 minutes
