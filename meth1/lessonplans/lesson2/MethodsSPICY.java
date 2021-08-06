@@ -5,6 +5,8 @@ public class MethodsSPICY{
   //create methods (one per parameter) to solicit user input
     //to get user input, you need to create a Scanner
     //for more on scanners, check this link: https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Scanner.html
+    //you are NOT required to validate user input, but can do so if you want to!
+    //(we will discuss data validation tomorrow)
 
   //create a method called date that takes as parameters the day, month, date, year, and date format and returns the date in that format.
 
