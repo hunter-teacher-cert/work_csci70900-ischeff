@@ -1,7 +1,8 @@
 # Lesson 1: Concatenation
 
 ## Context:
-This lesson is designed to be delivered to a mixed-grade group of high school students who have only recently been introduced to java, and who are also new to CS in general. Consequently, the lesson focus is concatenation; this is the first day of a two-day lesson, at the end of which students will create and implement a short program of their own design that concatenates more than one data type to represent a real-world scenario or to solve a problem.
+- This lesson is designed to be delivered to a mixed-grade group of high school students who have only recently been introduced to java, but who have taken AP CSP. Given that the course would have been taken during the pandemic, there is an explicit goal here of reinforcing and reviewing fundamental CS concepts while learning a new language.  
+- Consequently, the lesson focus is concatenation; this is the first day of a two-day lesson, at the end of which students will create and implement a short program that solicits input and returns a string produced by concatenating the input data.
 
 ## Lesson objective:
 Students will be able to concatenate different data types.  
@@ -18,7 +19,7 @@ Concatenate, concatenation, String, variable, primitive, data type
 ### Warm up
 time: 5 minutes
 
-*Think-Pair-Share:*
+*Think-Write-Pair-Share:*
 - Have you heard the term concatenation before? If so, where have you heard it? What do you recall it signified?
 - If you haven't heard the term before, what do you predict it will mean?
 
@@ -93,9 +94,13 @@ What was easy about this activity? What was hard? Why?
 ### Lesson Activity #2
 time: 15 minutes
 
-- Using the idea(s) they brainstormed during the quickwrite, students will write pseudocode to plan out creating their idea, now that they have had some experience using concatenation! (Coding up the idea, using the pseudocode, will be tomorrow's activity.)
+- Students will complete the mild, medium, or spicy version of this activity.
 - While students work, teacher should circulate and assess who needs extra help and/or feedback.
 - If anyone finishes early, they should ask the instructor for feedback; if they still have extra time after implementing any revisions, they can assist their peers.
+
+**Expected Misconceptions:**
+- Students may struggle to generalize the relationship among the concatenated data types.
+- Students may struggle to conceptualize the relationship between the main method and the other methods they will create. (This may present as students not being sure how or where to write out the generalized relationship.)
 
 *Question*
 - What was easy? What was hard? Why?

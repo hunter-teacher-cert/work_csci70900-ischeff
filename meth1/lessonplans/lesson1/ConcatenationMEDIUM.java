@@ -6,9 +6,14 @@ public class Concatenation{
   public static void main(String[] args){
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~DO NOW~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // Think-Write-Pair-Share: what do you remember about concatenation from AP CSP?
+    // YOUR ANSWER:
+
     //Think-Pair-Share: what do you notice and wonder about lines 9 and 10?
     int temp = 15;
     System.out.println("The temperature today will be " + temp + " degrees.");
+    //NOTICINGS:
+    //WONDERINGS:
 
     //What are some other ways we might be able to use this technique?
     //Your answer here:
@@ -34,11 +39,17 @@ public class Concatenation{
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~ACTIVITY 2~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    //The code above is for a SPECIFIC date. How can we write code that GENERALIZES
+    // The code above is for a SPECIFIC date. How can we write code that GENERALIZES
     // the relationship between the data types that we concatenated?
 
-    //Write out your plan in pseudocode and/or with a diagram.
+    // If you get stuck, use the prompting questions at the bottom!
+
+    // Write out your plan in pseudocode and/or with a diagram.
 
     //Be prepared to share out your plan! (We will code this up tomorrow!)
+
+    // Prompting questions: What method or methods will you need to create?
+    // What parameters will these methods take?
+    // What will these methods return?
   }
 }

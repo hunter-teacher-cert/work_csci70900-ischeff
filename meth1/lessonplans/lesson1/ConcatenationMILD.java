@@ -33,12 +33,19 @@ public class Concatenation{
     // System.out.println();
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~ACTIVITY 2~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    //The code above is for a SPECIFIC date. How can we write code that GENERALIZES
+    // The code above is for a SPECIFIC date. How can we write code that GENERALIZES
     // the relationship between the data types that we concatenated?
 
-    //Write out your plan in pseudocode and/or with a diagram.
+    // If you get stuck, use the prompting questions at the bottom!
+
+    // Write out your plan in pseudocode and/or with a diagram.
 
     //Be prepared to share out your plan! (We will code this up tomorrow!)
+
+    // Prompting questions: What method or methods will you need to create?
+    // What parameters will these methods take?
+    // What will these methods return?
+    // How will these methods relate to main? 
 
   }
 }
