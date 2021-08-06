@@ -46,12 +46,18 @@ time: 10 minutes
 public class Methods{
   //This is ANOTHER method, outside main
   public String myAgeIs(String firstName, String lastName, int age){
-    System.out.println(firstName + " " + lastName + "is " + age + " years old.");
+    //first, we create an empty string to store the output.
+    String result = "";
+    //then we assign the empty string to the concatenation of the parameters.
+    result = firstName + " " + lastName + "is " + age + " years old.";
+    //then we return the result.
+    return result;
   }
 
   //This is my main method
   public static void main(String[] args){
-    myAgeIs(Ian, Scheffler, 30);
+    //We can simultaneously print and invoke this method.
+    System.out.println(myAgeIs(Ian, Scheffler, 30));
 
   }
 }
@@ -78,12 +84,56 @@ time: 20 minutes
 - Students will individually complete either the mild, medium or spicy versions of this activity.
 - They should open the code file of their choice, then follow the instructions. (Everyone will ultimately write a method or methods that print out any date in both European and American formats.)
 - While students work, teacher should circulate and assess who needs extra help and/or feedback.
+- STUDENT SHOULD MAKE SURE TO TEST AS THEY GO!!! (Don't hesitate to call the class back together to highlight best practices, preferable with a student who is using best practices as the demo instructor!)
 - If anyone finishes early, they should ask the instructor for feedback; if they still have extra time after implementing any revisions, they can assist their peers.
 - Note: there is an extension activity in the Spicy file, in which students create a scanner to solicit user input.
 
-**Expected/Desired Code:**
+**Expected/Desired Code (Mild/Medium):**
 ```java
+public class Methods{
 
+  public String euroDate(String month, String day, int date, int year){
+    String result = "";
+    result = day + " " + date + " " + month + ", " + year + ".";
+    return result;
+  }
+
+  public String amDate(String month, String day, int date, int year){
+    String result = "";
+    result = day + ", " + month + " " + date + ", " + year ".";
+    return result;
+  }
+
+  public static void main(String[] args){
+    System.out.println(euroDate(August, Thursday, 5, 2021));
+    System.out.println(amDate(August, Thursday, 5, 2021));
+
+  }
+}
+```
+**Expected/Desired Code (Spicy):**
+```Java
+import java.io.*;
+import java.util.*;
+
+public class Methods{
+
+  public String date(String month, String day, int date, int year, boolean euroFormat){
+    String result = "";
+    if(euroFormat == true){
+      result = day + " " + date + " " + month + ", " + year + ".";
+    } else {
+      result = day + ", " + month + " " + date + ", " + year ".";
+    }
+    return result;
+  }
+
+  public static void main(String[] args){
+    System.out.println(date(August, Thursday, 5, 2021, false));
+    System.out.println(date(August, Thursday, 5, 2021, true));
+
+  }
+}
 ```
 
 **Expected Misconceptions:**
