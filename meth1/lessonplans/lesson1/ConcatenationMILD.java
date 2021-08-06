@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Concatenation{
+public class ConcatenationMILD{
 
   public static void main(String[] args){
 
@@ -45,7 +45,7 @@ public class Concatenation{
     // Prompting questions: What method or methods will you need to create?
     // What parameters will these methods take?
     // What will these methods return?
-    // How will these methods relate to main? 
+    // How will these methods relate to main?
 
   }
 }

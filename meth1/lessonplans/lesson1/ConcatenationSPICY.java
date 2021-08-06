@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Concatenation{
+public class ConcatenationSPICY{
 
   public static void main(String[] args){
 
