@@ -98,6 +98,19 @@ time: 15 minutes
 - While students work, teacher should circulate and assess who needs extra help and/or feedback.
 - If anyone finishes early, they should ask the instructor for feedback; if they still have extra time after implementing any revisions, they can assist their peers.
 
+**Expected/Desired Pseudocode:**
+```Java
+// Create a method for European date and American date
+// OR a method that produces either based on user input
+// So TWO separate methods or ONE method
+// These are OUTSIDE the main method
+// But are called/given input in main
+// Each method should take as a parameter EACH of the data types to be concatenated.
+// I.e., you would want to input the date, day, month, etc.
+// Then the method would essentially return a string that uses the concatenated string in activity 1 as a template.
+//If someone wanted to, they could also create a scanner to solicit user input. (This is going to be an extension activity tomorrow.)
+```
+
 **Expected Misconceptions:**
 - Students may struggle to generalize the relationship among the concatenated data types.
 - Students may struggle to conceptualize the relationship between the main method and the other methods they will create. (This may present as students not being sure how or where to write out the generalized relationship.)
