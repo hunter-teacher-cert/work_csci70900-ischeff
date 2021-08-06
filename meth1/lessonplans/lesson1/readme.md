@@ -1,5 +1,8 @@
 # Lesson 1: Concatenation
 
+## Context:
+This lesson is designed to be delivered to a mixed-grade group of high school students who have only recently been introduced to java, and who are also new to CS in general. Consequently, the lesson focus is concatenation; this is the first day of a two-day lesson, at the end of which students will create and implement a short program of their own design that concatenates more than one data type to represent a real-world scenario or to solve a problem.
+
 ## Lesson objective:
 Students will be able to concatenate different data types.  
 
@@ -55,6 +58,32 @@ time: 15 minutes
 
 - Students will individually complete either the mild, medium or spicy versions of this activity.
 - They should open the code file of their choice, then follow the instructions. (Everyone will ultimately write lines that print out today's date in both European and American formats.)
+- While students work, teacher should circulate and assess who needs extra help and/or feedback.
+- If anyone finishes early, they should ask the instructor for feedback; if they still have extra time after implementing any revisions, they can assist their peers.
+
+**Expected/Desired Code:**
+```java
+ String day = Friday;
+ System.out.println(day);
+ int date = 30;
+ System.out.println(date);
+ String month = July;
+ System.out.println(month);
+ int year = 2021;
+ System.out.println(year);
+
+// Now, uncomment the lines below and print out today's date in both formats!
+// American Format: Friday, July 30, 2021.
+ System.out.println(day + ", " + month + " " + date + ", " + year ".");
+// European Format: Friday 30 July, 2021.
+ System.out.println(day + " " + date + " " + month + ", " + year + ".");
+```
+
+**Expected Misconceptions:**
+- Students may misremember Java fundamentals, like compiling before running.
+- Students may forget semicolons and make other syntax errors.
+- Students may not understand that to concatenate strings in a grammatical fashion, you need to add in the spaces you want--even though there are multiple ways to do this, you need to be intentional about it!
+- Students may try to write out their code without planning it first.
 
 *Think-Pair-Share:*
 What was easy about this activity? What was hard? Why?
@@ -64,7 +93,9 @@ What was easy about this activity? What was hard? Why?
 ### Lesson Activity #2
 time: 15 minutes
 
-- Using the idea(s) they brainstormed during the quickwrite, students will write pseudocode to plan out creating their idea, now that they have had some experience using concatenation!
+- Using the idea(s) they brainstormed during the quickwrite, students will write pseudocode to plan out creating their idea, now that they have had some experience using concatenation! (Coding up the idea, using the pseudocode, will be tomorrow's activity.)
+- While students work, teacher should circulate and assess who needs extra help and/or feedback.
+- If anyone finishes early, they should ask the instructor for feedback; if they still have extra time after implementing any revisions, they can assist their peers.
 
 *Question*
 - What was easy? What was hard? Why?
