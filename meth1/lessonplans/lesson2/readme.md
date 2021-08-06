@@ -33,7 +33,6 @@ time: 5 minutes
 time: 10 minutes
 
 *Mini-lesson:*
-Before you start the live coding demo, tell students that you will be doing a live code demo of how to write a method in Java.
 **Vocab:**
 - Method = what we call a function in Java
 - Parameter = input data/variables
