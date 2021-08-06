@@ -23,6 +23,10 @@ time: 5 minutes
 - Have you heard the term concatenation before? If so, where have you heard it? What do you recall it signified?
 - If you haven't heard the term before, what do you predict it will mean?
 
+**Expected Answers:**
+- Adding things together
+- Connecting things 
+
 ---
 
 ### Lesson Content
