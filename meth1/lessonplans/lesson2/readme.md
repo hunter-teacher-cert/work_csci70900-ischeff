@@ -67,32 +67,22 @@ public class Methods{
 - What did you wonder?
 - How do you think you can apply this demo to your own next steps?
 
+*Formative Assessment:*
+- Using your analog feedback device (i.e., raising number of fingers from closed fist to 5 fingers), how clear are you on your next steps?
 ---
 
 ### Lesson Activity #1
-time: 15 minutes
+time: 20 minutes
 
 - Students will individually complete either the mild, medium or spicy versions of this activity.
-- They should open the code file of their choice, then follow the instructions. (Everyone will ultimately write lines that print out today's date in both European and American formats.)
+- They should open the code file of their choice, then follow the instructions. (Everyone will ultimately write a method or methods that print out any date in both European and American formats.)
 - While students work, teacher should circulate and assess who needs extra help and/or feedback.
 - If anyone finishes early, they should ask the instructor for feedback; if they still have extra time after implementing any revisions, they can assist their peers.
+- Note: there is an extension activity in the Spicy file, in which students create a scanner to solicit user input.
 
 **Expected/Desired Code:**
 ```java
- String day = Friday;
- System.out.println(day);
- int date = 30;
- System.out.println(date);
- String month = July;
- System.out.println(month);
- int year = 2021;
- System.out.println(year);
 
-// Now, uncomment the lines below and print out today's date in both formats!
-// American Format: Friday, July 30, 2021.
- System.out.println(day + ", " + month + " " + date + ", " + year ".");
-// European Format: Friday 30 July, 2021.
- System.out.println(day + " " + date + " " + month + ", " + year + ".");
 ```
 
 **Expected Misconceptions:**
@@ -100,6 +90,8 @@ time: 15 minutes
 - Students may forget semicolons and make other syntax errors.
 - Students may not understand that to concatenate strings in a grammatical fashion, you need to add in the spaces you want--even though there are multiple ways to do this, you need to be intentional about it!
 - Students may try to write out their code without planning it first.
+- Students may struggle to generalize the relationship among the concatenated data types.
+- Students may struggle to conceptualize the relationship between the main method and the other methods they will create. (This may present as students not being sure how or where to write out the generalized relationship.)
 
 *Think-Pair-Share:*
 What was easy about this activity? What was hard? Why?
@@ -107,37 +99,16 @@ What was easy about this activity? What was hard? Why?
 ---
 
 ### Lesson Activity #2
-time: 15 minutes
+time: 10 minutes
 
-- Students will complete the mild, medium, or spicy version of this activity.
-- While students work, teacher should circulate and assess who needs extra help and/or feedback.
-- If anyone finishes early, they should ask the instructor for feedback; if they still have extra time after implementing any revisions, they can assist their peers.
-
-**Expected/Desired Pseudocode:**
-```Java
-// Create a method for European date and American date
-// OR a method that produces either based on user input
-// So TWO separate methods or ONE method
-// These are OUTSIDE the main method
-// But are called/given input in main
-// Each method should take as a parameter EACH of the data types to be concatenated.
-// I.e., you would want to input the date, day, month, etc.
-// Then the method would essentially return a string that uses the concatenated string in activity 1 as a template.
-//If someone wanted to, they could also create a scanner to solicit user input. (This is going to be an extension activity tomorrow.)
-```
-
-**Expected Misconceptions:**
-- Students may struggle to generalize the relationship among the concatenated data types.
-- Students may struggle to conceptualize the relationship between the main method and the other methods they will create. (This may present as students not being sure how or where to write out the generalized relationship.)
-
-*Question*
-- What was easy? What was hard? Why?
-- What next steps will you take tomorrow?
+- Students leave their laptops open, then stand up, and participate in a musical-chairs-style gallery walk to give and receive feedback. (When music plays, get up and dance; when music ends, take seat nearest to you, read over their code, then leave a glow, grow, and wondering question.)
+- There should be time for at least 2 cycles.
+- Students will then take their seat and read over the feedback they were left.
 
 ### Closing
 time: 5 minutes
 
 *Think-Write-Pair-Share:*
-If you were to analogize concatenation--that is, to compare concatenation to something else, to help express what concatenation is--what would you compare it to and why?
+Based on the feedback you received, what next steps--if any-should you take tonight to revise your code? s
 
 ---
