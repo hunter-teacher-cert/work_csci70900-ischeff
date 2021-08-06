@@ -33,7 +33,6 @@ time: 5 minutes
 time: 10 minutes
 
 *Mini-lesson:*
-**Vocab:**
 - Method = what we call a function in Java
 - Parameter = input data/variables
 - Return = the value produced by the method
