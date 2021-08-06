@@ -25,7 +25,7 @@ time: 5 minutes
 
 **Expected Answers:**
 - Adding things together
-- Connecting things 
+- Connecting things
 
 ---
 
@@ -68,20 +68,24 @@ time: 15 minutes
 
 **Expected/Desired Code:**
 ```java
- String day = Friday;
- System.out.println(day);
- int date = 30;
- System.out.println(date);
- String month = July;
- System.out.println(month);
- int year = 2021;
- System.out.println(year);
+public class Concatenation{
+  public static void main(String[] args){
+     String day = "Friday";
+     System.out.println(day);
+     int date = 30;
+     System.out.println(date);
+     String month = "July";
+     System.out.println(month);
+     int year = 2021;
+     System.out.println(year);
 
-// Now, uncomment the lines below and print out today's date in both formats!
-// American Format: Friday, July 30, 2021.
- System.out.println(day + ", " + month + " " + date + ", " + year ".");
-// European Format: Friday 30 July, 2021.
- System.out.println(day + " " + date + " " + month + ", " + year + ".");
+    // Now, uncomment the lines below and print out today's date in both formats!
+    // American Format: Friday, July 30, 2021.
+     System.out.println(day + ", " + month + " " + date + ", " + year ".");
+    // European Format: Friday 30 July, 2021.
+     System.out.println(day + " " + date + " " + month + ", " + year + ".");
+   }
+}
 ```
 
 **Expected Misconceptions:**
