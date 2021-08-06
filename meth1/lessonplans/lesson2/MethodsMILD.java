@@ -11,7 +11,7 @@ public class MethodsMILD{
     return result;
   }
 
-  public static String amDate(String month, String day, int date, int year){
+  public static String amDate(//your parameters go here!){
     //start with an empty string
     String result = "";
     //then assign the string to the concatenated format!
@@ -27,4 +27,4 @@ public class MethodsMILD{
   }
 }
 
-//Done early? Try medium! 
+//Done early? Try medium!
